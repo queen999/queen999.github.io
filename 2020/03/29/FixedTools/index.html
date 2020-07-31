@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2020'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="shenma-site-verification" content="afd7134c0056c7f8a115de13b8f9c6ea_1591931913">
+
+  <!-- 页面元数据 -->
+  
+    <title>Photoshop修复工具的使用 - 覃浩的博客</title>
+  
+    <meta name="keywords" content="图像处理,Photoshop">
+  
+  
+    <meta name="description" content="模糊工具
+图章工具
+修复画笔工具
+红眼工具">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="覃浩的博客">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://img.icons8.com/nolan/96/orca.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+<script>
+  (function(){
+  var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+  document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+
+<script>
+(function(){
+var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f486ec541a2e651ca1f01aa60d606987";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            覃浩的博客 <b><sup style='color:#3AA757'>2020</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="输入关键词搜索一下" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.5'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='1398663411'>
+    </meting-js>
+  
+
+
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2020/03/29/FixedTools/">
+        Photoshop修复工具的使用
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
+    <p>覃浩</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Photoshop/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Photoshop</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年3月29日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.4k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>模糊工具</p>
+<p>图章工具</p>
+<p>修复画笔工具</p>
+<p>红眼工具</p>
+<a id="more"></a>
+
+<h2 id="模糊工具"><a href="#模糊工具" class="headerlink" title="模糊工具"></a>模糊工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">模糊工具的主要功能就是把图像变得模糊。使用模糊工具可以把图像拉开空间、距离感。</span><br><span class="line"></span><br><span class="line">模糊工具是对所画目标区域进行模糊处理。</span><br><span class="line"></span><br><span class="line">模糊处理后容易营造出画面的空间、层次感。</span><br></pre></td></tr></table></figure>
+
+<h3 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在对图像进行模糊的同时还可以通过模式改变对象颜色。</span><br></pre></td></tr></table></figure>
+
+<h3 id="强度"><a href="#强度" class="headerlink" title="强度"></a>强度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">强度值越大，模糊效果越大，反之越小。</span><br></pre></td></tr></table></figure>
+
+<h3 id="对所有图层取样"><a href="#对所有图层取样" class="headerlink" title="对所有图层取样"></a>对所有图层取样</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对所有图层取样指的是可对所有可见图层进行模糊处理。</span><br><span class="line"></span><br><span class="line">勾选：&quot;对所有图层取样&quot;操作都会作用于目标图层上。</span><br></pre></td></tr></table></figure>
+
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">滤镜也可以制作模糊效果。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="锐化"><a href="#锐化" class="headerlink" title="锐化"></a>锐化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">锐化工具作用与模糊工具对立，它可使图像变得锐利清晰。</span><br></pre></td></tr></table></figure>
+
+<h3 id="保护细节"><a href="#保护细节" class="headerlink" title="保护细节"></a>保护细节</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">勾选“保护细节”可保护图像微小像素防止画面失真。</span><br></pre></td></tr></table></figure>
+
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a><red>注意</red></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用模糊工具后会改变、损失很多原有像素信息，是无法通过锐化工具进行还原的。</span><br><span class="line"></span><br><span class="line">锐化工具是在图像现有像素基础上进行锐化的。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="涂抹工具"><a href="#涂抹工具" class="headerlink" title="涂抹工具"></a>涂抹工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">涂抹工具和画笔工具用法一样：直接在画面上画就可以。</span><br></pre></td></tr></table></figure>
+
+<h3 id="强度-1"><a href="#强度-1" class="headerlink" title="强度"></a>强度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">涂抹强度值越高，涂抹效果越强。</span><br></pre></td></tr></table></figure>
+
+<h3 id="手指绘画"><a href="#手指绘画" class="headerlink" title="手指绘画"></a>手指绘画</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">勾选“手指绘画”可以绘制前景色，快捷键为Alt</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="减淡工具"><a href="#减淡工具" class="headerlink" title="减淡工具"></a>减淡工具</h2><h3 id="保护色调"><a href="#保护色调" class="headerlink" title="保护色调"></a>保护色调</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">保护色调可以保护图像在使用减淡时色调方面失真。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="海绵工具"><a href="#海绵工具" class="headerlink" title="海绵工具"></a>海绵工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">作用：局部增加饱和度或降低饱和度。</span><br></pre></td></tr></table></figure>
+
+<h3 id="饱和度"><a href="#饱和度" class="headerlink" title="饱和度"></a>饱和度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简单理解就是：色彩的鲜艳程度。</span><br></pre></td></tr></table></figure>
+
+<h3 id="降低饱和度"><a href="#降低饱和度" class="headerlink" title="降低饱和度"></a>降低饱和度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">降低饱和度最终可使图像接近黑白。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="仿制图章工具"><a href="#仿制图章工具" class="headerlink" title="仿制图章工具"></a>仿制图章工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">锁定透明像素：禁止对透明区域进行操作。</span><br><span class="line"></span><br><span class="line">按住Alt键，光标变成靶心形状后代表可以寻找仿制源了。</span><br><span class="line"></span><br><span class="line">取样后就可以按照画笔用法来涂抹出仿制对象了。</span><br><span class="line"></span><br><span class="line">把仿制源文档删除后，仿制源也就不会存在了。</span><br></pre></td></tr></table></figure>
+
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">“对齐”保证鼠标每次操作都与源点对齐且画出整片图像。</span><br><span class="line"></span><br><span class="line">勾选“对齐”可以松开鼠标，然后继续画。</span><br><span class="line"></span><br><span class="line">不勾选“对齐”每次松开鼠标之后会重新开始画。</span><br></pre></td></tr></table></figure>
+
+<h3 id="样本"><a href="#样本" class="headerlink" title="样本"></a>样本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">当前图层：在本图层上点选仿制源，然后在本图层上进行仿制的操作。</span><br><span class="line"></span><br><span class="line">当前和下方图层：定义仿制源时只能选择当前图层以及下方图层图像为源。</span><br><span class="line"></span><br><span class="line">所有图层：可以定义画面上所有图像。</span><br></pre></td></tr></table></figure>
+
+<h3 id="切换仿制源面板"><a href="#切换仿制源面板" class="headerlink" title="切换仿制源面板"></a>切换仿制源面板</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">通过仿制源面板可以对仿制源进行更多深层次的编辑。</span><br><span class="line"></span><br><span class="line">还可以在这里定义多个仿制源（最多5个）。</span><br><span class="line"></span><br><span class="line">“位移”参数记录仿制源位移的位置。</span><br><span class="line">设置宽(W)、高(H)参数可以仿制出放大缩小的仿制源图像。</span><br><span class="line"></span><br><span class="line">同理：设置角度也可以仿制出旋转一定角度后的图像。</span><br><span class="line"></span><br><span class="line">显示叠加：勾选会出现预览效果。</span><br><span class="line"></span><br><span class="line">已剪切：勾选状态下只能看到画笔区域里面的预览。</span><br><span class="line">	   取消勾选会看到要仿制的整个画面的预览。</span><br><span class="line">	   </span><br><span class="line">反向：勾选反向显示叠加里面就会以反向的形式出现。</span><br><span class="line"></span><br><span class="line">自动隐藏：勾选自动隐藏，仿制时就可以隐藏掉显示叠加的部分。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="图案图章工具"><a href="#图案图章工具" class="headerlink" title="图案图章工具"></a>图案图章工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">图案图章工具用法就是直接在画面上画图案。</span><br></pre></td></tr></table></figure>
+
+<h3 id="印象派效果"><a href="#印象派效果" class="headerlink" title="印象派效果"></a>印象派效果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">勾选“印象派效果”命令，就会绘画出印象派效果。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="修复画笔工具"><a href="#修复画笔工具" class="headerlink" title="修复画笔工具"></a>修复画笔工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">用法和仿制图章工具基本上是相同的。</span><br><span class="line"></span><br><span class="line">使用修复画笔工具后，边缘会有融合的效果。</span><br><span class="line"></span><br><span class="line">快捷键是J</span><br><span class="line"></span><br><span class="line">工具组里进行切换是Shift + J</span><br></pre></td></tr></table></figure>
+
+<h3 id="源"><a href="#源" class="headerlink" title="源"></a>源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">取样：仿制图章工具。</span><br><span class="line">图案：图案图标，可以选择图案进行修补图案。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="仿制图章工具与修复画笔工具的区别"><a href="#仿制图章工具与修复画笔工具的区别" class="headerlink" title="仿制图章工具与修复画笔工具的区别"></a>仿制图章工具与修复画笔工具的区别</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">仿制图章可以跨文档继续进行。</span><br><span class="line"></span><br><span class="line">仿制图章进行的仿制是很严格的，画成什么样边缘就是怎么样。</span><br><span class="line">修复画笔有一定的智能性，可以和周围环境进行融合。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="污点修复画笔工具"><a href="#污点修复画笔工具" class="headerlink" title="污点修复画笔工具"></a>污点修复画笔工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用污点修复画笔工具在污点上点击、绘画就可以清除污点。</span><br></pre></td></tr></table></figure>
+
+<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">近似匹配：计算较为简单，就近取样覆盖污点。</span><br><span class="line">创建纹理：在擦除污点同时创建出和周围相似的纹理效果。</span><br><span class="line">内容识别：是一种智能的识别方式，一般都会选择它。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="修补工具"><a href="#修补工具" class="headerlink" title="修补工具"></a>修补工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修补工具可以快速地对画面进行修复。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="内容感知移动工具"><a href="#内容感知移动工具" class="headerlink" title="内容感知移动工具"></a>内容感知移动工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">内容感知移动工具比修补工具更加智能和简单。</span><br></pre></td></tr></table></figure>
+
+<h3 id="模式-1"><a href="#模式-1" class="headerlink" title="模式"></a>模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">移动：代表的是移走</span><br><span class="line">拓展：代表的是复制</span><br></pre></td></tr></table></figure>
+
+<h3 id="适应"><a href="#适应" class="headerlink" title="适应"></a>适应</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在适应选项里决定了融合边缘程度的不同。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="红眼工具"><a href="#红眼工具" class="headerlink" title="红眼工具"></a>红眼工具</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">眼睛在补光灯作用下会扩张，而毛细血管就会呈现出红色。</span><br><span class="line"></span><br><span class="line">框选红眼区域，红眼就自动消失了。</span><br></pre></td></tr></table></figure>
+
+
+          
+            <br>
+            
+              
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/03/30/GRE-over-IPSec/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>GRE over IPSec VPN配置练习</p>
+                <p class='content'>GRE over IPSec VPN配置练习
+软件：Cisco  Packet  Tracer
+
+
+
+实验网络拓扑图如图所示，在总公司和分公司的边界路由器上做GRE over IPSec VPN...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/03/25/IPSec_VPN/'>
+                <p class='title'>IPSec VPN配置练习<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>IPSec VPN配置 
+软件：Cisco Packet  Tracer
+
+
+题目要求实验网络拓扑图如图所示
+
+1、基础配置如下：    (1)按图中所示配置总公司和分公司中各计算机、服务器、路...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+  
+    
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Photoshop修复工具的使用',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模糊工具"><span class="toc-text">模糊工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式"><span class="toc-text">模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强度"><span class="toc-text">强度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对所有图层取样"><span class="toc-text">对所有图层取样</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拓展"><span class="toc-text">拓展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#锐化"><span class="toc-text">锐化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#保护细节"><span class="toc-text">保护细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#涂抹工具"><span class="toc-text">涂抹工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#强度-1"><span class="toc-text">强度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手指绘画"><span class="toc-text">手指绘画</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#减淡工具"><span class="toc-text">减淡工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#保护色调"><span class="toc-text">保护色调</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#海绵工具"><span class="toc-text">海绵工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#饱和度"><span class="toc-text">饱和度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#降低饱和度"><span class="toc-text">降低饱和度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#仿制图章工具"><span class="toc-text">仿制图章工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对齐"><span class="toc-text">对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#样本"><span class="toc-text">样本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#切换仿制源面板"><span class="toc-text">切换仿制源面板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图案图章工具"><span class="toc-text">图案图章工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#印象派效果"><span class="toc-text">印象派效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修复画笔工具"><span class="toc-text">修复画笔工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#源"><span class="toc-text">源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#仿制图章工具与修复画笔工具的区别"><span class="toc-text">仿制图章工具与修复画笔工具的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#污点修复画笔工具"><span class="toc-text">污点修复画笔工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类型"><span class="toc-text">类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修补工具"><span class="toc-text">修补工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内容感知移动工具"><span class="toc-text">内容感知移动工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模式-1"><span class="toc-text">模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#适应"><span class="toc-text">适应</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红眼工具"><span class="toc-text">红眼工具</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<footer id="footer" class="clearfix" style="color: #333;">
+  <i class="far fa-copyright" style="color: #333;">2019-2020</i> 
+    <a href="https://www.zhengyuanyuan520.com/" target="_blank" style="color: #333;"> 覃浩的博客 </a>丨
+  <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.6/images/icp.png">
+  <a href="http://www.beian.miit.gov.cn/" target="_blank"  style="color: #333;">鄂ICP备19020398号-4</a> 丨
+  <!-- 网站运行时间 -->
+  <span id="timeDate" >正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+  <script class="run">
+  var now = new Date(); 
+  function createtime() { 
+  var grt= new Date("12/04/2019 20:13:14");
+  now.setTime(now.getTime()+250); 
+  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+  document.getElementById("timeDate").innerHTML = "本站已在风雨中度过了 "
+  document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  document.getElementById("timeDate").style.color="#333";
+  document.getElementById("times").style.color="#333";
+  }
+  setInterval("createtime()",250);
+  </script>丨
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205816.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205948.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210018.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz",
+    appKey: "tvRQuJAWPHtA7Xpddprw1wa8",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'false'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2020'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="shenma-site-verification" content="afd7134c0056c7f8a115de13b8f9c6ea_1591931913">
+
+  <!-- 页面元数据 -->
+  
+    <title>计算机网络学习1 - 覃浩的博客</title>
+  
+  
+    <meta name="description" content="学习笔记，包含以下内容：
+
+网络、互联网（互连网）和因特网
+三种交换方式
+计算机网络的性能指标
+">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="覃浩的博客">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://img.icons8.com/nolan/96/orca.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+<script>
+  (function(){
+  var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+  document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+
+<script>
+(function(){
+var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f486ec541a2e651ca1f01aa60d606987";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            覃浩的博客 <b><sup style='color:#3AA757'>2020</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="输入关键词搜索一下" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.5'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='493735012'>
+    </meting-js>
+  
+
+
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2020/07/17/computer_Internet_1/">
+        计算机网络学习1
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
+    <p>覃浩</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>计算机网络</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年7月17日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.5k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：5分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>学习笔记，包含以下内容：</p>
+<ul>
+<li>网络、互联网（互连网）和因特网</li>
+<li>三种交换方式</li>
+<li>计算机网络的性能指标</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="网络、互联网（互联网）和因特网"><a href="#网络、互联网（互联网）和因特网" class="headerlink" title="网络、互联网（互联网）和因特网"></a>网络、互联网（互联网）和因特网</h2><p>网络（Network）由若干<span class='p red'>结点</span>（Node）和连接这些节点的<span class='p red'>链路</span>（Link）组成。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200717162104.png" alt=""></p>
+<p>多个网络还可以通过路由器互连起来，这样就构成了一个覆盖范围更大的网络，即互联网（或互连网）。因此，互连网是“<span class='p red'>网络中的网络</span>（Network  of  Network）”</p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200717162555.png" alt=""></p>
+<p>因特网（Internet）是世界上最大的互联网络（用户数以亿计，互连的网络数以百万计）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200717162750.png" alt=""></p>
+<h3 id="Internet与internet的区别"><a href="#Internet与internet的区别" class="headerlink" title="Internet与internet的区别"></a>Internet与internet的区别</h3><blockquote>
+<p><kbd>internet</kbd>（互联网或互连网）是一个<kbd>通用名词</kbd>，它泛指<kbd>由多个计算机网络互连而成的网络</kbd>。在这些网络之间的<kbd>通信协议</kbd>可以是<kbd>任意</kbd>的。</p>
+</blockquote>
+<blockquote>
+<p><kbd>Internet</kbd>（因特网）则是一个<kbd>专用名词</kbd>，它指当前<kbd>全球最大的、开放的、由众多网络相互连接而成的特定计算机网络</kbd>，它采用<kbd>TCP/IP协议</kbd>族作为通信的规则，其前身是美国的ARPANET。</p>
+</blockquote>
+<h3 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h3><p><kbd>ISP</kbd>：因特网服务提供者</p>
+<h3 id="因特网的组成"><a href="#因特网的组成" class="headerlink" title="因特网的组成"></a>因特网的组成</h3><p>① 边缘部分：由所有连接在因特网上的主机组成。</p>
+<p>② 核心部分：由大量的网络和连接这些网络的路由器组成。</p>
+<h2 id="电路交换、分组交换和报文交换"><a href="#电路交换、分组交换和报文交换" class="headerlink" title="电路交换、分组交换和报文交换"></a>电路交换、分组交换和报文交换</h2><h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3><blockquote>
+<p>电话交换机接通电话线的方式称为电路交换。</p>
+</blockquote>
+<blockquote>
+<p>从通信资源的分配角度来看，交换（Switching）就是按照某种方式动态地分配传输线路的资源。</p>
+</blockquote>
+<blockquote>
+<p>电路交换的三个步骤：</p>
+<ol>
+<li>建立连接（分配通信资源）</li>
+<li>通话（一直占用通信资源）</li>
+<li>释放连接（归还通信资源）</li>
+</ol>
+</blockquote>
+<p>当使用电路交换来传送计算机数据时，其线路的传输效率往往很低。</p>
+<h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200717180739.png" alt="image-20200717165117099"></p>
+<h3 id="三种交换方式的对比"><a href="#三种交换方式的对比" class="headerlink" title="三种交换方式的对比"></a>三种交换方式的对比</h3><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200717180740.png" alt="image-20200717165207537"></p>
+<h2 id="计算机网络的性能指标"><a href="#计算机网络的性能指标" class="headerlink" title="计算机网络的性能指标"></a>计算机网络的性能指标</h2><h3 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h3><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200717180741.png" alt="image-20200717165735699"></p>
+<p>计算题：有一个待发送的数据块，大小为100MB，网卡的发送速率为100Mbps，则网卡发送完该数据块需要多长时间？</p>
+<p>$$\frac{100MB}{100Mb/s} = \frac{MB}{Mb/s} = \frac{2^{20}·8 b }{10^{6}b/s} ≈ 8.4s$$</p>
+<h3 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h3><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200717180742.png" alt="image-20200717171145414"></p>
+<blockquote>
+<p>一条通信线路的“频带宽度”越宽，其所传输数据的“最高数据率”也越高。</p>
+</blockquote>
+<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><blockquote>
+<p>吞吐量表示在单位时间内通过某个网络（或信道、接口）的数据量。</p>
+</blockquote>
+<blockquote>
+<p>吞吐量被经常用于对现实世界中的网络的一种测量，以便知道实际上到底有多少数据量能够通过网络。</p>
+</blockquote>
+<blockquote>
+<p>吞吐量受<kbd>网络的带宽</kbd>或<kbd>额定速率</kbd>的限制。</p>
+</blockquote>
+<h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><blockquote>
+<p>发送时延 ： $$  \frac{分组长度(b)}{发送速率(b/s)} $$ ，与网卡的发送速率、信道带宽、接口速率都有关。</p>
+</blockquote>
+<blockquote>
+<p>传播时延： $$ \frac{信道长度(m)}{电磁波传播速率(m/s)} $$ </p>
+</blockquote>
+<blockquote>
+<p>处理时延： 路由器接收数据后，对数据进行存储转发所消耗的时间。</p>
+</blockquote>
+<p>计算题： 数据块长度为100MB，信道带宽为1 Mb/s，传送距离为1000 km，计算<kbd>发送时延</kbd>和<kbd>传播时延</kbd>。</p>
+<p>$$ 发送时延 = \frac{分组长度(b)}{发送速率(b/s)} = \frac{100 × 2^{20} × 8(b)}{10^6(b/s)} = 838.8608s $$</p>
+<p>$$  传播时延 = \frac{信道长度(m)}{电磁波传播速率(m/s)} = \frac{1000 × 10^3(m)}{2 × 10^8(m/s)} = 0.005s $$</p>
+<h3 id="时延带宽积"><a href="#时延带宽积" class="headerlink" title="时延带宽积"></a>时延带宽积</h3><p>$$  时延带宽积 = 传播时延 × 带宽 $$</p>
+<h3 id="往返时间"><a href="#往返时间" class="headerlink" title="往返时间"></a>往返时间</h3><blockquote>
+<p>在很多情况下，因特网上的信息不仅仅单方向传输，而是双向交互。因此，往返时间RTT（Round-Trip  Time）也是一个重要指标。</p>
+</blockquote>
+<h3 id="利用率"><a href="#利用率" class="headerlink" title="利用率"></a>利用率</h3><blockquote>
+<p><kbd>信道利用率</kbd> ： 用来表示某信道有百分之几的时间是被利用的（有数据通过）。</p>
+<p><kbd>网络利用率</kbd> ： 全网络的信道利用率的加权平均。</p>
+</blockquote>
+<p>根据排队论，当某信道的利用率增大时，该信道引起的时延也会迅速增加。因此，信道的利用率并非越高越好。</p>
+<p>如果令$$ D_0 $$ 表示网络空闲时的时延，D表示网络当前的时延，那么在适当的假定条件下，可以用下面的简单公式来表示D、$$ D_0 $$ 和利用率U之间的关系：</p>
+<p>$$ D = \frac{D_0}{1 - U}  $$</p>
+<ul>
+<li>当网络的利用率达到 50% 的时候，时延就要加倍。</li>
+<li>当网络的利用率超过 50% 的时候，时延急剧增大。</li>
+<li>当网络的利用率接近 100% 的时候，时延就趋近于无穷大。</li>
+<li>因此，一些拥有较大主干网的ISP通常会控制他们的信道利用率不超过 50% 。如果超过了，就要准备扩容，增大线路的带宽。</li>
+<li>也不能使信道利用率太低，这会使宝贵的通信资源被白白浪费。应该使用一些机制，可以根据情况动态调整输入到网络中的通信量，使网络利用率保持在一个合理的范围内。</li>
+</ul>
+<h3 id="丢包率"><a href="#丢包率" class="headerlink" title="丢包率"></a>丢包率</h3><blockquote>
+<p>丢包率即分组丢失率，是指在一定的时间范围内，传输过程中丢失的分组数量与总分组数量的比率。</p>
+</blockquote>
+<blockquote>
+<p>丢包率具体可分为接口丢失率、结点丢包率、链路丢包率、路径丢包率、网络丢包率等。</p>
+</blockquote>
+<blockquote>
+<p>丢包率是网络运维人员非常关心的一个网络性能指标，但对于普通用户来说往往并不关心这个指标，因为他们通常意识不到网络丢包。</p>
+</blockquote>
+<blockquote>
+<p>分组丢失主要有两种情况：</p>
+<ul>
+<li>分组在传输过程中出现误码，被结点丢弃</li>
+<li>分组到达一台队列已满的分组交换机时被丢弃，在通信量较大时就可能造成网络拥塞。</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>丢包率反映了网络的拥塞情况：</p>
+<ul>
+<li>无拥塞时路径丢包率为0</li>
+<li>轻度拥塞时路径丢包率为1% ~ 4%</li>
+<li>严重拥塞时路径丢包率为5% ~ 15%</li>
+</ul>
+</blockquote>
+
+          
+            <br>
+            
+              
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/07/07/Python_variable/'>
+                <p class='title'>Python基础之变量进阶<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+变量的引用
+可变和不可变类型
+局部变量和全局变量
+
+
+
+01. 变量的引用
+
+变量 和 数据 都是保存在 内存 中的
+在 Python 中 函数 的 参数传递 以及 返回值 都是靠 引用 传递...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+  
+    
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    tags: "ams",
+    macros: {
+      href: "{}"
+    }
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|dno",
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: '计算机网络学习1',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网络、互联网（互联网）和因特网"><span class="toc-text">网络、互联网（互联网）和因特网</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Internet与internet的区别"><span class="toc-text">Internet与internet的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#名词解释"><span class="toc-text">名词解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#因特网的组成"><span class="toc-text">因特网的组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#电路交换、分组交换和报文交换"><span class="toc-text">电路交换、分组交换和报文交换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#电路交换"><span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分组交换"><span class="toc-text">分组交换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三种交换方式的对比"><span class="toc-text">三种交换方式的对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#计算机网络的性能指标"><span class="toc-text">计算机网络的性能指标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#速率"><span class="toc-text">速率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带宽"><span class="toc-text">带宽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#吞吐量"><span class="toc-text">吞吐量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时延"><span class="toc-text">时延</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#时延带宽积"><span class="toc-text">时延带宽积</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#往返时间"><span class="toc-text">往返时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用率"><span class="toc-text">利用率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#丢包率"><span class="toc-text">丢包率</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<footer id="footer" class="clearfix" style="color: #333;">
+  <i class="far fa-copyright" style="color: #333;">2019-2020</i> 
+    <a href="https://www.zhengyuanyuan520.com/" target="_blank" style="color: #333;"> 覃浩的博客 </a>丨
+  <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.6/images/icp.png">
+  <a href="http://www.beian.miit.gov.cn/" target="_blank"  style="color: #333;">鄂ICP备19020398号-4</a> 丨
+  <!-- 网站运行时间 -->
+  <span id="timeDate" >正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+  <script class="run">
+  var now = new Date(); 
+  function createtime() { 
+  var grt= new Date("12/04/2019 20:13:14");
+  now.setTime(now.getTime()+250); 
+  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+  document.getElementById("timeDate").innerHTML = "本站已在风雨中度过了 "
+  document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  document.getElementById("timeDate").style.color="#333";
+  document.getElementById("times").style.color="#333";
+  }
+  setInterval("createtime()",250);
+  </script>丨
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205816.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205948.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210018.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz",
+    appKey: "tvRQuJAWPHtA7Xpddprw1wa8",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'false'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

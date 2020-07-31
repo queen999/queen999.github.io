@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2020'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="shenma-site-verification" content="afd7134c0056c7f8a115de13b8f9c6ea_1591931913">
+
+  <!-- 页面元数据 -->
+  
+    <title>GSM系统概述 - 覃浩的博客</title>
+  
+    <meta name="keywords" content="通信技术,无线技术,通信原理">
+  
+  
+    <meta name="description" content="2G系统概述学习笔记">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="覃浩的博客">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://img.icons8.com/nolan/96/orca.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+<script>
+  (function(){
+  var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+  document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+
+<script>
+(function(){
+var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f486ec541a2e651ca1f01aa60d606987";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            覃浩的博客 <b><sup style='color:#3AA757'>2020</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="输入关键词搜索一下" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.5'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='233974'>
+    </meting-js>
+  
+
+
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2020/03/07/GSM/">
+        GSM系统概述
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
+    <p>覃浩</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>通信技术</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年3月7日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：602字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：2分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>2G系统概述学习笔记</p>
+<a id="more"></a>
+
+<h2 id="什么是GSM"><a href="#什么是GSM" class="headerlink" title="什么是GSM"></a>什么是GSM</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GSM(Global System for Mobile Communication) ，全球移动通信系统。</span><br><span class="line"></span><br><span class="line">GSM分GSM900、DCS1800和PCN1900三个频段。</span><br><span class="line"></span><br><span class="line">GSM900&#x2F;1800分别工作在890~960MHz&#x2F;1710~1880MHz频段。</span><br><span class="line"></span><br><span class="line">频段越高，波长越短，直射和绕射的能力越弱。</span><br></pre></td></tr></table></figure>
+
+<h2 id="GSM频段分配"><a href="#GSM频段分配" class="headerlink" title="GSM频段分配"></a>GSM频段分配</h2><h3 id="GSM900"><a href="#GSM900" class="headerlink" title="GSM900"></a>GSM900</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">上行频率：890--915MHZ（MS发射，BTS接收）</span><br><span class="line"></span><br><span class="line">下行频率：935—-960MHZ（BTS发射，MS接收）</span><br><span class="line"></span><br><span class="line">共分为124对双工载频，载频间隔为200KHZ。</span><br><span class="line"></span><br><span class="line">每载频共分8个时隙，即为8个信道。</span><br><span class="line"></span><br><span class="line">总信道数为124×8&#x3D;992个信道。</span><br><span class="line"></span><br><span class="line">中国移动频点（1-94），中国联通频点（96-124）。</span><br><span class="line"></span><br><span class="line">该频段适合用于实现信号覆盖。</span><br></pre></td></tr></table></figure>
+
+<h3 id="DCS1800"><a href="#DCS1800" class="headerlink" title="DCS1800"></a>DCS1800</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">上行：1710-1785MHz</span><br><span class="line"></span><br><span class="line">下行：1805-1880MHz</span><br><span class="line"></span><br><span class="line">共分为374对双工载频，载频间隔为200KHZ。</span><br><span class="line"></span><br><span class="line">总信道数为374×8&#x3D;2992个信道。</span><br><span class="line"></span><br><span class="line">1800频段的信号带宽资源充足，多用于吸收室内的话务。</span><br><span class="line"></span><br><span class="line">中国移动频点512-636，中国联通频点638-736。</span><br></pre></td></tr></table></figure>
+
+<h2 id="基站子系统-BSS-和移动台-MS"><a href="#基站子系统-BSS-和移动台-MS" class="headerlink" title="基站子系统(BSS)和移动台(MS)"></a>基站子系统(BSS)和移动台(MS)</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images20200307095544.png" alt="">))</p>
+<h3 id="BSC基站控制器"><a href="#BSC基站控制器" class="headerlink" title="BSC基站控制器"></a>BSC基站控制器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">① 进行无线信道、参数、资源管理</span><br><span class="line">② 实施呼叫和通信链路的建立和拆除</span><br><span class="line">③ 控制完成移动台的定位、切换及寻呼等</span><br><span class="line">④ 接口管理</span><br><span class="line">⑤ 无线链路测量</span><br><span class="line">⑥ 话务量统计</span><br><span class="line">⑦ 操作与维护</span><br></pre></td></tr></table></figure>
+
+<h3 id="BTS基站收发信站"><a href="#BTS基站收发信站" class="headerlink" title="BTS基站收发信站"></a>BTS基站收发信站</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">① 无线传输</span><br><span class="line">② 无线与有线的转换</span><br><span class="line">③ 无线分集、无线信道加密、调频等</span><br></pre></td></tr></table></figure>
+
+<h3 id="MS移动台"><a href="#MS移动台" class="headerlink" title="MS移动台"></a>MS移动台</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">包括终端设备和SIM卡。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="移动交换子系统-NSS"><a href="#移动交换子系统-NSS" class="headerlink" title="移动交换子系统(NSS)"></a>移动交换子系统(NSS)</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images20200307095413.png" alt=""></p>
+<h3 id="AUC-鉴权中心"><a href="#AUC-鉴权中心" class="headerlink" title="AUC 鉴权中心"></a>AUC 鉴权中心</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是向HLR提供出于安全原因而使用的鉴权参数和密钥。现网中是和HLR一个物理实体。</span><br></pre></td></tr></table></figure>
+
+<h3 id="EIR设备识别寄存器"><a href="#EIR设备识别寄存器" class="headerlink" title="EIR设备识别寄存器"></a>EIR设备识别寄存器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对接入系统的移动台的设备进行识别。</span><br></pre></td></tr></table></figure>
+
+<h3 id="MSC-移动业务交换中心"><a href="#MSC-移动业务交换中心" class="headerlink" title="MSC 移动业务交换中心"></a>MSC 移动业务交换中心</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 交换功能：包括呼叫的建立、路由选择、呼叫监视、呼叫释放等。</span><br><span class="line"></span><br><span class="line">- 计费功能</span><br><span class="line"></span><br><span class="line">- 移动性管理：位置更新、鉴权、加密等。</span><br></pre></td></tr></table></figure>
+
+<h3 id="VLR拜访位置寄存器"><a href="#VLR拜访位置寄存器" class="headerlink" title="VLR拜访位置寄存器"></a>VLR拜访位置寄存器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 动态数据库</span><br><span class="line"></span><br><span class="line">- 本交换区用户参数，该参数是从LR中获得的。</span><br><span class="line"></span><br><span class="line">- 本交换区用户的位置信息：MS的LAI。</span><br></pre></td></tr></table></figure>
+
+<h3 id="HLR归属位置寄存器"><a href="#HLR归属位置寄存器" class="headerlink" title="HLR归属位置寄存器"></a>HLR归属位置寄存器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 静态数据库</span><br><span class="line"></span><br><span class="line">- 永久性参数：用户号码、接入的优先等级、预定的业务类型等；</span><br><span class="line"></span><br><span class="line">- 临时性参数：寄存用户的鉴约信息和位置信息，如补充业务、鉴权参数，MS的位置信息等。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+          
+            <br>
+            
+              
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/03/07/3G/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>3G系统概述</p>
+                <p class='content'>3G系统概述学习笔记
+
+
+什么是3G13G是第三代移动通信技术，是指支持高速数据传输的蜂窝移动通讯技术。
+
+3G的主要特点12345- 全球普及和全球无缝漫游- 具有支持多媒体业务的能力，特别是...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/03/06/wireless_word/'>
+                <p class='title'>移动通信术语<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>记录了一些无线侧和核心侧的一些术语
+
+
+无线侧术语频谱1一个时域的信号在频域下表示方式
+
+频段1频谱中的某一区间
+
+载频1载波或者载频(载波频率）是一个物理概念，其实就是一个特定频率的无线电波，...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+  
+    
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'GSM系统概述',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是GSM"><span class="toc-text">什么是GSM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GSM频段分配"><span class="toc-text">GSM频段分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GSM900"><span class="toc-text">GSM900</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DCS1800"><span class="toc-text">DCS1800</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基站子系统-BSS-和移动台-MS"><span class="toc-text">基站子系统(BSS)和移动台(MS)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BSC基站控制器"><span class="toc-text">BSC基站控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BTS基站收发信站"><span class="toc-text">BTS基站收发信站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MS移动台"><span class="toc-text">MS移动台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#移动交换子系统-NSS"><span class="toc-text">移动交换子系统(NSS)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AUC-鉴权中心"><span class="toc-text">AUC 鉴权中心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EIR设备识别寄存器"><span class="toc-text">EIR设备识别寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MSC-移动业务交换中心"><span class="toc-text">MSC 移动业务交换中心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLR拜访位置寄存器"><span class="toc-text">VLR拜访位置寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HLR归属位置寄存器"><span class="toc-text">HLR归属位置寄存器</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<footer id="footer" class="clearfix" style="color: #333;">
+  <i class="far fa-copyright" style="color: #333;">2019-2020</i> 
+    <a href="https://www.zhengyuanyuan520.com/" target="_blank" style="color: #333;"> 覃浩的博客 </a>丨
+  <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.6/images/icp.png">
+  <a href="http://www.beian.miit.gov.cn/" target="_blank"  style="color: #333;">鄂ICP备19020398号-4</a> 丨
+  <!-- 网站运行时间 -->
+  <span id="timeDate" >正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+  <script class="run">
+  var now = new Date(); 
+  function createtime() { 
+  var grt= new Date("12/04/2019 20:13:14");
+  now.setTime(now.getTime()+250); 
+  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+  document.getElementById("timeDate").innerHTML = "本站已在风雨中度过了 "
+  document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  document.getElementById("timeDate").style.color="#333";
+  document.getElementById("times").style.color="#333";
+  }
+  setInterval("createtime()",250);
+  </script>丨
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205816.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205948.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210018.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz",
+    appKey: "tvRQuJAWPHtA7Xpddprw1wa8",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'false'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

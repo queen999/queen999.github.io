@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2020'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="shenma-site-verification" content="afd7134c0056c7f8a115de13b8f9c6ea_1591931913">
+
+  <!-- 页面元数据 -->
+  
+    <title>计算机网络基础知识 - 覃浩的博客</title>
+  
+    <meta name="keywords" content="基础网络,路由器,VPN">
+  
+  
+    <meta name="description" content="计算机网络基础知识，简单介绍了IP地址，TCP与UDP，路由器以及VPN等相关知识。">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="覃浩的博客">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://img.icons8.com/nolan/96/orca.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+<script>
+  (function(){
+  var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+  document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+
+<script>
+(function(){
+var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f486ec541a2e651ca1f01aa60d606987";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            覃浩的博客 <b><sup style='color:#3AA757'>2020</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="输入关键词搜索一下" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.5'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='1410666632'>
+    </meting-js>
+  
+
+
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2020/02/27/computer_network_basics/">
+        计算机网络基础知识
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
+    <p>覃浩</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>计算机网络</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年2月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：943字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>计算机网络基础知识，简单介绍了IP地址，TCP与UDP，路由器以及VPN等相关知识。</p>
+<a id="more"></a>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IPv4中的v是英文version的缩写，表示版本。</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IP地址一共有32位，用点分十进制表示。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="私有地址："><a href="#私有地址：" class="headerlink" title="私有地址："></a>私有地址：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A类： 10.0.0.0&#x2F;8</span><br><span class="line">B类： 172.16.0.0&#x2F;12</span><br><span class="line">C类： 192.168.0.0&#x2F;16</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="广播地址"><a href="#广播地址" class="headerlink" title="广播地址"></a>广播地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网络位不变，主机位全1</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Windows查看ip地址"><a href="#Windows查看ip地址" class="headerlink" title="Windows查看ip地址"></a>Windows查看ip地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipconfig</span><br></pre></td></tr></table></figure>
+
+<h2 id="Linux查看ip地址"><a href="#Linux查看ip地址" class="headerlink" title="Linux查看ip地址"></a>Linux查看ip地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="专业术语"><a href="#专业术语" class="headerlink" title="专业术语"></a>专业术语</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Cable：线缆</span><br><span class="line">Physical  Layer：物理层</span><br><span class="line">Data Link  Layer：数据链路层</span><br><span class="line">Network Layer：网络层</span><br><span class="line">Transport Layer：传输层</span><br><span class="line">Application Layer：应用层</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="组播地址"><a href="#组播地址" class="headerlink" title="组播地址"></a>组播地址</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">组播IP地址以224段开头。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="TCP与UDP"><a href="#TCP与UDP" class="headerlink" title="TCP与UDP"></a>TCP与UDP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TCP&#x2F;UDP工作在传输层。</span><br><span class="line"></span><br><span class="line">TCP特点：传输控制协议（TCP，Transmission Control Protocol）是一种面向连接的、可靠的、基于字节流的传输层通信协议。</span><br><span class="line"></span><br><span class="line">UDP特点：无连接、不可靠、快速传输</span><br><span class="line"></span><br><span class="line">TCP提供可靠的传输，UDP提供不可靠的传输。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Windows常用命令解析"><a href="#Windows常用命令解析" class="headerlink" title="Windows常用命令解析"></a>Windows常用命令解析</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ping：利用“ping”命令可以检查网络是否连通，可以很好地帮助我们分析和判定网络故障。</span><br><span class="line">trace：TRACE和TRACK是用来调试web服务器连接的HTTP方式。</span><br><span class="line">ICMP：在主机与路由器之间传递控制信息，是网络层的协议。</span><br><span class="line">IGMP：主要用于主机和多播路由器的请求和探询。</span><br></pre></td></tr></table></figure>
+
+<h2 id="单模光纤与多模光纤"><a href="#单模光纤与多模光纤" class="headerlink" title="单模光纤与多模光纤"></a>单模光纤与多模光纤</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">单模光纤：传输距离远，色散小，造价高。一般单模光纤跳线用黄色表示。</span><br><span class="line"></span><br><span class="line">多模光纤：传输距离短，带宽大，造价低。一般多模光纤跳线用橙红色，灰色等颜色表示。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="光纤常见类型"><a href="#光纤常见类型" class="headerlink" title="光纤常见类型"></a>光纤常见类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SC，ST，LC，FC。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="什么是路由？"><a href="#什么是路由？" class="headerlink" title="什么是路由？"></a>什么是路由？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">路由的概念就是将多个不同子网的IP，进行转发通信。选择一个将数据包发往某个目标网段或主机的路径就是路由的过程。</span><br></pre></td></tr></table></figure>
+
+<h2 id="路由器的概念"><a href="#路由器的概念" class="headerlink" title="路由器的概念"></a>路由器的概念</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用来表示逻辑源和逻辑目的地址的是IP地址，因此我们认为路由的过程是将不同IP地址网段的IP包进行转发。实现这一功能的设备我们称之为路由器。</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据包路由过程"><a href="#数据包路由过程" class="headerlink" title="数据包路由过程"></a>数据包路由过程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在路由的过程中，三层地址不变，二层地址随着下跳的改变而改变。</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何进行路径选择？"><a href="#如何进行路径选择？" class="headerlink" title="如何进行路径选择？"></a>如何进行路径选择？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">路径选择依据：根据信宿地址确定下一个站点是谁</span><br><span class="line">路径选择方法：查看邮局各自去往信宿的路由表</span><br></pre></td></tr></table></figure>
+
+<p>路由必须要有回指路由，保证有去有回。</p>
+<h2 id="策略路由"><a href="#策略路由" class="headerlink" title="策略路由"></a><strong>策略路由</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">策略路由，是一种比基于目标网络进行路由更加灵活的数据包路由转发机制。路由器将通过路由图决定如何对需要路由的数据包进行处理，路由图决定了一个数据包的下一跳转发路由器。它分为目的地址路由，源地址路由。</span><br></pre></td></tr></table></figure>
+
+<h2 id="VPN概念"><a href="#VPN概念" class="headerlink" title="VPN概念"></a><strong>VPN概念</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">虚拟专用网技术，顾名思义，虚拟专用网不是真的专用网络，但却能够实现专用网络的功能。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ISP与NSP"><a href="#ISP与NSP" class="headerlink" title="ISP与NSP"></a>ISP与NSP</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ISP：Internet服务提供商。</span><br><span class="line"></span><br><span class="line">NSP：网络服务提供商。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="VPN按应用类型分布"><a href="#VPN按应用类型分布" class="headerlink" title="VPN按应用类型分布"></a>VPN按应用类型分布</h2><h4 id="Access-VPN（远程访问虚拟网）"><a href="#Access-VPN（远程访问虚拟网）" class="headerlink" title="Access  VPN（远程访问虚拟网）"></a>Access  VPN（远程访问虚拟网）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Access VPN最适用于公司内部经常有流动人员远程办公的情况。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Intranet-VPN（企业内部虚拟网）"><a href="#Intranet-VPN（企业内部虚拟网）" class="headerlink" title="Intranet  VPN（企业内部虚拟网）"></a>Intranet  VPN（企业内部虚拟网）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intranet VPN通过公网网络进行企业内部的互联，是传统专网或其它企业网的扩展或替代形式。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Extranet-VPN（企业拓展虚拟网）"><a href="#Extranet-VPN（企业拓展虚拟网）" class="headerlink" title="Extranet  VPN（企业拓展虚拟网）"></a>Extranet  VPN（企业拓展虚拟网）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Extranet利用VPN将企业网延伸至供应商、合作伙伴与客户处，在具有共同利益的不同企业间通过公网构筑VPN，使部分资源能够在不同VPN用户间共享。</span><br></pre></td></tr></table></figure>
+
+
+          
+            <br>
+            
+              
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/02/29/per_four_years_happy/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>2月29日快乐</p>
+                <p class='content'>小可爱，2月29日快乐喔！
+
+
+这世上本没有二月二十九，我想多爱你一天，便有了今天。
+
+
+</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/02/27/MySQL8_basics/'>
+                <p class='title'>MySQL 8数据库基础<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>MySQL基础语法，学习时做的笔记。
+
+
+
+
+常用数据库命令1234create database 数据库名称;           	    &#x2F;&#x2F;创建数据库drop  da...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+  
+    
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '计算机网络基础知识',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#私有地址："><span class="toc-text">私有地址：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#广播地址"><span class="toc-text">广播地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows查看ip地址"><span class="toc-text">Windows查看ip地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux查看ip地址"><span class="toc-text">Linux查看ip地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#专业术语"><span class="toc-text">专业术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组播地址"><span class="toc-text">组播地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP与UDP"><span class="toc-text">TCP与UDP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows常用命令解析"><span class="toc-text">Windows常用命令解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单模光纤与多模光纤"><span class="toc-text">单模光纤与多模光纤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#光纤常见类型"><span class="toc-text">光纤常见类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是路由？"><span class="toc-text">什么是路由？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由器的概念"><span class="toc-text">路由器的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据包路由过程"><span class="toc-text">数据包路由过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何进行路径选择？"><span class="toc-text">如何进行路径选择？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#策略路由"><span class="toc-text">策略路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VPN概念"><span class="toc-text">VPN概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ISP与NSP"><span class="toc-text">ISP与NSP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VPN按应用类型分布"><span class="toc-text">VPN按应用类型分布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Access-VPN（远程访问虚拟网）"><span class="toc-text">Access  VPN（远程访问虚拟网）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Intranet-VPN（企业内部虚拟网）"><span class="toc-text">Intranet  VPN（企业内部虚拟网）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Extranet-VPN（企业拓展虚拟网）"><span class="toc-text">Extranet  VPN（企业拓展虚拟网）</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<footer id="footer" class="clearfix" style="color: #333;">
+  <i class="far fa-copyright" style="color: #333;">2019-2020</i> 
+    <a href="https://www.zhengyuanyuan520.com/" target="_blank" style="color: #333;"> 覃浩的博客 </a>丨
+  <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.6/images/icp.png">
+  <a href="http://www.beian.miit.gov.cn/" target="_blank"  style="color: #333;">鄂ICP备19020398号-4</a> 丨
+  <!-- 网站运行时间 -->
+  <span id="timeDate" >正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+  <script class="run">
+  var now = new Date(); 
+  function createtime() { 
+  var grt= new Date("12/04/2019 20:13:14");
+  now.setTime(now.getTime()+250); 
+  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+  document.getElementById("timeDate").innerHTML = "本站已在风雨中度过了 "
+  document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  document.getElementById("timeDate").style.color="#333";
+  document.getElementById("times").style.color="#333";
+  }
+  setInterval("createtime()",250);
+  </script>丨
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205816.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205948.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210018.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz",
+    appKey: "tvRQuJAWPHtA7Xpddprw1wa8",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'false'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

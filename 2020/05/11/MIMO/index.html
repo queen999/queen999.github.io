@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2020'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="shenma-site-verification" content="afd7134c0056c7f8a115de13b8f9c6ea_1591931913">
+
+  <!-- 页面元数据 -->
+  
+    <title>MIMO - 覃浩的博客</title>
+  
+    <meta name="keywords" content="通信技术,无线技术,通信原理">
+  
+  
+    <meta name="description" content="多进多出（MIMO）是为极大地提高信道容量，在发送端和接收端都使用多根天线，在收发之间构成多个信道的天线系统。MIMO系统的一个明显特点就是具有极高的频谱利用效率，在对现有频谱资源充分利用的基础上通过利用空间资源来获取可靠性与有效性两方面增益，其代价是增加了发送端与接收端的处理复杂度。大规模MIMO技术采用大量天...">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="覃浩的博客">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://img.icons8.com/nolan/96/orca.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+<script>
+  (function(){
+  var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+  document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+
+<script>
+(function(){
+var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f486ec541a2e651ca1f01aa60d606987";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            覃浩的博客 <b><sup style='color:#3AA757'>2020</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="输入关键词搜索一下" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.5'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='1433434738'>
+    </meting-js>
+  
+
+
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2020/05/11/MIMO/">
+        MIMO
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
+    <p>覃浩</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>通信技术</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年5月11日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.2k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：4分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>多进多出（MIMO）是为极大地提高信道容量，在发送端和接收端都使用多根天线，在收发之间构成多个信道的天线系统。MIMO系统的一个明显特点就是具有极高的频谱利用效率，在对现有频谱资源充分利用的基础上通过利用空间资源来获取可靠性与有效性两方面增益，其代价是增加了发送端与接收端的处理复杂度。大规模MIMO技术采用大量天线来服务数量相对较少的用户，可以有效提高频谱效率。</p>
+<a id="more"></a>
+
+<h2 id="MIMO的定义"><a href="#MIMO的定义" class="headerlink" title="MIMO的定义"></a>MIMO的定义</h2><details ><summary> <p>Multiple Input Multiple Output，多输入多输出。</p> </summary>
+              <div class='content'>
+              <div class="note success"><p>在多个天线上分别发送多个数据流</p></div><div class="note success"><p>利用多径衰落，在不增加带宽和天线发射功率的情况下，提高信道容量及频谱利用率，或提高数据的传输质量。</p></div>
+              </div>
+            </details>
+
+
+
+<h2 id="MIMO的优点"><a href="#MIMO的优点" class="headerlink" title="MIMO的优点"></a>MIMO的优点</h2><p><red><strong>MIMO多种模式带来多种增益。</strong></red></p>
+<ul>
+<li>分集增益</li>
+<li>波束赋形增益</li>
+<li>空间复用增益</li>
+</ul>
+<p><red><strong>频谱效率</strong></red></p>
+<p>要求TD-LTE的下行频率速率达到5bps/Hz（Rel-10为30bps/Hz），上行频谱速率达到2.5bps/Hz（Rel-10为15bps/Hz）</p>
+<hr>
+
+<div class="note success"><p>MIMO天线收发分集：提高通信质量。</p></div>
+
+<div class="note success"><p>发射分集技术提高系统下行链路性能。</p></div>
+
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511140050.png" alt="开环模式中的STTD分集"></p>
+<hr>
+
+<div class="note success"><p>MIMO天线空间复用：提高系统容量</p></div>
+
+<p>MU-MIMO：基站将占用相同时频资源的多个数据流发送给不同用户</p>
+<p>下行同时支持SU-MIMO和MU-MIMO</p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511154807.png" alt=""></p>
+<hr>
+
+<div class="note success"><p>MIMO天线波束赋形：增强抗干扰能力</p></div>
+
+<p>传统的波束赋形：</p>
+<ul>
+<li>小间距的天线阵列，使用较多天线单元</li>
+<li>提高峰值速率，小区覆盖，降低小区间的干扰</li>
+</ul>
+<hr>
+
+<h2 id="LTE创新技术：双流波束赋形"><a href="#LTE创新技术：双流波束赋形" class="headerlink" title="LTE创新技术：双流波束赋形"></a>LTE创新技术：双流波束赋形</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511211824.png" alt=""></p>
+<hr>
+
+<h2 id="MIMO优点总结"><a href="#MIMO优点总结" class="headerlink" title="MIMO优点总结"></a>MIMO优点总结</h2><p>发送分集：提高可靠性，不能提升数据速率</p>
+<p>波束赋形：降低干扰，能提升数据速率</p>
+<p>空分复用：多个数据流传输，可提升数据速率</p>
+<hr>
+
+<h2 id="TD-LTE中MIMO的应用（PDSCH-传输方案）"><a href="#TD-LTE中MIMO的应用（PDSCH-传输方案）" class="headerlink" title="TD-LTE中MIMO的应用（PDSCH 传输方案）"></a>TD-LTE中MIMO的应用（PDSCH 传输方案）</h2><table>
+<thead>
+<tr>
+<th align="center">传输模式</th>
+<th align="left">PDSCH传输方案</th>
+<th>优点</th>
+<th>典型应用方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">TM1</td>
+<td align="left">单天线传输模式</td>
+<td>产生的CRS开销小</td>
+<td>各类场景</td>
+</tr>
+<tr>
+<td align="center">TM2</td>
+<td align="left">发送分集</td>
+<td>提高链路传输质量，提高小区覆盖半径</td>
+<td>作为其他MIMO模式的回退模式</td>
+</tr>
+<tr>
+<td align="center">TM3</td>
+<td align="left">开环空间复用</td>
+<td>提高小区平均频谱效率和峰值速率</td>
+<td>高速移动场景</td>
+</tr>
+<tr>
+<td align="center">TM4</td>
+<td align="left">闭环空间复用</td>
+<td>提高小区平均频谱效率和峰值速率</td>
+<td>低速移动场景</td>
+</tr>
+<tr>
+<td align="center">TM5</td>
+<td align="left">多用户MIMO</td>
+<td>提高小区平均频谱效率和峰值速率</td>
+<td>密集城区</td>
+</tr>
+<tr>
+<td align="center">TM6</td>
+<td align="left">Rank=1的预编码</td>
+<td>提高小区的覆盖</td>
+<td>仅支持rank=1的传输</td>
+</tr>
+<tr>
+<td align="center">TM7</td>
+<td align="left">单流波束赋形</td>
+<td>提高链路传输质量，提高小区覆盖半径</td>
+<td>郊区、大范围覆盖场景</td>
+</tr>
+<tr>
+<td align="center">TM8</td>
+<td align="left">双流波束赋形</td>
+<td>提高小区覆盖，提升小区中心用户吞吐量</td>
+<td>小区中心吞吐量需求大的场景</td>
+</tr>
+</tbody></table>
+<hr>
+
+<h2 id="TM1：单天线端口传输"><a href="#TM1：单天线端口传输" class="headerlink" title="TM1：单天线端口传输"></a>TM1：单天线端口传输</h2><ul>
+<li>最简单的传输方案</li>
+<li>PDSCH使用单天线端口传输时，根据Port0上的CRS进行解调。</li>
+</ul>
+<div class="note success"><p>Port0上的小区专用参考信号的标识是R0。</p></div>
+
+<hr>
+
+<h2 id="TM2：发送分集"><a href="#TM2：发送分集" class="headerlink" title="TM2：发送分集"></a>TM2：发送分集</h2><ul>
+<li>用于增强小区覆盖。</li>
+<li>作为TM3/4/5/6/7的回退模式</li>
+<li>LTE中的实现方式SFBC+FSTD。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511191836.png" alt=""></p>
+<hr>
+
+<h2 id="TM3：开环空间复用"><a href="#TM3：开环空间复用" class="headerlink" title="TM3：开环空间复用"></a>TM3：开环空间复用</h2><ul>
+<li>一种大延迟（CDD）空间复用，接收端不需给发射端反馈预编码矩阵信息。</li>
+<li>用于提高小区平均频谱效率和峰值速率。</li>
+<li>适用于高速移动场景。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511192143.png" alt=""></p>
+<hr>
+
+<h2 id="TM4：闭环空间复用"><a href="#TM4：闭环空间复用" class="headerlink" title="TM4：闭环空间复用"></a>TM4：闭环空间复用</h2><ul>
+<li>发送端需要给接收端反馈预编码矩阵信息。</li>
+<li>用于提高小区平均频谱效率和峰值速率。</li>
+<li>适用于低速移动场景。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511192325.png" alt=""></p>
+<hr>
+
+<h2 id="TM5：多用户MIMO"><a href="#TM5：多用户MIMO" class="headerlink" title="TM5：多用户MIMO"></a>TM5：多用户MIMO</h2><ul>
+<li>只支持每个用户单层的传输，而且最大支持两层。</li>
+<li>用于提高小区平均频谱效率和峰值速率。</li>
+</ul>
+<hr>
+
+<h2 id="TM6：闭环RANK-1的预编码"><a href="#TM6：闭环RANK-1的预编码" class="headerlink" title="TM6：闭环RANK=1的预编码"></a>TM6：闭环RANK=1的预编码</h2><ul>
+<li>用于增强小区覆盖。</li>
+<li>尽可能减小承载相关的控制信令。</li>
+<li>仅支持rank=1的传输。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511192647.png" alt=""></p>
+<hr>
+
+<h2 id="TM7：单流波束赋形"><a href="#TM7：单流波束赋形" class="headerlink" title="TM7：单流波束赋形"></a>TM7：单流波束赋形</h2><ul>
+<li>PDSCH是依据port5上DRS进行解调的。</li>
+<li>用于提高小区边缘用户的覆盖。</li>
+<li>单流波束赋形是基于专用导频的非码本波束赋形。</li>
+<li>主要用于TD-LTE系统。</li>
+</ul>
+<hr>
+
+<h2 id="TM8：双流波束赋形"><a href="#TM8：双流波束赋形" class="headerlink" title="TM8：双流波束赋形"></a>TM8：双流波束赋形</h2><ul>
+<li>双流波束赋形将波束赋形技术与空间复用技术相结合。</li>
+<li>既提高小区边缘用户的覆盖，也可以提升小区中心用户的吞吐量。</li>
+<li>双流波束赋形是基于专用导频的非码本波束赋形。</li>
+<li>双流波束赋形是TD-LTE  Rel-9中的增强型技术。</li>
+</ul>
+<hr>
+
+<h2 id="终端LTE多天线"><a href="#终端LTE多天线" class="headerlink" title="终端LTE多天线"></a>终端LTE多天线</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511205924.png" alt=""></p>
+
+          
+            <br>
+            
+              
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/05/12/ICIC/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>ICIC</p>
+                <p class='content'>小区间干扰协调（Inter Cell Interference Coordination，ICIC）是用来解决同频组网时，小区间干扰的技术。
+
+
+干扰抑制的3种类型
+干扰随机化：加扰、交织、跳频...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/04/25/OFDMA/'>
+                <p class='title'>OFDMA<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>TD-LTE核心技术
+频分多址技术之OFDMA/SC-FDMA
+
+
+OFDMA的优点
+时域上抵抗多径衰落
+频域上抵抗频率选择性衰落，简化接收机的信道均衡操作
+
+
+
+码元的长度越长，符号间的干扰（...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+  
+    
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true,
+    tags: "ams",
+    macros: {
+      href: "{}"
+    }
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|dno",
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+
+
+
+
+  <script>
+    window.subData = {
+      title: 'MIMO',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MIMO的定义"><span class="toc-text">MIMO的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MIMO的优点"><span class="toc-text">MIMO的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LTE创新技术：双流波束赋形"><span class="toc-text">LTE创新技术：双流波束赋形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MIMO优点总结"><span class="toc-text">MIMO优点总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TD-LTE中MIMO的应用（PDSCH-传输方案）"><span class="toc-text">TD-LTE中MIMO的应用（PDSCH 传输方案）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TM1：单天线端口传输"><span class="toc-text">TM1：单天线端口传输</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TM2：发送分集"><span class="toc-text">TM2：发送分集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TM3：开环空间复用"><span class="toc-text">TM3：开环空间复用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TM4：闭环空间复用"><span class="toc-text">TM4：闭环空间复用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TM5：多用户MIMO"><span class="toc-text">TM5：多用户MIMO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TM6：闭环RANK-1的预编码"><span class="toc-text">TM6：闭环RANK&#x3D;1的预编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TM7：单流波束赋形"><span class="toc-text">TM7：单流波束赋形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TM8：双流波束赋形"><span class="toc-text">TM8：双流波束赋形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#终端LTE多天线"><span class="toc-text">终端LTE多天线</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<footer id="footer" class="clearfix" style="color: #333;">
+  <i class="far fa-copyright" style="color: #333;">2019-2020</i> 
+    <a href="https://www.zhengyuanyuan520.com/" target="_blank" style="color: #333;"> 覃浩的博客 </a>丨
+  <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.6/images/icp.png">
+  <a href="http://www.beian.miit.gov.cn/" target="_blank"  style="color: #333;">鄂ICP备19020398号-4</a> 丨
+  <!-- 网站运行时间 -->
+  <span id="timeDate" >正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+  <script class="run">
+  var now = new Date(); 
+  function createtime() { 
+  var grt= new Date("12/04/2019 20:13:14");
+  now.setTime(now.getTime()+250); 
+  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+  document.getElementById("timeDate").innerHTML = "本站已在风雨中度过了 "
+  document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  document.getElementById("timeDate").style.color="#333";
+  document.getElementById("times").style.color="#333";
+  }
+  setInterval("createtime()",250);
+  </script>丨
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205816.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205948.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210018.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz",
+    appKey: "tvRQuJAWPHtA7Xpddprw1wa8",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'false'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

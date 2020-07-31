@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2020'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="shenma-site-verification" content="afd7134c0056c7f8a115de13b8f9c6ea_1591931913">
+
+  <!-- 页面元数据 -->
+  
+    <title>交换机端口安全配置练习 - 覃浩的博客</title>
+  
+    <meta name="keywords" content="网络安全,交换机,思科">
+  
+  
+    <meta name="description" content="实验用到的知识点：
+
+启用端口安全功能配置
+
+端口安全mac地址配置
+
+端口安全mac地址数目配置
+
+端口安全违规处理方式配置
+
+">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="覃浩的博客">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://img.icons8.com/nolan/96/orca.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+<script>
+  (function(){
+  var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+  document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+
+<script>
+(function(){
+var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f486ec541a2e651ca1f01aa60d606987";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            覃浩的博客 <b><sup style='color:#3AA757'>2020</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="输入关键词搜索一下" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.5'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='1404885266'>
+    </meting-js>
+  
+
+
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2020/02/27/switchport-security/">
+        交换机端口安全配置练习
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
+    <p>覃浩</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>网络安全</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年2月27日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：7分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>实验用到的知识点：</p>
+<ol>
+<li><p>启用端口安全功能配置</p>
+</li>
+<li><p>端口安全mac地址配置</p>
+</li>
+<li><p>端口安全mac地址数目配置</p>
+</li>
+<li><p>端口安全违规处理方式配置</p>
+</li>
+</ol>
+<a id="more"></a>
+
+<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><blockquote>
+<ol>
+<li><p>VLAN及VLAN间路由配置；</p>
+</li>
+<li><p>端口安全应用配置：左边网络中只允许PC0接入C1，右边网络允许两个终端用户接入C1；</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><blockquote>
+<p>如图所示，二层结构构建的本地网络包括一个核心交换机和两个接入交换机，按图示要求为S1、S2划分VLAN及成员。</p>
+</blockquote>
+<p><img src="https://www.zhengyuanyuan520.cn/images/switch/switchport-security/photo1.png" alt=""></p>
+<h3 id="记录表格："><a href="#记录表格：" class="headerlink" title="记录表格："></a>记录表格：</h3><table>
+<thead>
+<tr>
+<th>设备名</th>
+<th>接口</th>
+<th>IP地址/掩码</th>
+<th>网关地址</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C1</td>
+<td>vlan 1</td>
+<td>10.35.1.254/24</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>C1</td>
+<td>vlan 2</td>
+<td>10.35.2.254/24</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>S1</td>
+<td>Fa0/1</td>
+<td></td>
+<td></td>
+<td>vlan 1</td>
+</tr>
+<tr>
+<td>S1</td>
+<td>Fa0/2</td>
+<td></td>
+<td></td>
+<td>vlan 2</td>
+</tr>
+<tr>
+<td>S1</td>
+<td>Fa0/3</td>
+<td></td>
+<td></td>
+<td>mac: 0001.96ce.1e03</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Fa0/1</td>
+<td></td>
+<td></td>
+<td>vlan 1</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Fa0/2</td>
+<td></td>
+<td></td>
+<td>vlan 2</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Fa0/3</td>
+<td></td>
+<td></td>
+<td>mac: 00e0.b086.8803</td>
+</tr>
+<tr>
+<td>PC0</td>
+<td></td>
+<td>10.35.1.1/24</td>
+<td>10.35.1.254/24</td>
+<td>mac: 0060.7020.93BB</td>
+</tr>
+<tr>
+<td>PC1</td>
+<td></td>
+<td>10.35.2.1/24</td>
+<td>10.35.2.254/24</td>
+<td>mac: 0090.2150.050B</td>
+</tr>
+<tr>
+<td>PC2</td>
+<td></td>
+<td>10.35.1.2/24</td>
+<td>10.35.1.254/24</td>
+<td>mac: 0004.9A58.D178</td>
+</tr>
+<tr>
+<td>PC3</td>
+<td></td>
+<td>10.35.2.2/24</td>
+<td>10.35.2.254/24</td>
+<td>mac: 0002.17B3.896B</td>
+</tr>
+</tbody></table>
+<h3 id="配置VLAN间路由"><a href="#配置VLAN间路由" class="headerlink" title="配置VLAN间路由"></a>配置VLAN间路由</h3><blockquote>
+<p>在S1、S2、C1进行设置，最终实现PC间的互Ping，各PC均可ssh C1</p>
+</blockquote>
+<h4 id="S1-中继接口"><a href="#S1-中继接口" class="headerlink" title="S1:  中继接口"></a>S1:  中继接口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">S1(config)# vlan 2     						#创建vlan2</span><br><span class="line">S1(config-vlan)# exit   					#回到全局模式</span><br><span class="line">S1(config)# interface fastEthernet 0&#x2F;2   	#进入2号接口</span><br><span class="line">S1(config-if)# switchport mode access   	#定义端口工作模式为access</span><br><span class="line">S1(config-if)# switchport access vlan 2		#将端口加入到vlan 2</span><br><span class="line">S1(config-if)# exit							#回到全局模式</span><br><span class="line">S1(config)# interface fastEthernet 0&#x2F;3		#进入3号接口</span><br><span class="line">S1(config-if)# switchport mode trunk		#定义端口工作模式为trunk</span><br><span class="line">S1(config-if)# exit							#回到全局模式</span><br></pre></td></tr></table></figure>
+
+<h4 id="S2-中继接口"><a href="#S2-中继接口" class="headerlink" title="S2: 中继接口"></a>S2: 中继接口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">S2(config)# vlan 2     						#创建vlan2</span><br><span class="line">S2(config-vlan)# exit   					#回到全局模式</span><br><span class="line">S2(config)# interface fastEthernet 0&#x2F;2   	#进入2号接口</span><br><span class="line">S2(config-if)# switchport mode access   	#定义端口工作模式为access</span><br><span class="line">S2(config-if)# switchport access vlan 2		#将端口加入到vlan 2</span><br><span class="line">S2(config-if)# exit							#回到全局模式</span><br><span class="line">S2(config)# interface fastEthernet 0&#x2F;3		#进入3号接口</span><br><span class="line">S2(config-if)# switchport mode trunk		#定义端口工作模式为trunk</span><br><span class="line">S2(config-if)# exit							#回到全局模式</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：SSH"><a href="#C1：SSH" class="headerlink" title="C1：SSH"></a>C1：SSH</h4><blockquote>
+<p>主机名C1、域名wtctx、用户名、密码均为txXX、enable不加密密码tx18XX（XX为学号最后2位）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">C1(config)# hostname C1						#设置主机名为C1</span><br><span class="line">C1(config)# ip domain-name wtctx			#设置域名为wtctx</span><br><span class="line">C1(config)# crypto key generate rsa			#生成rsa秘钥</span><br><span class="line">C1(config)# line vty 0 15					#进vty接口，最多15人同时在线</span><br><span class="line">C1(config-line)# transport input ssh		#启用SSH登录</span><br><span class="line">C1(config-line)# privilege level 15			#设置用户操作等级为最高级</span><br><span class="line">C1(config-line)# login local				#使用本地验证</span><br><span class="line">C1(config-line)# exit						#回退到全局模式</span><br><span class="line">C1(config)# username tx11 password tx11		#创建用户tx11，密码为tx11</span><br><span class="line">C1(config)# enable password tx1811			#设置enable明文密码</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：中继接口"><a href="#C1：中继接口" class="headerlink" title="C1：中继接口"></a>C1：中继接口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C1(config)# interface range fastEthernet 0&#x2F;1-2			#进入0&#x2F;1和0&#x2F;2端口</span><br><span class="line">C1(config-if)# switchport trunk encapsulation dot1q		#封装vlan帧</span><br><span class="line">C1(config-if)# switchport mode trunk					#定义接口工作模式</span><br><span class="line">C1(config-if)# exit										#退出端口</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：开启路由功能"><a href="#C1：开启路由功能" class="headerlink" title="C1：开启路由功能"></a>C1：开启路由功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C1(config)# ip routing		#开启路由功能</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：设置各VLAN网关地址"><a href="#C1：设置各VLAN网关地址" class="headerlink" title="C1：设置各VLAN网关地址"></a>C1：设置各VLAN网关地址</h4><blockquote>
+<p>地址为该网段最大主机地址（注意VLAN接口默认关闭且手工打开）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">C1(config)# vlan 2										#创建vlan 2</span><br><span class="line">C1(config-vlan)# exit									#退回到全局模式</span><br><span class="line">C1(config)# interface vlan 1							#进入vlan1接口</span><br><span class="line">C1(config-if)# ip address 10.35.1.254 255.255.255.0		#配置IP和子网掩码</span><br><span class="line">C1(config-if)# no shutdown								#接口启用</span><br><span class="line">C1(config-if)# exit										#退出vlan1接口</span><br><span class="line">C1(config)# interface vlan 2							#进入vlan2接口</span><br><span class="line">C1(config-if)# ip address 10.35.2.254 255.255.255.0		#配置IP和子网掩码</span><br><span class="line">C1(config-if)# exit										#退出vlan2接口</span><br></pre></td></tr></table></figure>
+
+<h4 id="记录结果"><a href="#记录结果" class="headerlink" title="记录结果"></a>记录结果</h4><blockquote>
+<p>为各PC设置网关地址，设置完毕PC0 分别ping PC1 和PC2，记录结果。</p>
+</blockquote>
+<p><img src="https://www.zhengyuanyuan520.cn/images/switch/switchport-security/photo2.png" alt=""></p>
+<h3 id="端口安全配置。"><a href="#端口安全配置。" class="headerlink" title="端口安全配置。"></a>端口安全配置。</h3><h4 id="C1：fa0-1开启安全端口功能"><a href="#C1：fa0-1开启安全端口功能" class="headerlink" title="C1：fa0/1开启安全端口功能"></a>C1：fa0/1开启安全端口功能</h4><blockquote>
+<p>配置时建议关闭端口，关闭端口可清空mac地址表</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C1(config)# interface fastEthernet 0&#x2F;1		#进入Fa0&#x2F;1接口</span><br><span class="line">C1(config-if)# shutdown						#关闭端口</span><br><span class="line">C1(config-if)# switchport port-security		#开启安全端口功能</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-1安全端口禁用DTP"><a href="#C1：fa0-1安全端口禁用DTP" class="headerlink" title="C1：fa0/1安全端口禁用DTP"></a>C1：fa0/1安全端口禁用DTP</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# switchport nonegotiate		#禁用DTP</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-1安全端口允许最大地址数"><a href="#C1：fa0-1安全端口允许最大地址数" class="headerlink" title="C1：fa0/1安全端口允许最大地址数"></a>C1：fa0/1安全端口允许最大地址数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# switchport port-security maximum 3		#设置允许最大地址数</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">解析：C1从Fa0&#x2F;1学习地址时会优先学习与之直连的接口地址（即S1交换机的Fa0&#x2F;3端口），C1上有两个VLAN对应两条，加上静态指定的共有三条；</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-1安全端口指定允许接入的地址"><a href="#C1：fa0-1安全端口指定允许接入的地址" class="headerlink" title="C1：fa0/1安全端口指定允许接入的地址"></a>C1：fa0/1安全端口指定允许接入的地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# switchport port-security mac-address 0060.7020.93BB</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-1安全端口指定违规处理行为"><a href="#C1：fa0-1安全端口指定违规处理行为" class="headerlink" title="C1：fa0/1安全端口指定违规处理行为"></a>C1：fa0/1安全端口指定违规处理行为</h4><blockquote>
+<p>建议使用protected，思考为什么</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# switchport port-security violation protect</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">解析：违规方式采用protect是为了确保网络能为合规的数据提供继续的服务，若采用默认方式，违规后端口将自动关闭，从而导致网络不可用。</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-2开启安全端口功能"><a href="#C1：fa0-2开启安全端口功能" class="headerlink" title="C1：fa0/2开启安全端口功能"></a>C1：fa0/2开启安全端口功能</h4><blockquote>
+<p>配置时建议关闭端口，关闭端口可清空mac地址表</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# no shutdown						#开启Fa0&#x2F;1端口</span><br><span class="line">C1(config-if)# exit								#退出Fa0&#x2F;1端口</span><br><span class="line">C1(config)# interface fastEthernet 0&#x2F;2			#进入Fa0&#x2F;2端口</span><br><span class="line">C1(config-if)# shutdown							#关闭Fa0&#x2F;2端口</span><br><span class="line">C1(config-if)# switchport port-security			#开启安全端口功能</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-2安全端口禁用DTP"><a href="#C1：fa0-2安全端口禁用DTP" class="headerlink" title="C1：fa0/2安全端口禁用DTP"></a>C1：fa0/2安全端口禁用DTP</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# switchport nonegotiate			#禁用DTP</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-2安全端口允许最大地址数"><a href="#C1：fa0-2安全端口允许最大地址数" class="headerlink" title="C1：fa0/2安全端口允许最大地址数"></a>C1：fa0/2安全端口允许最大地址数</h4><blockquote>
+<p>思考数值设置多少合理，依据是什么</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# switchport port-security maximum 5		#设置允许最大地址数</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">解析：C1会粘滞5个来自Fa0&#x2F;2的mac地址记录，分别是从Fa0&#x2F;1学习地址时会优先学习与之直连的接口地址（即S1交换机的Fa0&#x2F;3端口），vlan1和vlan2接口的mac地址，PC2和PC3的mac地址。</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-2安全端口采用地址粘滞功能"><a href="#C1：fa0-2安全端口采用地址粘滞功能" class="headerlink" title="C1：fa0/2安全端口采用地址粘滞功能"></a>C1：fa0/2安全端口采用地址粘滞功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# switchport port-security mac-address sticky</span><br></pre></td></tr></table></figure>
+
+<h4 id="C1：fa0-2安全端口指定违规处理行为"><a href="#C1：fa0-2安全端口指定违规处理行为" class="headerlink" title="C1：fa0/2安全端口指定违规处理行为"></a>C1：fa0/2安全端口指定违规处理行为</h4><blockquote>
+<p>建议使用protected，思考为什么</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C1(config-if)# switchport port-security violation protect</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">解析：违规方式采用protect是为了确保网络能为合规的数据提供继续的服务，若采用默认方式，违规后端口将自动关闭，从而导致网络不可用。</span><br></pre></td></tr></table></figure>
+
+<h4 id="记录结果-1"><a href="#记录结果-1" class="headerlink" title="记录结果"></a>记录结果</h4><blockquote>
+<p>设置完毕PC0 分别ping PC1 和PC2，记录结果，思考原因</p>
+</blockquote>
+<p><img src="https://www.zhengyuanyuan520.cn/images/switch/switchport-security/photo3.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解析：虽然已经做到了全网互通，但是由于PC1没有设置允许它接入，且设置了保护模式为protect，所以PC1的数据流量对于交换机来说是违规的，端口对PC1的数据进行丢弃，所以PC0的数据无法发送给PC1。</span><br></pre></td></tr></table></figure>
+
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p><img src="https://www.zhengyuanyuan520.cn/images/switch/switchport-security/photo4.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解析：此时mac地址表会出现共5个来自Fa0&#x2F;2的mac地址记录，分别是从Fa0&#x2F;1学习地址时会优先学习与之直连的接口地址（即S1交换机的Fa0&#x2F;3端口），vlan1和vlan2接口的mac地址，PC2和PC3的mac地址。</span><br></pre></td></tr></table></figure>
+
+
+          
+            <br>
+            
+              
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/02/27/OLT_command/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>OLT基础命令</p>
+                <p class='content'>适用于华为OLT的基础命令，这是当时学习时做的笔记。
+
+
+
+
+1、基础命令模式功能及特性列表
+
+
+命令模式
+功能
+模式提示符实例
+命令
+
+
+
+普通用户模式
+查看系统基本信息
+huawei&gt;...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/02/24/ssh/'>
+                <p class='title'>思科交换机开启ssh远程<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>由于传统的telnet方式使用明文的方式进行密码和数据的传送，对于安全性我们无法得到保障，那么接下来介绍一下通过ssh方式远程，ssh方式使用了加密的方式进行密码和数据的传输，提高了网络设备的安...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+  
+    
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '交换机端口安全配置练习',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#任务"><span class="toc-text">任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现步骤"><span class="toc-text">实现步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#记录表格："><span class="toc-text">记录表格：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置VLAN间路由"><span class="toc-text">配置VLAN间路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#S1-中继接口"><span class="toc-text">S1:  中继接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#S2-中继接口"><span class="toc-text">S2: 中继接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：SSH"><span class="toc-text">C1：SSH</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：中继接口"><span class="toc-text">C1：中继接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：开启路由功能"><span class="toc-text">C1：开启路由功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：设置各VLAN网关地址"><span class="toc-text">C1：设置各VLAN网关地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#记录结果"><span class="toc-text">记录结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#端口安全配置。"><span class="toc-text">端口安全配置。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-1开启安全端口功能"><span class="toc-text">C1：fa0&#x2F;1开启安全端口功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-1安全端口禁用DTP"><span class="toc-text">C1：fa0&#x2F;1安全端口禁用DTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-1安全端口允许最大地址数"><span class="toc-text">C1：fa0&#x2F;1安全端口允许最大地址数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-1安全端口指定允许接入的地址"><span class="toc-text">C1：fa0&#x2F;1安全端口指定允许接入的地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-1安全端口指定违规处理行为"><span class="toc-text">C1：fa0&#x2F;1安全端口指定违规处理行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-2开启安全端口功能"><span class="toc-text">C1：fa0&#x2F;2开启安全端口功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-2安全端口禁用DTP"><span class="toc-text">C1：fa0&#x2F;2安全端口禁用DTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-2安全端口允许最大地址数"><span class="toc-text">C1：fa0&#x2F;2安全端口允许最大地址数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-2安全端口采用地址粘滞功能"><span class="toc-text">C1：fa0&#x2F;2安全端口采用地址粘滞功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1：fa0-2安全端口指定违规处理行为"><span class="toc-text">C1：fa0&#x2F;2安全端口指定违规处理行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#记录结果-1"><span class="toc-text">记录结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思考"><span class="toc-text">思考</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<footer id="footer" class="clearfix" style="color: #333;">
+  <i class="far fa-copyright" style="color: #333;">2019-2020</i> 
+    <a href="https://www.zhengyuanyuan520.com/" target="_blank" style="color: #333;"> 覃浩的博客 </a>丨
+  <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.6/images/icp.png">
+  <a href="http://www.beian.miit.gov.cn/" target="_blank"  style="color: #333;">鄂ICP备19020398号-4</a> 丨
+  <!-- 网站运行时间 -->
+  <span id="timeDate" >正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+  <script class="run">
+  var now = new Date(); 
+  function createtime() { 
+  var grt= new Date("12/04/2019 20:13:14");
+  now.setTime(now.getTime()+250); 
+  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+  document.getElementById("timeDate").innerHTML = "本站已在风雨中度过了 "
+  document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  document.getElementById("timeDate").style.color="#333";
+  document.getElementById("times").style.color="#333";
+  }
+  setInterval("createtime()",250);
+  </script>丨
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205816.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606205948.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210018.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz",
+    appKey: "tvRQuJAWPHtA7Xpddprw1wa8",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'false'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
