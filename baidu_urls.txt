@@ -1,7 +1,6 @@
 https://www.imqinhao.cn/2020/07/17/computer_Internet_1/
 https://www.imqinhao.cn/2020/07/07/Python_variable/
 https://www.imqinhao.cn/2020/07/07/Python_cards_manage/
-https://www.imqinhao.cn/2020/07/01/qudou/
 https://www.imqinhao.cn/2020/06/13/buy-VPN/
 https://www.imqinhao.cn/2020/06/13/mysql-install/
 https://www.imqinhao.cn/2020/06/11/lanzous/
@@ -53,5 +52,4 @@ https://www.imqinhao.cn/2020/02/15/Windows_Web_often_use/
 https://www.imqinhao.cn/2020/02/14/Windows_Web_build_website/
 https://www.imqinhao.cn/2020/02/14/Windows_Web_build_environment/
 https://www.imqinhao.cn/2020/02/14/RedHat_setup_script/
-https://www.imqinhao.cn/2019/12/22/HP_Switch_Config/
 https://www.imqinhao.cn/2019/12/04/hello/
