@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2020'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="shenma-site-verification" content="afd7134c0056c7f8a115de13b8f9c6ea_1591931913">
+
+  <!-- 页面元数据 -->
+  
+    <title>文件和目录常用命令 - 覃浩的博客</title>
+  
+  
+    <meta name="description" content="查看目录内容
+切换目录
+创建和删除操作
+拷贝和移动文件
+查看文件内容">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="覃浩的博客">
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://img.icons8.com/nolan/96/orca.png">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+<script>
+  (function(){
+  var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+  document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+</script>
+
+<script>
+(function(){
+var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?998d5249445239126bd60f0404c2440b";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+  
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            覃浩的博客 <b><sup style='color:#3AA757'>2020</sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="输入关键词搜索一下" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/category/
+                  
+                  
+                  
+                    id="category"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/2019-nCoV/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="2019-nCoV"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>肺炎疫情
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/VPN/
+                  
+                  
+                    target="_blank"
+                  
+                  
+                    id="VPN"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>购买VPN
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+        
+
+  
+    <meting-js
+      mini='true'
+      autoplay='false'
+      volume='0.5'
+      loop='all'
+      order='list'
+      server='netease'
+      type='song'
+      id='1460682363'>
+    </meting-js>
+  
+
+
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  
+    <h1 class="title">
+      <a href="/2020/08/13/Files_and_directories/">
+        文件和目录常用命令
+      </a>
+    </h1>
+  
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
+    <p>覃浩</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Linux/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Linux</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月13日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.9k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：7分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>查看目录内容</p>
+<p>切换目录</p>
+<p>创建和删除操作</p>
+<p>拷贝和移动文件</p>
+<p>查看文件内容</p>
+<a id="more"></a>
+
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>查看目录内容<ul>
+<li><code>ls</code></li>
+</ul>
+</li>
+<li>切换目录<ul>
+<li><code>cd</code></li>
+</ul>
+</li>
+<li>创建和删除操作<ul>
+<li><code>touch</code></li>
+<li><code>rm</code></li>
+<li><code>mkdir</code></li>
+</ul>
+</li>
+<li>拷贝和移动文件<ul>
+<li><code>cp</code></li>
+<li><code>mv</code></li>
+</ul>
+</li>
+<li>查看文件内容<ul>
+<li><code>cat</code></li>
+<li><code>more</code></li>
+<li><code>grep</code></li>
+</ul>
+</li>
+<li>其他<ul>
+<li><code>echo</code></li>
+<li>重定向 <code>&gt;</code> 和 <code>&gt;&gt;</code></li>
+<li>管道 <code>|</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="01-查看目录内容"><a href="#01-查看目录内容" class="headerlink" title="01. 查看目录内容"></a>01. 查看目录内容</h2><h3 id="1-1-终端实用技巧"><a href="#1-1-终端实用技巧" class="headerlink" title="1.1 终端实用技巧"></a>1.1 终端实用技巧</h3><h4 id="1-gt-自动补全"><a href="#1-gt-自动补全" class="headerlink" title="1&gt; 自动补全"></a>1&gt; 自动补全</h4><ul>
+<li>在敲出 <code>文件</code>／<code>目录</code>／<code>命令</code> 的前几个字母之后，按下 <code>tab</code> 键<ul>
+<li>如果输入的没有歧义，系统会自动补全</li>
+<li>如果还存在其他 <code>文件</code>／<code>目录</code>／<code>命令</code>，再按一下 <code>tab</code> 键，系统会提示可能存在的命令</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-gt-曾经使用过的命令"><a href="#2-gt-曾经使用过的命令" class="headerlink" title="2&gt; 曾经使用过的命令"></a>2&gt; 曾经使用过的命令</h4><ul>
+<li>按 <code>上</code>／<code>下</code> 光标键可以在曾经使用过的命令之间来回切换</li>
+<li>如果想要退出选择，并且不想执行当前选中的命令，可以按 <code>ctrl + c</code></li>
+</ul>
+<h3 id="1-2-ls-命令说明"><a href="#1-2-ls-命令说明" class="headerlink" title="1.2 ls 命令说明"></a>1.2 <code>ls</code> 命令说明</h3><ul>
+<li><code>ls</code> 是英文单词 <strong>list</strong> 的简写，其功能为列出目录的内容，是用户最常用的命令之一，类似于 <strong>DOS</strong> 下的 <code>dir</code> 命令</li>
+</ul>
+<h4 id="Linux-下文件和目录的特点"><a href="#Linux-下文件和目录的特点" class="headerlink" title="Linux 下文件和目录的特点"></a>Linux 下文件和目录的特点</h4><ul>
+<li>Linux <strong>文件</strong> 或者 <strong>目录</strong> 名称最长可以有 <code>256</code> 个字符</li>
+<li>以 <code>.</code> 开头的文件为隐藏文件，需要用 -a 参数才能显示</li>
+<li><strong>.</strong> 代表当前目录</li>
+<li><strong>..</strong> 代表上一级目录</li>
+</ul>
+<h3 id="1-3-ls-常用选项"><a href="#1-3-ls-常用选项" class="headerlink" title="1.3 ls 常用选项"></a>1.3 ls 常用选项</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-a</td>
+<td>显示指定目录下所有子目录与文件，包括隐藏文件</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>以列表方式显示文件的详细信息</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>配合 -l 以人性化的方式显示文件大小</td>
+</tr>
+</tbody></table>
+<h4 id="计算机中文件大小的表示方式（科普）"><a href="#计算机中文件大小的表示方式（科普）" class="headerlink" title="计算机中文件大小的表示方式（科普）"></a>计算机中文件大小的表示方式（科普）</h4><table>
+<thead>
+<tr>
+<th>单位</th>
+<th>英文</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字节</td>
+<td>B（Byte）</td>
+<td>在计算机中作为一个数字单元，一般为 8 位二进制数</td>
+</tr>
+<tr>
+<td>千</td>
+<td>K（Kibibyte）</td>
+<td>1 KB = 1024 B，千字节 （1024 = 2 ** 10）</td>
+</tr>
+<tr>
+<td>兆</td>
+<td>M（Mebibyte）</td>
+<td>1 MB = 1024 KB，百万字节</td>
+</tr>
+<tr>
+<td>千兆</td>
+<td>G（Gigabyte）</td>
+<td>1 GB = 1024 MB，十亿字节，千兆字节</td>
+</tr>
+<tr>
+<td>太</td>
+<td>T（Terabyte）</td>
+<td>1 TB = 1024 GB，万亿字节，太字节</td>
+</tr>
+<tr>
+<td>拍</td>
+<td>P（Petabyte）</td>
+<td>1 PB = 1024 TB，千万亿字节，拍字节</td>
+</tr>
+<tr>
+<td>艾</td>
+<td>E（Exabyte）</td>
+<td>1 EB = 1024 PB，百亿亿字节，艾字节</td>
+</tr>
+<tr>
+<td>泽</td>
+<td>Z（Zettabyte）</td>
+<td>1 ZB = 1024 EB，十万亿亿字节，泽字节</td>
+</tr>
+<tr>
+<td>尧</td>
+<td>Y（Yottabyte）</td>
+<td>1 YB = 1024 ZB，一亿亿亿字节，尧字节</td>
+</tr>
+</tbody></table>
+<h3 id="1-4-ls-通配符的使用"><a href="#1-4-ls-通配符的使用" class="headerlink" title="1.4 ls 通配符的使用"></a>1.4 ls 通配符的使用</h3><table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>代表任意个数个字符</td>
+</tr>
+<tr>
+<td>?</td>
+<td>代表任意一个字符，至少 1 个</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>表示可以匹配字符组中的任一一个</td>
+</tr>
+<tr>
+<td>[abc]</td>
+<td>匹配 a、b、c 中的任意一个</td>
+</tr>
+<tr>
+<td>[a-f]</td>
+<td>匹配从 a 到 f 范围内的的任意一个字符</td>
+</tr>
+</tbody></table>
+<h2 id="02-切换目录"><a href="#02-切换目录" class="headerlink" title="02. 切换目录"></a>02. 切换目录</h2><h3 id="2-1-cd"><a href="#2-1-cd" class="headerlink" title="2.1 cd"></a>2.1 <code>cd</code></h3><ul>
+<li><code>cd</code> 是英文单词 <strong>change directory</strong> 的简写，其功能为更改当前的工作目录，也是用户最常用的命令之一</li>
+</ul>
+<blockquote>
+<p>注意：Linux 所有的 <strong>目录</strong> 和 <strong>文件名</strong> 都是大小写敏感的</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cd</td>
+<td>切换到当前用户的主目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd ~</td>
+<td>切换到当前用户的主目录(/home/用户目录)</td>
+</tr>
+<tr>
+<td>cd .</td>
+<td>保持在当前目录不变</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td>切换到上级目录</td>
+</tr>
+<tr>
+<td>cd -</td>
+<td>可以在最近两次工作目录之间来回切换</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-相对路径和绝对路径"><a href="#2-2-相对路径和绝对路径" class="headerlink" title="2.2 相对路径和绝对路径"></a>2.2 相对路径和绝对路径</h3><ul>
+<li><strong>相对路径</strong> 在输入路径时，最前面不是 <strong>/</strong> 或者 <strong>~</strong>，表示相对 <strong>当前目录</strong> 所在的目录位置</li>
+<li><strong>绝对路径</strong> 在输入路径时，最前面是 <strong>/</strong> 或者 <strong>~</strong>，表示从 <strong>根目录/家目录</strong> 开始的具体目录位置</li>
+</ul>
+<h2 id="03-创建和删除操作"><a href="#03-创建和删除操作" class="headerlink" title="03. 创建和删除操作"></a>03. 创建和删除操作</h2><h3 id="3-1-touch"><a href="#3-1-touch" class="headerlink" title="3.1 touch"></a>3.1 <code>touch</code></h3><ul>
+<li>创建文件或修改文件时间<ul>
+<li>如果文件 <strong>不存在</strong>，可以创建一个空白文件</li>
+<li>如果文件 <strong>已经存在</strong>，可以修改文件的末次修改日期</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-mkdir"><a href="#3-2-mkdir" class="headerlink" title="3.2 mkdir"></a>3.2 <code>mkdir</code></h3><ul>
+<li>创建一个新的目录</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-p</td>
+<td>可以递归创建目录</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>新建目录的名称</strong> 不能与当前目录中 <strong>已有的目录或文件</strong> 同名</p>
+</blockquote>
+<h3 id="3-3-rm"><a href="#3-3-rm" class="headerlink" title="3.3 rm"></a>3.3 <code>rm</code></h3><ul>
+<li>删除文件或目录</li>
+</ul>
+<blockquote>
+<p>使用 <code>rm</code> 命令要小心，因为文件删除后不能恢复</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-f</td>
+<td>强制删除，忽略不存在的文件，无需提示</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>递归地删除目录下的内容，<strong>删除文件夹</strong> 时必须加此参数</td>
+</tr>
+</tbody></table>
+<h2 id="04-拷贝和移动文件"><a href="#04-拷贝和移动文件" class="headerlink" title="04. 拷贝和移动文件"></a>04. 拷贝和移动文件</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>tree [目录名]</td>
+<td>tree</td>
+<td>以树状图列出文件目录结构</td>
+</tr>
+<tr>
+<td>02</td>
+<td>cp 源文件 目标文件</td>
+<td>copy</td>
+<td>复制文件或者目录</td>
+</tr>
+<tr>
+<td>03</td>
+<td>mv 源文件 目标文件</td>
+<td>move</td>
+<td>移动文件或者目录／文件或者目录重命名</td>
+</tr>
+</tbody></table>
+<h3 id="4-1-tree"><a href="#4-1-tree" class="headerlink" title="4.1 tree"></a>4.1 <code>tree</code></h3><ul>
+<li><code>tree</code> 命令可以以树状图列出文件目录结构</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d</td>
+<td>只显示目录</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-cp"><a href="#4-2-cp" class="headerlink" title="4.2 cp"></a>4.2 <code>cp</code></h3><ul>
+<li><code>cp</code> 命令的功能是将给出的 <strong>文件</strong> 或 <strong>目录</strong> 复制到另一个 <strong>文件</strong> 或 <strong>目录</strong> 中，相当于 <strong>DOS</strong> 下的 <code>copy</code> 命令</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>若给出的源文件是目录文件，则 cp 将递归复制该目录下的所有子目录和文件，目标文件必须为一个目录名</td>
+</tr>
+</tbody></table>
+<h3 id="4-3-mv"><a href="#4-3-mv" class="headerlink" title="4.3 mv"></a>4.3 <code>mv</code></h3><ul>
+<li><code>mv</code> 命令可以用来 <strong>移动</strong> <strong>文件</strong> 或 <strong>目录</strong>，也可以给 <strong>文件或目录重命名</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-i</td>
+<td>覆盖文件前提示</td>
+</tr>
+</tbody></table>
+<h2 id="05-查看文件内容"><a href="#05-查看文件内容" class="headerlink" title="05. 查看文件内容"></a>05. 查看文件内容</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>对应英文</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>cat 文件名</td>
+<td>concatenate</td>
+<td>查看文件内容、创建文件、文件合并、追加文件内容等功能</td>
+</tr>
+<tr>
+<td>02</td>
+<td>more 文件名</td>
+<td>more</td>
+<td>分屏显示文件内容</td>
+</tr>
+<tr>
+<td>03</td>
+<td>grep 搜索文本 文件名</td>
+<td>grep</td>
+<td>搜索文本文件内容</td>
+</tr>
+</tbody></table>
+<h3 id="5-1-cat"><a href="#5-1-cat" class="headerlink" title="5.1 cat"></a>5.1 <code>cat</code></h3><ul>
+<li><code>cat</code> 命令可以用来 <strong>查看文件内容</strong>、<strong>创建文件</strong>、<strong>文件合并</strong>、<strong>追加文件内容</strong> 等功能</li>
+<li><code>cat</code> 会一次显示所有的内容，适合 <strong>查看内容较少</strong> 的文本文件</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-b</td>
+<td>对非空输出行编号</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>对输出的所有行编号</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Linux 中还有一个 <code>nl</code> 的命令和 <code>cat -b</code> 的效果等价</p>
+</blockquote>
+<h3 id="5-2-more"><a href="#5-2-more" class="headerlink" title="5.2 more"></a>5.2 <code>more</code></h3><ul>
+<li><code>more</code> 命令可以用于分屏显示文件内容，每次只显示一页内容</li>
+<li>适合于 <strong>查看内容较多</strong>的文本文件</li>
+</ul>
+<p>使用 <code>more</code> 的操作键：</p>
+<table>
+<thead>
+<tr>
+<th>操作键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>空格键</td>
+<td>显示手册页的下一屏</td>
+</tr>
+<tr>
+<td>Enter 键</td>
+<td>一次滚动手册页的一行</td>
+</tr>
+<tr>
+<td>b</td>
+<td>回滚一屏</td>
+</tr>
+<tr>
+<td>f</td>
+<td>前滚一屏</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>/word</td>
+<td>搜索 <strong>word</strong> 字符串</td>
+</tr>
+</tbody></table>
+<h3 id="5-3-grep"><a href="#5-3-grep" class="headerlink" title="5.3 grep"></a>5.3 <code>grep</code></h3><ul>
+<li>Linux 系统中 <code>grep</code> 命令是一种强大的文本搜索工具</li>
+<li><code>grep</code>允许对文本文件进行 <strong>模式</strong>查找，所谓模式查找，又被称为正则表达式，在就业班会详细讲解</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-n</td>
+<td>显示匹配行及行号</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示不包含匹配文本的所有行（相当于求反）</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>忽略大小写</td>
+</tr>
+</tbody></table>
+<ul>
+<li>常用的两种模式查找</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^a</td>
+<td>行首，搜寻以 <strong>a</strong> 开头的行</td>
+</tr>
+<tr>
+<td>ke$</td>
+<td>行尾，搜寻以 <strong>ke</strong> 结束的行</td>
+</tr>
+</tbody></table>
+<h2 id="06-其他"><a href="#06-其他" class="headerlink" title="06. 其他"></a>06. 其他</h2><h3 id="6-1-echo-文字内容"><a href="#6-1-echo-文字内容" class="headerlink" title="6.1 echo 文字内容"></a>6.1 <code>echo 文字内容</code></h3><ul>
+<li><code>echo</code> 会在终端中显示参数指定的文字，通常会和 <strong>重定向</strong> 联合使用</li>
+</ul>
+<h3 id="6-2-重定向-gt-和-gt-gt"><a href="#6-2-重定向-gt-和-gt-gt" class="headerlink" title="6.2 重定向 &gt; 和 &gt;&gt;"></a>6.2 重定向 <code>&gt;</code> 和 <code>&gt;&gt;</code></h3><ul>
+<li>Linux 允许将命令执行结果 <strong>重定向</strong>到一个 <strong>文件</strong></li>
+<li>将本应显示在<strong>终端上的内容</strong> <strong>输出／追加</strong> 到<strong>指定文件中</strong></li>
+</ul>
+<p>其中</p>
+<ul>
+<li><code>&gt;</code> 表示输出，会覆盖文件原有的内容</li>
+<li><code>&gt;&gt;</code> 表示追加，会将内容追加到已有文件的末尾</li>
+</ul>
+<h3 id="6-3-管道"><a href="#6-3-管道" class="headerlink" title="6.3 管道 |"></a>6.3 管道 <code>|</code></h3><ul>
+<li>Linux 允许将 <strong>一个命令的输出</strong> 可以<strong>通过管道</strong> 做为 <strong>另一个命令的输入</strong></li>
+<li>可以理解现实生活中的管子，管子的一头塞东西进去，另一头取出来，这里 <code>|</code> 的左右分为两端，左端塞东西（写），右端取东西（读）</li>
+</ul>
+<p>常用的管道命令有：</p>
+<ul>
+<li><code>more</code>：分屏显示内容</li>
+<li><code>grep</code>：在命令执行结果的基础上查询指定的文本</li>
+</ul>
+
+          
+            <br>
+            
+              
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/07/17/computer_Internet_1/'>
+                <p class='title'>计算机网络学习1<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>学习笔记，包含以下内容：
+
+网络、互联网（互连网）和因特网
+三种交换方式
+计算机网络的性能指标
+
+
+
+网络、互联网（互联网）和因特网网络（Network）由若干结点（Node）和连接这些节点的链...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+  
+    
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '文件和目录常用命令',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#01-查看目录内容"><span class="toc-text">01. 查看目录内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-终端实用技巧"><span class="toc-text">1.1 终端实用技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-gt-自动补全"><span class="toc-text">1&gt; 自动补全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-gt-曾经使用过的命令"><span class="toc-text">2&gt; 曾经使用过的命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-ls-命令说明"><span class="toc-text">1.2 ls 命令说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-下文件和目录的特点"><span class="toc-text">Linux 下文件和目录的特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-ls-常用选项"><span class="toc-text">1.3 ls 常用选项</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#计算机中文件大小的表示方式（科普）"><span class="toc-text">计算机中文件大小的表示方式（科普）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-ls-通配符的使用"><span class="toc-text">1.4 ls 通配符的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-切换目录"><span class="toc-text">02. 切换目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-cd"><span class="toc-text">2.1 cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-相对路径和绝对路径"><span class="toc-text">2.2 相对路径和绝对路径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-创建和删除操作"><span class="toc-text">03. 创建和删除操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-touch"><span class="toc-text">3.1 touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-mkdir"><span class="toc-text">3.2 mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-rm"><span class="toc-text">3.3 rm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#04-拷贝和移动文件"><span class="toc-text">04. 拷贝和移动文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-tree"><span class="toc-text">4.1 tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-cp"><span class="toc-text">4.2 cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-mv"><span class="toc-text">4.3 mv</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#05-查看文件内容"><span class="toc-text">05. 查看文件内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-cat"><span class="toc-text">5.1 cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-more"><span class="toc-text">5.2 more</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-grep"><span class="toc-text">5.3 grep</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#06-其他"><span class="toc-text">06. 其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-echo-文字内容"><span class="toc-text">6.1 echo 文字内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-重定向-gt-和-gt-gt"><span class="toc-text">6.2 重定向 &gt; 和 &gt;&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-管道"><span class="toc-text">6.3 管道 |</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<footer id="footer" class="clearfix" style="color: #333;">
+  <i class="far fa-copyright" style="color: #333;">2019-2020</i> 
+    <a href="https://www.zhengyuanyuan520.com/" target="_blank" style="color: #333;"> 覃浩的博客 </a>丨
+  <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.6/images/icp.png">
+  <a href="http://www.beian.miit.gov.cn/" target="_blank"  style="color: #333;">鄂ICP备19020398号-4</a> 丨
+  <!-- 网站运行时间 -->
+  <span id="timeDate" >正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+  <script class="run">
+  var now = new Date(); 
+  function createtime() { 
+  var grt= new Date("12/04/2019 20:13:14");
+  now.setTime(now.getTime()+250); 
+  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+  document.getElementById("timeDate").innerHTML = "本站已在风雨中度过了 "
+  document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  document.getElementById("timeDate").style.color="#333";
+  document.getElementById("times").style.color="#333";
+  }
+  setInterval("createtime()",250);
+  </script>丨
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200804154709.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz",
+    appKey: "tvRQuJAWPHtA7Xpddprw1wa8",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'false'
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
