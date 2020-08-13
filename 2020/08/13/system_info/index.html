@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,8 +18,13 @@
 
   <!-- 页面元数据 -->
   
-    <title>分类：通信技术 - 覃浩的博客</title>
+    <title>系统信息相关命令 - 覃浩的博客</title>
   
+  
+    <meta name="description" content="
+本节内容主要是为了方便通过远程终端维护服务器时，查看服务器上当前 系统日期和时间 ／ 磁盘空间占用情况 ／ 程序执行情况
+本小结学习的终端命令基本都是查询命令，通过这些命令对系统资源的使用情况有个了解
+">
   
 
   <!-- feed -->
@@ -381,19 +384,12 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -410,7 +406,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       order='list'
       server='netease'
       type='song'
-      id='1411358329'>
+      id='1363205817'>
     </meting-js>
   
 
@@ -420,11 +416,13 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/03/07/3G/">
-      3G系统概述
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2020/08/13/system_info/">
+        系统信息相关命令
+      </a>
+    </h1>
+  
 
 
         
@@ -444,25 +442,25 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
             
           
             
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年3月7日</p>
-  </a>
-</div>
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Linux/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Linux</p>
+    </a>
+  </div>
+
 
             
           
             
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>通信技术</p>
-    </a>
-  </div>
-
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月13日</p>
+  </a>
+</div>
 
             
           
@@ -471,13 +469,13 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：626字</p>
+      <p>字数：433字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2分钟</p>
+      <p>时长：1分钟</p>
     </a>
   </div>
 
@@ -487,8 +485,6 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
             
               
 
-            
-          
             
           
         </div>
@@ -500,448 +496,253 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>3G系统概述学习笔记</p>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <ul>
+<li>本节内容主要是为了方便通过远程终端维护服务器时，查看服务器上当前 <strong>系统日期和时间</strong> ／ <strong>磁盘空间占用情况</strong> ／ <strong>程序执行情况</strong></li>
+<li>本小结学习的终端命令基本都是查询命令，通过这些命令对系统资源的使用情况有个了解</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li>时间和日期<ul>
+<li><code>date</code></li>
+<li><code>cal</code></li>
+</ul>
+</li>
+<li>磁盘和目录空间<ul>
+<li><code>df</code></li>
+<li><code>du</code></li>
+</ul>
+</li>
+<li>进程信息<ul>
+<li><code>ps</code></li>
+<li><code>top</code></li>
+<li><code>kill</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="01-时间和日期"><a href="#01-时间和日期" class="headerlink" title="01. 时间和日期"></a>01. 时间和日期</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>date</td>
+<td>查看系统时间</td>
+</tr>
+<tr>
+<td>02</td>
+<td>cal</td>
+<td><code>calendar</code> 查看日历，<code>-y</code> 选项可以查看一年的日历</td>
+</tr>
+</tbody></table>
+<h2 id="02-磁盘信息"><a href="#02-磁盘信息" class="headerlink" title="02. 磁盘信息"></a>02. 磁盘信息</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>df -h</td>
+<td><code>disk free</code> 显示磁盘剩余空间</td>
+</tr>
+<tr>
+<td>02</td>
+<td>du -h [目录名]</td>
+<td><code>disk usage</code> 显示目录下的文件大小</td>
+</tr>
+</tbody></table>
+<ul>
+<li>选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-h</td>
+<td>以人性化的方式显示文件大小</td>
+</tr>
+</tbody></table>
+<h2 id="03-进程信息"><a href="#03-进程信息" class="headerlink" title="03. 进程信息"></a>03. 进程信息</h2><ul>
+<li>所谓 <strong>进程</strong>，通俗地说就是 <strong>当前正在执行的一个程序</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>01</td>
+<td>ps aux</td>
+<td><code>process status</code> 查看进程的详细状况</td>
+</tr>
+<tr>
+<td>02</td>
+<td>top</td>
+<td>动态显示运行中的进程并且排序</td>
+</tr>
+<tr>
+<td>03</td>
+<td>kill [-9] 进程代号</td>
+<td>终止指定代号的进程，<code>-9</code> 表示强行终止</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>ps</code> 默认只会显示当前用户通过终端启动的应用程序</p>
+</blockquote>
+<ul>
+<li><code>ps</code> 选项说明</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a</td>
+<td>显示终端上的所有进程，包括其他用户的进程</td>
+</tr>
+<tr>
+<td>u</td>
+<td>显示进程的详细状态</td>
+</tr>
+<tr>
+<td>x</td>
+<td>显示没有控制终端的进程</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示：使用 <code>kill</code> 命令时，最好只终止由当前用户开启的进程，而不要终止 <code>root</code> 身份开启的进程，否则可能导致系统崩溃</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>要退出 <code>top</code> 可以直接输入 <code>q</code></li>
+</ul>
+</blockquote>
+
+          
+            <br>
+            
+              
+
+            
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
     </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/03/07/3G/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
   </section>
-</article>
 
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/08/13/Files_and_directories/'>
+                <p class='title'>文件和目录常用命令<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>查看目录内容
+切换目录
+创建和删除操作
+拷贝和移动文件
+查看文件内容
+
+
+目标
+查看目录内容
+ls
+
+
+切换目录
+cd
+
+
+创建和删除操作
+touch
+rm
+mkdir
+
+
+拷贝和移动文件
+cp...</p>
+              </a>
+            
           </div>
         
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+      </section>
+    </article>
   
 
-
-  <section class='meta'>
-    
-      
-        
-
   
-    <meting-js
-      mini='true'
-      autoplay='false'
-      volume='0.5'
-      loop='all'
-      order='list'
-      server='netease'
-      type='song'
-      id='233974'>
-    </meting-js>
-  
+    <!-- 显示推荐文章和评论 -->
 
 
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
       
       
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/03/07/GSM/">
-      GSM系统概述
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
-    <p>覃浩</p>
-  </a>
-</div>
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年3月7日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>通信技术</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：602字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
       
-        <p>2G系统概述学习笔记</p>
       
-    </div>
-    
       
-        <div class="button readmore">
-          <a href="/2020/03/07/GSM/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
           </div>
-        
+        </section>
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+      
+    </section>
+  </article>
+
+
   
 
-
-  <section class='meta'>
-    
-      
-        
-
-  
-    <meting-js
-      mini='true'
-      autoplay='false'
-      volume='0.5'
-      loop='all'
-      order='list'
-      server='netease'
-      type='song'
-      id='1302090321'>
-    </meting-js>
-  
-
-
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/03/06/wireless_word/">
-      移动通信术语
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
-    <p>覃浩</p>
-  </a>
-</div>
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年3月6日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>通信技术</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.4k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：5分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>记录了一些无线侧和核心侧的一些术语</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/03/06/wireless_word/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-        
-
-  
-    <meting-js
-      mini='true'
-      autoplay='false'
-      volume='0.5'
-      loop='all'
-      order='list'
-      server='netease'
-      type='song'
-      id='553815178'>
-    </meting-js>
-  
-
-
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/03/06/mobile_communication/">
-      移动网络发展与技术笔记
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://www.zhengyuanyuan520.com" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting//imagesavatar.jpg">
-    <p>覃浩</p>
-  </a>
-</div>
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年3月6日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>通信技术</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.3k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：8分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>移动通信基础的学习笔记</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/03/06/mobile_communication/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
   
     
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+  
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '系统信息相关命令',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -950,172 +751,18 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box' href='/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210045.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>覃浩</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">覃浩的博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-  </div>
-</section>
 
-  
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-globe-asia fa-fw" aria-hidden="true"></i><span class='name'>定位</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><b><script>var getOSAndBrowser=function(){var os=navigator.platform;var userAgent=navigator.userAgent;var info="";var tempArray="";if(os.indexOf("Win")>-1){if(userAgent.indexOf("Windows NT 5.0")>-1){info+="Win2000"}else if(userAgent.indexOf("Windows NT 5.1")>-1){info+="WinXP"}else if(userAgent.indexOf("Windows NT 5.2")>-1){info+="Win2003"}else if(userAgent.indexOf("Windows NT 6.0")>-1){info+="WindowsVista"}else if(userAgent.indexOf("Windows NT 6.1")>-1||userAgent.indexOf("Windows 7")>-1){info+="Win7"}else if(userAgent.indexOf("Windows NT 6.2")>-1||userAgent.indexOf("Windows 8")>-1){info+="Win8"}else if(userAgent.indexOf("Windows NT 6.3")>-1||userAgent.indexOf("Windows 8.1")>-1){info+="Win8.1"}else if(userAgent.indexOf("Windows NT 10.0")>-1||userAgent.indexOf("Windows 10")>-1){info+="Win10"}else{info+="Other"}}else if(os.indexOf("Mac")>-1){info+="Mac"}else if(os.indexOf("X11")>-1){info+="Unix"}else if(os.indexOf("Linux")>-1){info+="Linux"}else{info+="Other"}info+="/";var isOpera=userAgent.indexOf("Opera")>-1;var isIE=userAgent.indexOf("compatible")>-1&&userAgent.indexOf("MSIE")>-1&&!isOpera;var isEdge=userAgent.toLowerCase().indexOf("edge")>-1&&!isIE;var isIE11=(userAgent.toLowerCase().indexOf("trident")>-1&&userAgent.indexOf("rv")>-1);if(/[Ff]irefox(\/\d+\.\d+)/.test(userAgent)){tempArray=/([Ff]irefox)\/(\d+\.\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(isIE){var version="";var reIE=new RegExp("MSIE (\\d+\\.\\d+);");reIE.test(userAgent);var fIEVersion=parseFloat(RegExp["$1"]);if(fIEVersion==7){version="IE7"}else if(fIEVersion==8){version="IE8"}else if(fIEVersion==9){version="IE9"}else if(fIEVersion==10){version="IE10"}else{version="0"}info+=version}else if(isEdge){info+="Edge"}else if(isIE11){info+="IE11"}else if(/[Cc]hrome\/\d+/.test(userAgent)){tempArray=/([Cc]hrome)\/(\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(/[Vv]ersion\/\d+\.\d+\.\d+(\.\d)* *[Ss]afari/.test(userAgent)){tempArray=/[Vv]ersion\/(\d+\.\d+\.\d+)(\.\d)* *([Ss]afari)/.exec(userAgent);info+=tempArray[3]+tempArray[1]}else if(/[Oo]pera.+[Vv]ersion\/\d+\.\d+/.test(userAgent)){tempArray=/([Oo]pera).+[Vv]ersion\/(\d+)\.\d+/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else{info+="unknown"}return info};document.write("欢迎来自"+returnCitySN["cname"]+"的朋友");document.write("<br>您的 IP 是："+returnCitySN["cip"]);document.write("<br>您使用的是："+getOSAndBrowser());</script></b>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i><span class='name'>访客地图</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5stt7n27ekb&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;br=8&amp;sx=0" async="async"></script>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile">
     
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Photoshop/" href="/categories/Photoshop/"
-            id="categoriesPhotoshop"
-            ><div class='name'>Photoshop</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/VPN/" href="/categories/VPN/"
-            id="categoriesVPN"
-            ><div class='name'>VPN</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E4%B8%AA%E4%BA%BA/" href="/categories/%E4%B8%AA%E4%BA%BA/"
-            id="categoriesE4B8AAE4BABA"
-            ><div class='name'>个人</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E4%BA%A4%E6%8D%A2%E6%9C%BA/" href="/categories/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"
-            id="categoriesE4BAA4E68DA2E69CBA"
-            ><div class='name'>交换机</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/" href="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/"
-            id="categoriesE58D8EE4B8BAE8AEA4E8AF81"
-            ><div class='name'>华为认证</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"
-            id="categoriesE5B08FE68A80E5B7A7"
-            ><div class='name'>小技巧</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
-            id="categoriesE695B0E68DAEE5BA93"
-            ><div class='name'>数据库</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"
-            id="categoriesE69C8DE58AA1E599A8"
-            ><div class='name'>服务器</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
-            id="categoriesE7BD91E7BB9CE5AE89E585A8"
-            ><div class='name'>网络安全</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/"
-            id="categoriesE8AEA1E7AE97E69CBAE4B889E7BAA7"
-            ><div class='name'>计算机三级</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
-            id="categoriesE8AEA1E7AE97E69CBAE7BD91E7BB9C"
-            ><div class='name'>计算机网络</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/" href="/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/"
-            id="categoriesE8BDAFE4BBB6E7A0B4E8A7A3"
-            ><div class='name'>软件破解</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/" href="/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"
-            id="categoriesE9809AE4BFA1E68A80E69CAF"
-            ><div class='name'>通信技术</div><div class='badge'>(14)</div></a></li>
-        
-      </ul>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#01-时间和日期"><span class="toc-text">01. 时间和日期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#02-磁盘信息"><span class="toc-text">02. 磁盘信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#03-进程信息"><span class="toc-text">03. 进程信息</span></a></li></ol>
     </div>
   </section>
 
@@ -1252,6 +899,33 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
 
 
+
+  
+    
+<script src="/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz",
+    appKey: "tvRQuJAWPHtA7Xpddprw1wa8",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight: 'true',
+    mathJax: 'false'
+  })
+  </script>
 
 
 
