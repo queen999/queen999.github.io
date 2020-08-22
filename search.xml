@@ -99,25 +99,6 @@
     
     
     <entry>
-      <title>购买VPN | 安全、高速、稳定</title>
-      <link href="/2020/06/13/buy-VPN/"/>
-      <url>/2020/06/13/buy-VPN/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最高500M带宽，最低仅需5.99元包月，包年最低32.99元，先到先得。支持mac，Windows，安卓和ios，包年赠送ios客户端。购买请移步<kbd><a href="https://www.zhengyuanyuan520.com/VPN" target="_blank" rel="noopener">购买VPN</a></kbd></p><a id="more"></a><h2 id="客户端下载"><a href="#客户端下载" class="headerlink" title="客户端下载"></a>客户端下载</h2><table><thead><tr><th>名称</th><th>版本</th><th>下载地址</th><th>下载地址</th><th>下载地址</th></tr></thead><tbody><tr><td>Clash</td><td>0.9.4</td><td><strong><a href="https://github.com/qianglie/Client/releases/download/0.0.1/Clash-Windows.exe" target="_blank" rel="noopener">本地下载</a></strong></td><td><strong><a href="https://www.pjapp.club/660ce2a4dca0738880f15e0c2cd90f06abd7c53f" target="_blank" rel="noopener">磁力链接</a></strong></td><td><strong><a href="https://github.com/qianglie/Client/releases/download/0.0.4/clash-windows-0.9.4.torrent" target="_blank" rel="noopener">BT种子</a></strong></td></tr></tbody></table><p>以上App由其作者进行维护，并非由我们开发，如有疑问，请联系其作者。</p><h2 id="墙裂配置-–-Clash"><a href="#墙裂配置-–-Clash" class="headerlink" title="墙裂配置 – Clash"></a>墙裂配置 – Clash</h2><p>登陆我们的网站，执行下列操作：</p><p>单击 “产品服务” &gt; “我的服务” &gt; 选择 “你可用的产品/服务”。</p><p><img src="https://cn.joysaid.com/files/images/int-portal-productdetail.png" alt="img"></p><p>点击 “Clash” 右边绿色的按钮 “复制”。</p><p><img src="https://cn.joysaid.com/files/images/int-portal-productdetail-02.png" alt="img"></p><h3 id="Clash-的设置过程："><a href="#Clash-的设置过程：" class="headerlink" title="Clash 的设置过程："></a>Clash 的设置过程：</h3><p>安装客户端后，点击 “Profiles”。</p><p><img src="https://cn.joysaid.com/files/images/Clash-01.png" alt="img"></p><p>在 “Download from a URL” 粘贴刚才复制的托管地址，然后点击 “Download”。</p><p><img src="https://cn.joysaid.com/files/images/Clash-02.png" alt="img"></p><p>自动下载托管配置，若下载不成功请检查网络。</p><p><img src="https://cn.joysaid.com/files/images/Clash-03.png" alt="img"></p><p>显示 “Success!” 则下载成功。</p><p><img src="https://cn.joysaid.com/files/images/Clash-04.png" alt="img"></p><p>前往 “General”，选择 “System Proxy” 开启系统代理。</p><p><img src="https://cn.joysaid.com/files/images/Clash-05.png" alt="img"></p><p>前往 “Proxies”，选择 “Global” 模式，选择您心仪的节点即可畅游网络！</p><p>如果您了解如何使用 “Rule” 模式，我们推荐您使用该模式，节省流量。</p><p><img src="https://cn.joysaid.com/files/images/Clash-06.png" alt="img"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> VPN </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>MySQL压缩包版安装方法</title>
       <link href="/2020/06/13/mysql-install/"/>
       <url>/2020/06/13/mysql-install/</url>
