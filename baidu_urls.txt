@@ -53,4 +53,3 @@ https://www.imqinhao.cn/2020/02/15/Windows_Web_often_use/
 https://www.imqinhao.cn/2020/02/14/Windows_Web_build_website/
 https://www.imqinhao.cn/2020/02/14/Windows_Web_build_environment/
 https://www.imqinhao.cn/2020/02/14/RedHat_setup_script/
-https://www.imqinhao.cn/2019/12/04/hello/
