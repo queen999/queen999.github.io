@@ -14,9 +14,18 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：交换机 - 覃浩的博客</title>
+  <title>TCP/IP简介 - 覃浩的博客</title>
   
 
+  
+    <meta name="description" content="知识点
+
+IP 地址
+域名
+MAC 地址
+端口号
+封装和分用
+">
   
 
   <!-- feed -->
@@ -346,7 +355,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
   
   
     <div class="cover-wrapper">
-      <div class='cover ' style="display: none;">
+      <div class='cover post' style="display: none;">
         <div class='cover-bg lazyload placeholder' data-bg=""></div>
         <div class='cover-body'>
   <div class='a'>
@@ -414,8 +423,8 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">TCP/IP简介</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path">none</div>
   <div id="pjax-comment-placeholder">none</div>
@@ -446,25 +455,12 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         
         
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -480,7 +476,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       order='list'
       server='netease'
       type='song'
-      id='554241732'>
+      id='1426649237'>
     </meting-js>
   
 
@@ -491,11 +487,11 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/02/27/OLT_command/">
-      OLT基础命令
+  <h1 class="title">
+    <a href="/2020/10/05/linux/">
+      TCP/IP简介
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -515,22 +511,12 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
             
           
             
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年2月27日</p>
-  </a>
-</div>
-
-            
-          
-            
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E4%BA%A4%E6%8D%A2%E6%9C%BA/' rel="nofollow">
+    <a href='/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>交换机</p>
+      <p>计算机网络</p>
     </a>
   </div>
 
@@ -538,7 +524,12 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
             
           
             
-              
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年10月5日</p>
+  </a>
+</div>
 
             
           
@@ -558,38 +549,148 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>适用于华为OLT的基础命令，这是当时学习时做的笔记。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/02/27/OLT_command/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>知识点</p>
+<ul>
+<li>IP 地址</li>
+<li>域名</li>
+<li>MAC 地址</li>
+<li>端口号</li>
+<li>封装和分用</li>
+</ul>
+<a id="more"></a>
 
-          </div>
+<p>提到网络协议栈结构，最著名的当属 OSI 七层模型，但是 TCP/IP 协议族的结构则稍有不同，它们之间的层次结构有如图对应关系：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/1548669082626.png" alt=""></p>
+<p>可见 TCP/IP 被分为 4 层，每层承担的任务不一样，各层的协议的工作方式也不一样，每层封装上层数据的方式也不一样：</p>
+<ul>
+<li>应用层：应用程序通过这一层访问网络，常见 FTP、HTTP、DNS 和 TELNET 协议；</li>
+<li>传输层：TCP 协议和 UDP 协议；</li>
+<li>网络层：IP 协议，ARP、RARP 协议，ICMP 协议等；</li>
+<li>网络接口层：是 TCP/IP 协议的基层，负责数据帧的发送和接收。</li>
+</ul>
+<blockquote>
+<p>TCP/IP（Transmission Control Protocol/Internet Protocol）是传输控制协议和网络协议的简称，它定义了电子设备如何连入因特网，以及数据如何在它们之间传输的标准。</p>
+<p>TCP/IP 不是一个协议，而是一个协议族的统称，里面包括了 IP 协议、ICMP 协议、TCP 协议、以及 http、ftp、pop3 协议等。网络中的计算机都采用这套协议族进行互联。</p>
+</blockquote>
+<h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><p>网络上每一个节点都必须有一个独立的 IP 地址，通常使用的 IP 地址是一个 32bit 的数字，被 <code>.</code> 分成 4 组，例如，<code>255.255.255.255</code> 就是一个 IP 地址。有了 IP 地址，用户的计算机就可以发现并连接互联网中的另外一台计算机。</p>
+<p>在 终端输入 <code>ifconfig -a</code> 命令查看自己的 IP 地址：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig -a</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/61acdc3e0704fdf5fb97876dec817ff3-0" alt=""></p>
+<h1 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h1><p>用 12 位数字组成的 IP 地址很难记忆，在实际应用时，用户一般不需要记住 IP 地址，互联网给每个 IP 地址起了一个别名，习惯上称作域名。</p>
+<p>域名与计算机的 IP 地址相对应，并把这种对应关系存储在域名服务系统 DNS(Domain Name System) 中，这样用户只需记住域名就可以与指定的计算机进行通信了。</p>
+<p>常见的域名包括 com、net 和 org 三种顶级域名后缀，除此之外每个国家还有自己国家专属的域名后缀（比如我国的域名后缀为 cn）。目前经常使用的域名诸如百度（<a href="https://www.baidu.com/" target="_blank" rel="noopener">www.baidu.com</a>）、Linux 组织（<a href="https://lwn.net/" target="_blank" rel="noopener">www.lwn.net</a>）等等。</p>
+<p>我们可以使用命令 <code>nslookup</code> 或者 <code>ping</code> 来查看与域名相对应的 IP 地址，由于实验楼网络限制，我们可以使用 <code>ping github.com</code>（如果 <code>github</code> 也 ping 不通，那么可以使用 <code>ping labfile.oss.aliyuncs.com</code>，如果你是会员账户，那么也可以 ping 其他的域名）查看。</p>
+<p>例如：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201016215115.png" alt=""></p>
+<h1 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h1><p>MAC（Media Access Control）地址，或称为物理地址、硬件地址，用来定义互联网中设备的位置。</p>
+<p>在 TCP/IP 层次模型中，网络层管理 IP 地址，链路层则负责 MAC 地址。因此每个网络位置会有一个专属于它的 IP 地址，而每个主机会有一个专属于它 MAC 地址。</p>
+<h1 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h1><p>IP 地址是用来发现和查找网络中的地址，但是不同程序如何互相通信呢？这就需要端口号来识别了。如果把 IP 地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是端口采用 16 比特的端口号标识，一个 IP 地址的端口可以有 65536（即：216）个之多！</p>
+<p>服务器的默认程序一般都是通过人们所熟知的端口号来识别的。例如，对于每个 TCP/IP 实现来说，SMTP（简单邮件传输协议）服务器的 TCP 端口号都是 <code>25</code>，FTP（文件传输协议）服务器的 TCP 端口号都是 <code>21</code>，TFTP（简单文件传输协议）服务器的 UDP 端口号都是 <code>69</code>。任何 TCP/IP 实现所提供的服务都用众所周知的 <code>1－1023</code> 之间的端口号。这些人们所熟知的端口号由 Internet 端口号分配机构（Internet Assigned Numbers Authority，IANA）来管理。</p>
+<p>常用协议对应端口号：</p>
+<ul>
+<li>SSH 22</li>
+<li>FTP 20 和 21</li>
+<li>Telnet 23</li>
+<li>SMTP 25</li>
+<li>TFTP 69</li>
+<li>HTTP 80</li>
+<li>SNMP 161</li>
+<li>Ping 使用 ICMP，无具体端口号</li>
+</ul>
+<h1 id="封装和分用"><a href="#封装和分用" class="headerlink" title="封装和分用"></a>封装和分用</h1><p><strong>封装</strong>：当应用程序发送数据的时候，数据在协议层次当中自顶向下通过每一层，每一层都会对数据增加一些首部或尾部信息，这样的信息称之为协议数据单元（Protocol Data Unit，缩写为 PDU），在分层协议系统里，在指定的协议层上传送的数据单元，包含了该层的协议控制信息和用户信息。如下图所示：</p>
+<ul>
+<li>物理层（一层）PDU 指数据位（Bit）</li>
+<li>数据链路层（二层）PDU 指数据帧（Frame）</li>
+<li>网络层（三层）PDU 指数据包（Packet）</li>
+<li>传输层（四层）PDU 指数据段（Segment）</li>
+<li>第五层以上为数据（data）</li>
+</ul>
+<p><img src="https://dn-simplecloud.shiyanlou.com/uid/8797/1548670748600.png" alt=""></p>
+<p><strong>分用</strong>：当主机收到一个数据帧时，数据就从协议层底向上升，通过每一层时，检查并去掉对应层次的报文首部或尾部，与封装过程正好相反。</p>
+<h1 id="RFC"><a href="#RFC" class="headerlink" title="RFC"></a>RFC</h1><p>RFC（Request for Comment）文档是所有以太网协议的正式标准，并在其官网上面公布，由 IETF 标准协会制定。大量的 RFC 并不是正式的标准，出版的目的只是为了提供信息。RFC 的篇幅不一，从几页到几百页不等。每一种协议都用一个数字来标识，如 RFC 3720 是 iSCSI 协议的标准，数字越大意味着 RFC 的内容越新或者是对应的协议（标准）出现的比较晚。</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
         
       
-    
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/'>
+                <p class='title'>5G网络优化<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>5G覆盖指标定义
+覆盖率
+覆盖优化整体流程
+NR覆盖类问题及优化方案
+
+
+5G覆盖指标定义广播信道SS参考信号接收功率(SS-RSRP) :测量频段带宽上承载辅同步信号(SS) 的资源单元接收功...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+  
     
-    
+  
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
 
 </div>
 <aside class='l_side'>
@@ -598,271 +699,19 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210045.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>覃浩的博客</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">覃浩的博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-  </div>
-</section>
-
-  
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-globe-asia fa-fw" aria-hidden="true"></i><span class='name'>定位</span>
-    
-  </header>
 
 
-  <div class='content'>
-    
-      <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><b><script>var getOSAndBrowser=function(){var os=navigator.platform;var userAgent=navigator.userAgent;var info="";var tempArray="";if(os.indexOf("Win")>-1){if(userAgent.indexOf("Windows NT 5.0")>-1){info+="Win2000"}else if(userAgent.indexOf("Windows NT 5.1")>-1){info+="WinXP"}else if(userAgent.indexOf("Windows NT 5.2")>-1){info+="Win2003"}else if(userAgent.indexOf("Windows NT 6.0")>-1){info+="WindowsVista"}else if(userAgent.indexOf("Windows NT 6.1")>-1||userAgent.indexOf("Windows 7")>-1){info+="Win7"}else if(userAgent.indexOf("Windows NT 6.2")>-1||userAgent.indexOf("Windows 8")>-1){info+="Win8"}else if(userAgent.indexOf("Windows NT 6.3")>-1||userAgent.indexOf("Windows 8.1")>-1){info+="Win8.1"}else if(userAgent.indexOf("Windows NT 10.0")>-1||userAgent.indexOf("Windows 10")>-1){info+="Win10"}else{info+="Other"}}else if(os.indexOf("Mac")>-1){info+="Mac"}else if(os.indexOf("X11")>-1){info+="Unix"}else if(os.indexOf("Linux")>-1){info+="Linux"}else{info+="Other"}info+="/";var isOpera=userAgent.indexOf("Opera")>-1;var isIE=userAgent.indexOf("compatible")>-1&&userAgent.indexOf("MSIE")>-1&&!isOpera;var isEdge=userAgent.toLowerCase().indexOf("edge")>-1&&!isIE;var isIE11=(userAgent.toLowerCase().indexOf("trident")>-1&&userAgent.indexOf("rv")>-1);if(/[Ff]irefox(\/\d+\.\d+)/.test(userAgent)){tempArray=/([Ff]irefox)\/(\d+\.\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(isIE){var version="";var reIE=new RegExp("MSIE (\\d+\\.\\d+);");reIE.test(userAgent);var fIEVersion=parseFloat(RegExp["$1"]);if(fIEVersion==7){version="IE7"}else if(fIEVersion==8){version="IE8"}else if(fIEVersion==9){version="IE9"}else if(fIEVersion==10){version="IE10"}else{version="0"}info+=version}else if(isEdge){info+="Edge"}else if(isIE11){info+="IE11"}else if(/[Cc]hrome\/\d+/.test(userAgent)){tempArray=/([Cc]hrome)\/(\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(/[Vv]ersion\/\d+\.\d+\.\d+(\.\d)* *[Ss]afari/.test(userAgent)){tempArray=/[Vv]ersion\/(\d+\.\d+\.\d+)(\.\d)* *([Ss]afari)/.exec(userAgent);info+=tempArray[3]+tempArray[1]}else if(/[Oo]pera.+[Vv]ersion\/\d+\.\d+/.test(userAgent)){tempArray=/([Oo]pera).+[Vv]ersion\/(\d+)\.\d+/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else{info+="unknown"}return info};document.write("欢迎来自"+returnCitySN["cname"]+"的朋友");document.write("<br>您的 IP 是："+returnCitySN["cip"]);document.write("<br>您使用的是："+getOSAndBrowser());</script></b>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i><span class='name'>访客地图</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5stt7n27ekb&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;br=8&amp;sx=0" async="async"></script>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>57 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2019/12/04'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Fri Oct 16 2020 22:09:02 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2020-10-16 日</div>
-          
-        </div>
-        
-        <script> 
-          function timeago(dateTimeStamp) { 
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示 
-              var hour = minute * 60; 
-              var day = hour * 24; 
-              var week = day * 7; 
-              var month = day * 30; 
-              var now = new Date().getTime(); //获取当前时间毫秒 
-              var diffValue = now - dateTimeStamp; //时间差 
-              if (diffValue < 0) { 
-                  return; 
-              } 
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月 
-              var hourC = diffValue / hour; 
-              var dayC = diffValue / day; 
-              var weekC = diffValue / week; 
-              var monthC = diffValue / month; 
-              if (monthC >= 1 && monthC <= 3) { 
-                  result = " " + parseInt(monthC) + " 月前" 
-              } else if (weekC >= 1 && weekC <= 3) { 
-                  result = " " + parseInt(weekC) + " 周前" 
-              } else if (dayC >= 1 && dayC <= 6) { 
-                  result = " " + parseInt(dayC) + " 天前" 
-              } else if (hourC >= 1 && hourC <= 23) { 
-                  result = " " + parseInt(hourC) + " 小时前" 
-              } else if (minC >= 1 && minC <= 59) { 
-                  result = " " + parseInt(minC) + " 分钟前" 
-              } else if (diffValue >= 0 && diffValue <= minute) { 
-                  result = "刚刚" 
-              } else { 
-                  var datetime = new Date(); 
-                  datetime.setTime(dateTimeStamp); 
-                  var Nyear = datetime.getFullYear(); 
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1; 
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate(); 
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours(); 
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes(); 
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds(); 
-                  result = Nyear + "-" + Nmonth + "-" + Ndate 
-              } 
-              return result; 
-          } 
-          var lastUpDate = document.getElementById('last-update').innerHTML; 
-          try { 
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate)); 
-          } catch (error) { 
-            document.getElementById('last-update-show').innerHTML = '2020-10-16 日'; 
-          } 
-        </script> 
-        
-      
-    </div>
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
         
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Photoshop/" href="/categories/Photoshop/"
-            id="categoriesPhotoshop"
-            ><div class='name'>Photoshop</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E4%BA%A4%E6%8D%A2%E6%9C%BA/" href="/categories/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"
-            id="categoriesE4BAA4E68DA2E69CBA"
-            ><div class='name'>交换机</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/" href="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/"
-            id="categoriesE58D8EE4B8BAE8AEA4E8AF81"
-            ><div class='name'>华为认证</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"
-            id="categoriesE5B08FE68A80E5B7A7"
-            ><div class='name'>小技巧</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
-            id="categoriesE695B0E68DAEE5BA93"
-            ><div class='name'>数据库</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"
-            id="categoriesE69C8DE58AA1E599A8"
-            ><div class='name'>服务器</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
-            id="categoriesE7BD91E7BB9CE5AE89E585A8"
-            ><div class='name'>网络安全</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/"
-            id="categoriesE8AEA1E7AE97E69CBAE4B889E7BAA7"
-            ><div class='name'>计算机三级</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
-            id="categoriesE8AEA1E7AE97E69CBAE7BD91E7BB9C"
-            ><div class='name'>计算机网络</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/" href="/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/"
-            id="categoriesE8BDAFE4BBB6E7A0B4E8A7A3"
-            ><div class='name'>软件破解</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/" href="/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"
-            id="categoriesE9809AE4BFA1E68A80E69CAF"
-            ><div class='name'>通信技术</div><div class='badge'>(15)</div></a></li>
-        
-      </ul>
     </div>
   </section>
 

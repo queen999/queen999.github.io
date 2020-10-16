@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.imqinhao.cn/"/>
-  <updated>2020-10-16T10:41:43.974Z</updated>
+  <updated>2020-10-16T14:08:33.999Z</updated>
   <id>https://www.imqinhao.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TCP/IP简介</title>
+    <link href="https://www.imqinhao.cn/2020/10/05/linux/"/>
+    <id>https://www.imqinhao.cn/2020/10/05/linux/</id>
+    <published>2020-10-05T05:14:14.000Z</published>
+    <updated>2020-10-16T14:08:33.999Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>知识点</p><ul><li>IP 地址</li><li>域名</li><li>MAC 地址</li><li>端口号</li><li>封装和分用</li></ul><a id="more"></a><p>提到网络协议栈结构，最著名的当属 OSI 七层模型，但是 TCP/IP 协议族的结构则稍有不同，它们之间的层次结构有如图对应关系：</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/1548669082626.png" alt=""></p><p>可见 TCP/IP 被分为 4 层，每层承担的任务不一样，各层的协议的工作方式也不一样，每层封装上层数据的方式也不一样：</p><ul><li>应用层：应用程序通过这一层访问网络，常见 FTP、HTTP、DNS 和 TELNET 协议；</li><li>传输层：TCP 协议和 UDP 协议；</li><li>网络层：IP 协议，ARP、RARP 协议，ICMP 协议等；</li><li>网络接口层：是 TCP/IP 协议的基层，负责数据帧的发送和接收。</li></ul><blockquote><p>TCP/IP（Transmission Control Protocol/Internet Protocol）是传输控制协议和网络协议的简称，它定义了电子设备如何连入因特网，以及数据如何在它们之间传输的标准。</p><p>TCP/IP 不是一个协议，而是一个协议族的统称，里面包括了 IP 协议、ICMP 协议、TCP 协议、以及 http、ftp、pop3 协议等。网络中的计算机都采用这套协议族进行互联。</p></blockquote><h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><p>网络上每一个节点都必须有一个独立的 IP 地址，通常使用的 IP 地址是一个 32bit 的数字，被 <code>.</code> 分成 4 组，例如，<code>255.255.255.255</code> 就是一个 IP 地址。有了 IP 地址，用户的计算机就可以发现并连接互联网中的另外一台计算机。</p><p>在 终端输入 <code>ifconfig -a</code> 命令查看自己的 IP 地址：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig -a</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/61acdc3e0704fdf5fb97876dec817ff3-0" alt=""></p><h1 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h1><p>用 12 位数字组成的 IP 地址很难记忆，在实际应用时，用户一般不需要记住 IP 地址，互联网给每个 IP 地址起了一个别名，习惯上称作域名。</p><p>域名与计算机的 IP 地址相对应，并把这种对应关系存储在域名服务系统 DNS(Domain Name System) 中，这样用户只需记住域名就可以与指定的计算机进行通信了。</p><p>常见的域名包括 com、net 和 org 三种顶级域名后缀，除此之外每个国家还有自己国家专属的域名后缀（比如我国的域名后缀为 cn）。目前经常使用的域名诸如百度（<a href="https://www.baidu.com/" target="_blank" rel="noopener">www.baidu.com</a>）、Linux 组织（<a href="https://lwn.net/" target="_blank" rel="noopener">www.lwn.net</a>）等等。</p><p>我们可以使用命令 <code>nslookup</code> 或者 <code>ping</code> 来查看与域名相对应的 IP 地址，由于实验楼网络限制，我们可以使用 <code>ping github.com</code>（如果 <code>github</code> 也 ping 不通，那么可以使用 <code>ping labfile.oss.aliyuncs.com</code>，如果你是会员账户，那么也可以 ping 其他的域名）查看。</p><p>例如：</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201016215115.png" alt=""></p><h1 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h1><p>MAC（Media Access Control）地址，或称为物理地址、硬件地址，用来定义互联网中设备的位置。</p><p>在 TCP/IP 层次模型中，网络层管理 IP 地址，链路层则负责 MAC 地址。因此每个网络位置会有一个专属于它的 IP 地址，而每个主机会有一个专属于它 MAC 地址。</p><h1 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h1><p>IP 地址是用来发现和查找网络中的地址，但是不同程序如何互相通信呢？这就需要端口号来识别了。如果把 IP 地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是端口采用 16 比特的端口号标识，一个 IP 地址的端口可以有 65536（即：216）个之多！</p><p>服务器的默认程序一般都是通过人们所熟知的端口号来识别的。例如，对于每个 TCP/IP 实现来说，SMTP（简单邮件传输协议）服务器的 TCP 端口号都是 <code>25</code>，FTP（文件传输协议）服务器的 TCP 端口号都是 <code>21</code>，TFTP（简单文件传输协议）服务器的 UDP 端口号都是 <code>69</code>。任何 TCP/IP 实现所提供的服务都用众所周知的 <code>1－1023</code> 之间的端口号。这些人们所熟知的端口号由 Internet 端口号分配机构（Internet Assigned Numbers Authority，IANA）来管理。</p><p>常用协议对应端口号：</p><ul><li>SSH 22</li><li>FTP 20 和 21</li><li>Telnet 23</li><li>SMTP 25</li><li>TFTP 69</li><li>HTTP 80</li><li>SNMP 161</li><li>Ping 使用 ICMP，无具体端口号</li></ul><h1 id="封装和分用"><a href="#封装和分用" class="headerlink" title="封装和分用"></a>封装和分用</h1><p><strong>封装</strong>：当应用程序发送数据的时候，数据在协议层次当中自顶向下通过每一层，每一层都会对数据增加一些首部或尾部信息，这样的信息称之为协议数据单元（Protocol Data Unit，缩写为 PDU），在分层协议系统里，在指定的协议层上传送的数据单元，包含了该层的协议控制信息和用户信息。如下图所示：</p><ul><li>物理层（一层）PDU 指数据位（Bit）</li><li>数据链路层（二层）PDU 指数据帧（Frame）</li><li>网络层（三层）PDU 指数据包（Packet）</li><li>传输层（四层）PDU 指数据段（Segment）</li><li>第五层以上为数据（data）</li></ul><p><img src="https://dn-simplecloud.shiyanlou.com/uid/8797/1548670748600.png" alt=""></p><p><strong>分用</strong>：当主机收到一个数据帧时，数据就从协议层底向上升，通过每一层时，检查并去掉对应层次的报文首部或尾部，与封装过程正好相反。</p><h1 id="RFC"><a href="#RFC" class="headerlink" title="RFC"></a>RFC</h1><p>RFC（Request for Comment）文档是所有以太网协议的正式标准，并在其官网上面公布，由 IETF 标准协会制定。大量的 RFC 并不是正式的标准，出版的目的只是为了提供信息。RFC 的篇幅不一，从几页到几百页不等。每一种协议都用一个数字来标识，如 RFC 3720 是 iSCSI 协议的标准，数字越大意味着 RFC 的内容越新或者是对应的协议（标准）出现的比较晚。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;知识点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IP 地址&lt;/li&gt;
+&lt;li&gt;域名&lt;/li&gt;
+&lt;li&gt;MAC 地址&lt;/li&gt;
+&lt;li&gt;端口号&lt;/li&gt;
+&lt;li&gt;封装和分用&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://www.imqinhao.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>5G网络优化</title>
@@ -443,34 +471,6 @@
     <summary type="html">
     
       &lt;p&gt;多进多出（MIMO）是为极大地提高信道容量，在发送端和接收端都使用多根天线，在收发之间构成多个信道的天线系统。MIMO系统的一个明显特点就是具有极高的频谱利用效率，在对现有频谱资源充分利用的基础上通过利用空间资源来获取可靠性与有效性两方面增益，其代价是增加了发送端与接收端的处理复杂度。大规模MIMO技术采用大量天线来服务数量相对较少的用户，可以有效提高频谱效率。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="通信技术" scheme="https://www.imqinhao.cn/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="通信技术" scheme="https://www.imqinhao.cn/tags/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="无线技术" scheme="https://www.imqinhao.cn/tags/%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="通信原理" scheme="https://www.imqinhao.cn/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OFDMA</title>
-    <link href="https://www.imqinhao.cn/2020/04/25/OFDMA/"/>
-    <id>https://www.imqinhao.cn/2020/04/25/OFDMA/</id>
-    <published>2020-04-25T09:13:00.000Z</published>
-    <updated>2020-04-25T09:32:11.755Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>TD-LTE核心技术</p><p>频分多址技术之OFDMA/SC-FDMA</p><a id="more"></a><h2 id="OFDMA的优点"><a href="#OFDMA的优点" class="headerlink" title="OFDMA的优点"></a>OFDMA的优点</h2><ul><li>时域上抵抗多径衰落</li><li>频域上抵抗频率选择性衰落，简化接收机的信道均衡操作</li></ul><br><div class="note success"><p>码元的长度越长，符号间的干扰（ISI）就越低。</p></div><div class="note success"><p>码元的长度越长，码元速率就越低。</p></div><br><h2 id="OFDM循环前缀CP"><a href="#OFDM循环前缀CP" class="headerlink" title="OFDM循环前缀CP"></a>OFDM循环前缀CP</h2><p>CP能够克服时延拓展，最大限度消除符号间干扰（ISI）。CP越长，能够抵抗的多径时延越长，但相应的，系统开销也越大。</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200425155542.png" alt=""></p><div class="note success"><p>I指的是OFDM符号的编码</p></div><br><div class="note success"><p>LTE系统中最小的时间单位叫作基本的时间单位。</p></div><div class="note success"><p>一个子帧可以划分成14个OFDM符号，14个OFDM符号可以划分成2个时隙，1个时隙就是7个OFDM符号</p></div><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200425161403.png" alt=""></p><br><p>CP使一个符号周期内因多径产生的波形为完整的正弦波，因此不同子载波对应的时域信号与其多径积分总为0，消除载波间干扰（ICI）。</p><br><h2 id="OFDM定义"><a href="#OFDM定义" class="headerlink" title="OFDM定义"></a>OFDM定义</h2><div class="note success"><p>子载波间的正交性</p></div><div class="note success"><p>上行采用SC-FDMA技术</p></div><h2 id="OFDM基本原理"><a href="#OFDM基本原理" class="headerlink" title="OFDM基本原理"></a>OFDM基本原理</h2><div class="note success"><p>高速串行转低速并行</p></div><div class="note success"><p>傅里叶逆变换</p></div><h2 id="循环前缀"><a href="#循环前缀" class="headerlink" title="循环前缀"></a>循环前缀</h2><div class="note success"><p>目的：降低ISI和ICI</p></div><div class="note success"><p>分类：常规CP和扩展CP</p></div><h2 id="OFDM和CDMA的对比"><a href="#OFDM和CDMA的对比" class="headerlink" title="OFDM和CDMA的对比"></a>OFDM和CDMA的对比</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200425162921.png" alt=""></p><h3 id="OFDM缺点"><a href="#OFDM缺点" class="headerlink" title="OFDM缺点"></a>OFDM缺点</h3><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200425163141.png" alt=""></p><h2 id="SC-FDMA"><a href="#SC-FDMA" class="headerlink" title="SC-FDMA"></a>SC-FDMA</h2><div class="note success"><p>单载波频分多址接入（Single Carrier Frequency Division Multiple Access）</p></div><br><p>SC-FDMA类似于OFDMA，但SC-FDMA可以降低PAPR（峰均比）。</p><h2 id="OFDMA-VS-SC-FDMA"><a href="#OFDMA-VS-SC-FDMA" class="headerlink" title="OFDMA  VS  SC-FDMA"></a>OFDMA  VS  SC-FDMA</h2><ul><li>OFDMA导致<kbd>高PAPR</kbd>，影响UE的成本和电池寿命</li><li>SC-FDMA采用<kbd>单载波技术</kbd>，<kbd>峰均比（PAPR）低</kbd>，有效提高RF功率放大器的效率，降低终端成本和耗电量</li></ul><h2 id="下行多址方式-OFDMA"><a href="#下行多址方式-OFDMA" class="headerlink" title="下行多址方式-OFDMA"></a>下行多址方式-OFDMA</h2><p>集中式：连续RB分给一个用户</p><details ><summary> <p>点击查看优点</p> </summary>              <div class='content'>              <div class="note success"><p>优点：调度开销小</p></div>              </div>            </details><p>分布式：分配给用户的RB不连续</p><details ><summary> <p>点击查看优点</p> </summary>              <div class='content'>              <div class="note success"><p>优点：选频调度增益较大</p></div>              </div>            </details><br><p><strong>RB(Resource Block)</strong>：资源块。业务信道资源分配的资源单位，时域上为一个时隙，频域上为12个子载波。</p><p><strong>RE(Resource Element)</strong>：最小的资源单位，时域上为一个符号，频域上为一个子载波。</p><br><h2 id="上行多址方式-SC-FDMA"><a href="#上行多址方式-SC-FDMA" class="headerlink" title="上行多址方式-SC-FDMA"></a>上行多址方式-SC-FDMA</h2><p>与OFDMA相同，将传输带宽划分成一系列正交的子载波资源，将不同的子载波资源分配给不同的用户实现多址。注意不同的是：任一终端使用的子载波必须连续。</p><br><div class="note success"><p>在任一调度周期中，一个用户分得的子载波必须是连续的</p></div><br><p>上行方向上给用户分配RB要满足：<br>$$<br>RB = 2^a·3^b·5^c<br>$$</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="OFDM的缺点"><a href="#OFDM的缺点" class="headerlink" title="OFDM的缺点"></a>OFDM的缺点</h3><div class="note success"><p>高峰均比，高同步要求，同频干扰</p></div><h3 id="SC-FDMA定义"><a href="#SC-FDMA定义" class="headerlink" title="SC-FDMA定义"></a>SC-FDMA定义</h3><div class="note success"><p>目的：抗峰均比</p></div><div class="note success"><p>傅里叶表换&amp;傅里叶逆变换</p></div><h3 id="上下行资源的分配"><a href="#上下行资源的分配" class="headerlink" title="上下行资源的分配"></a>上下行资源的分配</h3><p>上行：资源集中&amp;连续RB数满足$$ RB = 2^a·3^b·5^c $$</p><p>下行：资源既可集中，也可分布</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;TD-LTE核心技术&lt;/p&gt;
-&lt;p&gt;频分多址技术之OFDMA/SC-FDMA&lt;/p&gt;
     
     </summary>
     
