@@ -5,9 +5,9 @@
   <subtitle>覃浩的博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.imqinhao.cn/"/>
+  <link href="https://www.zhengyuanyuan520.com/"/>
   <updated>2020-10-16T14:08:33.999Z</updated>
-  <id>https://www.imqinhao.cn/</id>
+  <id>https://www.zhengyuanyuan520.com/</id>
   
   <author>
     <name>覃浩</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>TCP/IP简介</title>
-    <link href="https://www.imqinhao.cn/2020/10/05/linux/"/>
-    <id>https://www.imqinhao.cn/2020/10/05/linux/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/10/05/linux/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/10/05/linux/</id>
     <published>2020-10-05T05:14:14.000Z</published>
     <updated>2020-10-16T14:08:33.999Z</updated>
     
@@ -39,15 +39,15 @@
     </summary>
     
     
-      <category term="计算机网络" scheme="https://www.imqinhao.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="https://www.zhengyuanyuan520.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
     
   </entry>
   
   <entry>
     <title>5G网络优化</title>
-    <link href="https://www.imqinhao.cn/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/"/>
-    <id>https://www.imqinhao.cn/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</id>
     <published>2020-10-01T02:00:00.000Z</published>
     <updated>2020-10-16T10:41:43.974Z</updated>
     
@@ -63,15 +63,15 @@
     </summary>
     
     
-      <category term="通信技术" scheme="https://www.imqinhao.cn/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
+      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>系统信息相关命令</title>
-    <link href="https://www.imqinhao.cn/2020/08/13/system_info/"/>
-    <id>https://www.imqinhao.cn/2020/08/13/system_info/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/08/13/system_info/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/08/13/system_info/</id>
     <published>2020-08-13T12:14:14.000Z</published>
     <updated>2020-08-13T05:49:29.827Z</updated>
     
@@ -87,15 +87,15 @@
     </summary>
     
     
-      <category term="Linux" scheme="https://www.imqinhao.cn/categories/Linux/"/>
+      <category term="Linux" scheme="https://www.zhengyuanyuan520.com/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>文件和目录常用命令</title>
-    <link href="https://www.imqinhao.cn/2020/08/13/Files_and_directories/"/>
-    <id>https://www.imqinhao.cn/2020/08/13/Files_and_directories/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/08/13/Files_and_directories/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/08/13/Files_and_directories/</id>
     <published>2020-08-13T12:13:14.000Z</published>
     <updated>2020-08-13T05:45:27.553Z</updated>
     
@@ -112,15 +112,15 @@
     </summary>
     
     
-      <category term="Linux" scheme="https://www.imqinhao.cn/categories/Linux/"/>
+      <category term="Linux" scheme="https://www.zhengyuanyuan520.com/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>计算机网络学习1</title>
-    <link href="https://www.imqinhao.cn/2020/07/17/computer_Internet_1/"/>
-    <id>https://www.imqinhao.cn/2020/07/17/computer_Internet_1/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/07/17/computer_Internet_1/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/07/17/computer_Internet_1/</id>
     <published>2020-07-17T10:25:00.000Z</published>
     <updated>2020-07-17T10:22:05.825Z</updated>
     
@@ -138,15 +138,15 @@
     </summary>
     
     
-      <category term="计算机网络" scheme="https://www.imqinhao.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="https://www.zhengyuanyuan520.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
     
   </entry>
   
   <entry>
     <title>Python基础之变量进阶</title>
-    <link href="https://www.imqinhao.cn/2020/07/07/Python_variable/"/>
-    <id>https://www.imqinhao.cn/2020/07/07/Python_variable/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/07/07/Python_variable/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/07/07/Python_variable/</id>
     <published>2020-07-07T10:30:11.000Z</published>
     <updated>2020-07-07T10:54:59.447Z</updated>
     
@@ -163,15 +163,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.imqinhao.cn/categories/Python/"/>
+      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>综合应用 —— 名片管理系统</title>
-    <link href="https://www.imqinhao.cn/2020/07/07/Python_cards_manage/"/>
-    <id>https://www.imqinhao.cn/2020/07/07/Python_cards_manage/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/07/07/Python_cards_manage/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/07/07/Python_cards_manage/</id>
     <published>2020-07-07T09:20:14.000Z</published>
     <updated>2020-07-07T10:10:57.176Z</updated>
     
@@ -191,15 +191,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.imqinhao.cn/categories/Python/"/>
+      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>MySQL压缩包版安装方法</title>
-    <link href="https://www.imqinhao.cn/2020/06/13/mysql-install/"/>
-    <id>https://www.imqinhao.cn/2020/06/13/mysql-install/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/06/13/mysql-install/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/06/13/mysql-install/</id>
     <published>2020-06-13T04:00:00.000Z</published>
     <updated>2020-06-13T03:58:52.577Z</updated>
     
@@ -212,15 +212,15 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://www.imqinhao.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.zhengyuanyuan520.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
   </entry>
   
   <entry>
     <title>无法访问蓝奏云的解决方法</title>
-    <link href="https://www.imqinhao.cn/2020/06/11/lanzous/"/>
-    <id>https://www.imqinhao.cn/2020/06/11/lanzous/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/06/11/lanzous/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/06/11/lanzous/</id>
     <published>2020-06-11T12:20:11.000Z</published>
     <updated>2020-06-12T11:58:20.616Z</updated>
     
@@ -233,15 +233,15 @@
     </summary>
     
     
-      <category term="小技巧" scheme="https://www.imqinhao.cn/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+      <category term="小技巧" scheme="https://www.zhengyuanyuan520.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
     
   </entry>
   
   <entry>
     <title>政府工作报告词云示例</title>
-    <link href="https://www.imqinhao.cn/2020/06/01/Python-5/"/>
-    <id>https://www.imqinhao.cn/2020/06/01/Python-5/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/06/01/Python-5/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/06/01/Python-5/</id>
     <published>2020-06-01T05:14:20.000Z</published>
     <updated>2020-06-05T12:59:39.011Z</updated>
     
@@ -257,15 +257,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.imqinhao.cn/categories/Python/"/>
+      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>华为应用开发学习笔记</title>
-    <link href="https://www.imqinhao.cn/2020/05/29/huawei-exam-application/"/>
-    <id>https://www.imqinhao.cn/2020/05/29/huawei-exam-application/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/29/huawei-exam-application/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/29/huawei-exam-application/</id>
     <published>2020-05-29T12:13:14.000Z</published>
     <updated>2020-06-01T05:18:01.052Z</updated>
     
@@ -278,15 +278,15 @@
     </summary>
     
     
-      <category term="华为认证" scheme="https://www.imqinhao.cn/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/"/>
+      <category term="华为认证" scheme="https://www.zhengyuanyuan520.com/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/"/>
     
     
   </entry>
   
   <entry>
     <title>Python实现《三国演义》人物出场次数统计</title>
-    <link href="https://www.imqinhao.cn/2020/05/25/Python-4/"/>
-    <id>https://www.imqinhao.cn/2020/05/25/Python-4/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/25/Python-4/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/25/Python-4/</id>
     <published>2020-05-25T03:11:11.000Z</published>
     <updated>2020-05-25T03:54:04.147Z</updated>
     
@@ -299,15 +299,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.imqinhao.cn/categories/Python/"/>
+      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>七段数码管带时间倒计时效果</title>
-    <link href="https://www.imqinhao.cn/2020/05/24/Python-3/"/>
-    <id>https://www.imqinhao.cn/2020/05/24/Python-3/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/24/Python-3/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/24/Python-3/</id>
     <published>2020-05-24T03:11:11.000Z</published>
     <updated>2020-05-25T03:57:42.347Z</updated>
     
@@ -320,15 +320,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.imqinhao.cn/categories/Python/"/>
+      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>白嫖天翼云盘4T空间和1年会员</title>
-    <link href="https://www.imqinhao.cn/2020/05/23/free-get-189vip/"/>
-    <id>https://www.imqinhao.cn/2020/05/23/free-get-189vip/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/23/free-get-189vip/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/23/free-get-189vip/</id>
     <published>2020-05-23T04:00:00.000Z</published>
     <updated>2020-05-23T04:17:26.712Z</updated>
     
@@ -341,15 +341,15 @@
     </summary>
     
     
-      <category term="小技巧" scheme="https://www.imqinhao.cn/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+      <category term="小技巧" scheme="https://www.zhengyuanyuan520.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
     
   </entry>
   
   <entry>
     <title>七段数码管绘制系统时间</title>
-    <link href="https://www.imqinhao.cn/2020/05/20/python-2/"/>
-    <id>https://www.imqinhao.cn/2020/05/20/python-2/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/20/python-2/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/20/python-2/</id>
     <published>2020-05-20T12:13:14.000Z</published>
     <updated>2020-05-24T01:28:55.665Z</updated>
     
@@ -362,15 +362,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.imqinhao.cn/categories/Python/"/>
+      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>网页禁止审查元素和F12</title>
-    <link href="https://www.imqinhao.cn/2020/05/19/not-allow-F12/"/>
-    <id>https://www.imqinhao.cn/2020/05/19/not-allow-F12/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/19/not-allow-F12/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/19/not-allow-F12/</id>
     <published>2020-05-19T14:25:11.000Z</published>
     <updated>2020-05-19T14:28:00.147Z</updated>
     
@@ -383,15 +383,15 @@
     </summary>
     
     
-      <category term="小技巧" scheme="https://www.imqinhao.cn/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+      <category term="小技巧" scheme="https://www.zhengyuanyuan520.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
     
   </entry>
   
   <entry>
     <title>解决pip异常:No module named &#39;pip&#39;</title>
-    <link href="https://www.imqinhao.cn/2020/05/19/No-module-named-pip/"/>
-    <id>https://www.imqinhao.cn/2020/05/19/No-module-named-pip/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/19/No-module-named-pip/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/19/No-module-named-pip/</id>
     <published>2020-05-19T13:10:00.000Z</published>
     <updated>2020-05-19T13:14:37.534Z</updated>
     
@@ -404,15 +404,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.imqinhao.cn/categories/Python/"/>
+      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>非华为电脑使用多屏协同</title>
-    <link href="https://www.imqinhao.cn/2020/05/19/huawei-PCManager/"/>
-    <id>https://www.imqinhao.cn/2020/05/19/huawei-PCManager/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/19/huawei-PCManager/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/19/huawei-PCManager/</id>
     <published>2020-05-19T03:42:14.000Z</published>
     <updated>2020-05-19T04:10:09.386Z</updated>
     
@@ -427,15 +427,15 @@
     </summary>
     
     
-      <category term="软件破解" scheme="https://www.imqinhao.cn/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/"/>
+      <category term="软件破解" scheme="https://www.zhengyuanyuan520.com/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/"/>
     
     
   </entry>
   
   <entry>
     <title>ICIC</title>
-    <link href="https://www.imqinhao.cn/2020/05/12/ICIC/"/>
-    <id>https://www.imqinhao.cn/2020/05/12/ICIC/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/12/ICIC/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/12/ICIC/</id>
     <published>2020-05-12T06:11:21.000Z</published>
     <updated>2020-05-12T07:21:14.455Z</updated>
     
@@ -448,21 +448,21 @@
     </summary>
     
     
-      <category term="通信技术" scheme="https://www.imqinhao.cn/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
+      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="通信技术" scheme="https://www.imqinhao.cn/tags/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
+      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/tags/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="无线技术" scheme="https://www.imqinhao.cn/tags/%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF/"/>
+      <category term="无线技术" scheme="https://www.zhengyuanyuan520.com/tags/%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="通信原理" scheme="https://www.imqinhao.cn/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
+      <category term="通信原理" scheme="https://www.zhengyuanyuan520.com/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>MIMO</title>
-    <link href="https://www.imqinhao.cn/2020/05/11/MIMO/"/>
-    <id>https://www.imqinhao.cn/2020/05/11/MIMO/</id>
+    <link href="https://www.zhengyuanyuan520.com/2020/05/11/MIMO/"/>
+    <id>https://www.zhengyuanyuan520.com/2020/05/11/MIMO/</id>
     <published>2020-05-11T13:21:21.000Z</published>
     <updated>2020-05-11T13:19:16.882Z</updated>
     
@@ -475,14 +475,14 @@
     </summary>
     
     
-      <category term="通信技术" scheme="https://www.imqinhao.cn/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
+      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="通信技术" scheme="https://www.imqinhao.cn/tags/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
+      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/tags/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="无线技术" scheme="https://www.imqinhao.cn/tags/%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF/"/>
+      <category term="无线技术" scheme="https://www.zhengyuanyuan520.com/tags/%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="通信原理" scheme="https://www.imqinhao.cn/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
+      <category term="通信原理" scheme="https://www.zhengyuanyuan520.com/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
