@@ -5,9 +5,9 @@
   <subtitle>覃浩的博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://www.zhengyuanyuan520.com/"/>
-  <updated>2020-10-16T14:08:33.999Z</updated>
-  <id>https://www.zhengyuanyuan520.com/</id>
+  <link href="https://imqinhao.cn/"/>
+  <updated>2020-10-20T12:42:13.859Z</updated>
+  <id>https://imqinhao.cn/</id>
   
   <author>
     <name>覃浩</name>
@@ -17,9 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java 设计模式-1</title>
+    <link href="https://imqinhao.cn/2020/10/20/Design_patterns_1/"/>
+    <id>https://imqinhao.cn/2020/10/20/Design_patterns_1/</id>
+    <published>2020-10-20T12:40:00.000Z</published>
+    <updated>2020-10-20T12:42:13.859Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>1.设计模式原则 </p><p>2.设计模式分类 </p><p>3.常用设计模式</p><p>4.工厂模式定义</p><p>5.工厂模式类图 </p><p>6.工厂模式示例 </p><p>7.工厂模式应用</p><p>8.抽象工厂模式定义 </p><p>9.抽象工厂模式类图 </p><p>10.抽象工厂模式示例 </p><p>11.抽象工厂模式应用 </p><p>12.工厂方法模式、抽象工厂模式区别</p><a id="more"></a><h1 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h1><p>在软件工程中，设计模式是对软件设计中普遍存在的各种问题，所提出的解决方案。</p><p>换句话说，设计模式是一套被反复使用、多数人知晓的、经过分类的、代码设计的经验的总结。使用设计模式是为了可重用代码，让代码更容易被他人理解，保证代码可靠性。</p><h1 id="设计模式原则"><a href="#设计模式原则" class="headerlink" title="设计模式原则"></a>设计模式原则</h1><h2 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h2><p>开闭原则的意思是：<code>对扩展开放，对修改封闭</code>。在程序需要进行扩展的时候，不能去修改或影响原有的代码，实现一个热插拔的效果。简言之，是为了使程序的扩展性更好，易于维护和升级。想要达到这样的效果，我们需要使用接口和抽象类。</p><h2 id="里氏代换原则"><a href="#里氏代换原则" class="headerlink" title="里氏代换原则"></a>里氏代换原则</h2><p>里氏代换原则是面向对象设计的基本原则之一。 里氏代换原则中说，任何基类可以出现的地方，子类一定可以出现。里氏代换原则是继承复用的基石，只有当子类可以替换掉基类，且软件单位的功能不受到影响时，基类才能真正被复用，而且子类也能够在基类的基础上增加新的行为。里氏代换原则是对开闭原则的补充。实现开闭原则的关键步骤就是抽象化，而基类与子类的继承关系就是抽象化的具体实现，所以里氏代换原则是对实现抽象化的具体步骤的规范。</p><h2 id="依赖倒转原则"><a href="#依赖倒转原则" class="headerlink" title="依赖倒转原则"></a>依赖倒转原则</h2><p>这个原则是开闭原则的基础，核心内容：针对接口编程，高层模块不应该依赖底层模块，二者都应该依赖抽象而不依赖于具体。</p><h2 id="接口隔离原则"><a href="#接口隔离原则" class="headerlink" title="接口隔离原则"></a>接口隔离原则</h2><p>这个原则的意思是：使用多个隔离的接口，比使用单个庞大的接口要好。其目的在于降低耦合度。由此可见，其实设计模式就是从大型软件架构出发，便于升级和维护软件的设计思想。它强调低依赖、低耦合。</p><h2 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h2><p>类的职责要单一，不能将太多的职责放在一个类中。</p><p>可能有的人会觉得单一职责原则和前面的接口隔离原则很相似，其实不然。其一，单一职责原则原注重的是职责；而接口隔离原则注重对接口依赖的隔离。其二，单一职责原则主要约束的是类，其次才是接口和方法，它针对的是程序中的实现和细节；而接口隔离原则主要约束接口，主要针对抽象，针对程序整体框架的构建。</p><h2 id="最少知道原则"><a href="#最少知道原则" class="headerlink" title="最少知道原则"></a>最少知道原则</h2><p>最少知道原则也叫迪米特法则，就是说：一个实体应当尽量少的与其他实体之间发生相互作用，使得系统功能模块相对独立。</p><p>一个对象应该对其他对象保持最少的了解。类与类之间的关系越密切，耦合度越大，当一个类发生改变时，对另一个类的影响也越大。如果两个类不必彼此直接通信，那么这两个类就不应当发生直接的相互作用。如果其中一个类需要调用另一个类的某一个方法的话，可以通过第三者转发这个调用。所以在类的设计上，每一个类都应当尽量降低成员的访问权限。</p><h2 id="合成复用原则"><a href="#合成复用原则" class="headerlink" title="合成复用原则"></a>合成复用原则</h2><p>合成复用原则就是在一个新的对象里通过关联关系（组合关系、聚合关系）来使用一些已有的对象，使之成为新对象的一部分；新对象通过委派调用已有对象的方法达到复用功能的目的。简而言之，尽量多使用<code>组合/聚合</code>的方式，尽量少使用甚至不使用继承关系。</p><h1 id="设计模式分类"><a href="#设计模式分类" class="headerlink" title="设计模式分类"></a>设计模式分类</h1><p>通常来说设计模式分为三大类：</p><ul><li><strong>创建型模式</strong>，共 5 种：工厂模式、抽象工厂模式、单例模式、建造者模式、原型模式。</li><li><strong>结构型模式</strong>，共 7 种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。</li><li><strong>行为型模式</strong>，共 11 种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。</li></ul><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201020190940.png" alt=""></p><h1 id="什么是工厂模式"><a href="#什么是工厂模式" class="headerlink" title="什么是工厂模式"></a>什么是工厂模式</h1><blockquote><p>工厂模式（Factory Pattern）的意义就跟它的名字一样，在面向对象程序设计中，工厂通常是一个用来创建其他对象的对象。工厂模式根据不同的参数来实现不同的分配方案和创建对象。</p></blockquote><p>在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个<code>共同的接口</code>来指向新创建的对象。例如用工厂来创建 <code>人</code> 这个对象，如果我们需要一个男人对象，工厂就会为我们创建一个男人；如果我们需要一个女人，工厂就会为我们生产一个女人。</p><p>工厂模式通常分为：</p><ul><li>普通工厂模式</li><li>多个工厂方法模式</li><li>静态工厂方法模式</li></ul><h1 id="普通工厂模式"><a href="#普通工厂模式" class="headerlink" title="普通工厂模式"></a>普通工厂模式</h1><p>刚刚我们说到，用工厂模式来创建人。先创建一个男人，他每天都“吃饭、睡觉、打豆豆”，然后我们再创建一个女人，她每天也“吃饭、睡觉、打豆豆”。</p><p>我们以普通工厂模式为例，在 project 目录下新建一个<code>FactoryTest.java</code>。</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201020191237.png" alt=""></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二者共同的接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Human</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建实现类 Male</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Male</span> <span class="keyword">implements</span> <span class="title">Human</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Male can eat."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Male can sleep."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Male can beat."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//创建实现类 Female</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Female</span> <span class="keyword">implements</span> <span class="title">Human</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Female can eat."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Female can sleep."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Female can beat."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建普通工厂类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HumanFactory</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Human <span class="title">createHuman</span><span class="params">(String gender)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>( gender.equals(<span class="string">"male"</span>) )&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">new</span> Male();</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>( gender.equals(<span class="string">"female"</span>))&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">new</span> Female();</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"请输入正确的类型！"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 工厂测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FactoryTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        HumanFactory factory = <span class="keyword">new</span> HumanFactory();</span><br><span class="line">        Human male = factory.createHuman(<span class="string">"male"</span>);</span><br><span class="line">        male.eat();</span><br><span class="line">        male.sleep();</span><br><span class="line">        male.beat();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="编译运行"><a href="#编译运行" class="headerlink" title="编译运行"></a>编译运行</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac FactoryTest.java</span><br><span class="line">java FactoryTest</span><br></pre></td></tr></table></figure><h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201020193135.png" alt=""></p><h1 id="多个工厂方法模式"><a href="#多个工厂方法模式" class="headerlink" title="多个工厂方法模式"></a>多个工厂方法模式</h1><p>普通工厂模式就是上面那样子了，那么多个工厂方法模式又有什么不同呢？在普通工厂方法模式中，如果传递的字符串出错，则不能正确创建对象。多个工厂方法模式是提供多个工厂方法，分别创建对象。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 设计模式;</span><br><span class="line"></span><br><span class="line"><span class="comment">//两者共同的接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建实现类Male</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Male</span> <span class="keyword">implements</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Male can eat."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Male can sleep."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Male can beat."</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建实现类Female</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Female</span> <span class="keyword">implements</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Female can eat."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Female can sleep."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Female can beat."</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//多个工厂方法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HumanFactory</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> Male <span class="title">CreateMale</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> Male();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> Female <span class="title">createFemale</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> Female();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//工厂测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FactoryTest2</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">HumanFactory factory = <span class="keyword">new</span> HumanFactory();</span><br><span class="line">Human maleHuman = factory.CreateMale();</span><br><span class="line">maleHuman.eat();</span><br><span class="line">maleHuman.sleep();</span><br><span class="line">maleHuman.beat();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="编译运行-1"><a href="#编译运行-1" class="headerlink" title="编译运行"></a>编译运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac FactoryTest2.java</span><br><span class="line">java FactoryTest2</span><br></pre></td></tr></table></figure><h2 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201020194538.png" alt=""></p><h1 id="静态工厂方法模式"><a href="#静态工厂方法模式" class="headerlink" title="静态工厂方法模式"></a>静态工厂方法模式</h1><p>将上面的多个工厂方法模式里的方法置为静态的，不需要创建实例，直接调用即可。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 设计模式;</span><br><span class="line"></span><br><span class="line"><span class="comment">//两者共同的接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建实现类Male</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Male</span> <span class="keyword">implements</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Male can eat."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Male can sleep."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Male can beat."</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建实现类Female</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Female</span> <span class="keyword">implements</span> <span class="title">Human</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Female can eat."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Female can sleep."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"Female can beat."</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//多个工厂方法</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HumanFactory</span></span>&#123;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Male <span class="title">createMale</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">new</span> Male();</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Female <span class="title">createFemale</span><span class="params">()</span> </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">new</span> Female();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//工厂测试类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FactoryTest2</span> </span>&#123;</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">     Human male = HumanFactory.createMale();</span><br><span class="line">     male.eat();</span><br><span class="line">     male.sleep();</span><br><span class="line">     male.beat();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>总结：凡是出现了大量的产品需要创建，并且具有共同的接口时，可以通过工厂方法模式进行创建。在以上的三种模式中，第一种如果传入的字符串有误，不能正确创建对象，第三种相对于第二种，不需要实例化工厂类，所以，大多数情况下，我们会选用第三种——静态工厂方法模式。</p><h1 id="什么是抽象工厂模式"><a href="#什么是抽象工厂模式" class="headerlink" title="什么是抽象工厂模式"></a>什么是抽象工厂模式</h1><p>抽象工厂模式（Abstract Factory Pattern）是一种软件开发设计模式。抽象工厂模式提供了一种方式，可以将一组具有同一主题的单独的工厂封装起来。如果比较抽象工厂模式和工厂模式，我们不难发现前者只是在工厂模式之上增加了一层抽象的概念。抽象工厂是一个父类工厂，可以创建其它工厂类。所以我们也叫它 “工厂的工厂”。</p><h1 id="抽象工厂模式类图"><a href="#抽象工厂模式类图" class="headerlink" title="抽象工厂模式类图"></a>抽象工厂模式类图</h1><p>“女娲娘娘”只有一个，而我们的工厂却可以有多个，因此在这里用作例子就不合适了。作为“女娲娘娘”生产出来的男人女人们，那就让我们来当一次吃货吧。（吃的东西总可以任性多来一点）</p><p>现在，假设我们有 A、B 两个厨房。每个厨房拥有的餐具和食品都不一样，但是用户搭配使用的方式，比如刀子和苹果、杯子和牛奶等等，我们假设是一致的。</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201020200923.png" alt=""></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 抽象工厂模式;</span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象食物</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Food</span></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getFoodName</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//抽象餐具</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">TableWare</span></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getToolName</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//抽象工厂</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">KitchenFactory</span></span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> Food <span class="title">getFood</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> TableWare <span class="title">getTableWare</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体食物 Apple 的定义如下</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Apple</span> <span class="keyword">implements</span> <span class="title">Food</span></span>&#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getFoodName</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">"apple"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//具体餐具 Knife 的定义如下</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Knife</span> <span class="keyword">implements</span> <span class="title">TableWare</span></span>&#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getToolName</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">"knife"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//以具体工厂 AKitchen 为例</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AKitchen</span> <span class="keyword">implements</span> <span class="title">KitchenFactory</span></span>&#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Food <span class="title">getFood</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> Apple();</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> TableWare <span class="title">getTableWare</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> Knife();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//吃货要开吃了</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foodaholic</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">(KitchenFactory kitchenFactory)</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"A foodaholic is eating "</span> + kitchenFactory.getFood().getFoodName() + <span class="string">" with "</span> + kitchenFactory.getTableWare().getToolName());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">Foodaholic foodaholic = <span class="keyword">new</span> Foodaholic();</span><br><span class="line">KitchenFactory kitchenFactory = <span class="keyword">new</span> AKitchen();</span><br><span class="line">foodaholic.eat(kitchenFactory);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="编译运行-2"><a href="#编译运行-2" class="headerlink" title="编译运行"></a>编译运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac Foodaholic.java</span><br><span class="line">java Foodaholic</span><br></pre></td></tr></table></figure><h2 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201020203200.png" alt=""></p><p>抽象工厂模式特别适合于这样的一种产品结构：产品分为几个系列，在每个系列中，产品的布局都是类似的，在一个系列中某个位置的产品，在另一个系列中一定有一个对应的产品。这样的产品结构是存在的，这几个系列中同一位置的产品可能是互斥的，它们是针对不同客户的解决方案，每个客户都只选择其一。</p><h1 id="工厂方法模式、抽象工厂模式区别"><a href="#工厂方法模式、抽象工厂模式区别" class="headerlink" title="工厂方法模式、抽象工厂模式区别"></a>工厂方法模式、抽象工厂模式区别</h1><p>工厂方法模式、抽象工厂模式，傻傻分不清楚。</p><p>为了解释得更清楚，先介绍两个概念：</p><ul><li><strong>产品等级结构</strong>：比如一个抽象类是食物，其子类有苹果、牛奶等等，则抽象食物与具体食物名称之间构成了一个产品等级结构。食物是抽象的父类，而具体的食物名称是其子类。</li><li><strong>产品族</strong>：在抽象工厂模式中，产品族是指由同一个工厂生产的，位于不同产品等级结构中的一组产品。如 AKitchen 生产的苹果、刀子，苹果属于食物产品等级结构中，而刀子则属于餐具产品等级结构中。而 BKitchen 可能生成另一组产品，如牛奶、杯子。</li></ul><p>因此工厂方法模式、抽象工厂模式最大的区别在于：</p><p>工厂方法模式：针对的是 <strong>一个产品等级结构</strong>。</p><p>抽象工厂模式：针对 <strong>多个产品等级结构</strong>。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1.设计模式原则 &lt;/p&gt;
+&lt;p&gt;2.设计模式分类 &lt;/p&gt;
+&lt;p&gt;3.常用设计模式&lt;/p&gt;
+&lt;p&gt;4.工厂模式定义&lt;/p&gt;
+&lt;p&gt;5.工厂模式类图 &lt;/p&gt;
+&lt;p&gt;6.工厂模式示例 &lt;/p&gt;
+&lt;p&gt;7.工厂模式应用&lt;/p&gt;
+&lt;p&gt;8.抽象工厂模式定义 &lt;/p&gt;
+&lt;p&gt;9.抽象工厂模式类图 &lt;/p&gt;
+&lt;p&gt;10.抽象工厂模式示例 &lt;/p&gt;
+&lt;p&gt;11.抽象工厂模式应用 &lt;/p&gt;
+&lt;p&gt;12.工厂方法模式、抽象工厂模式区别&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://imqinhao.cn/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>TCP/IP简介</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/10/05/linux/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/10/05/linux/</id>
+    <link href="https://imqinhao.cn/2020/10/05/linux/"/>
+    <id>https://imqinhao.cn/2020/10/05/linux/</id>
     <published>2020-10-05T05:14:14.000Z</published>
     <updated>2020-10-16T14:08:33.999Z</updated>
     
@@ -39,15 +71,15 @@
     </summary>
     
     
-      <category term="计算机网络" scheme="https://www.zhengyuanyuan520.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="https://imqinhao.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
     
   </entry>
   
   <entry>
     <title>5G网络优化</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</id>
+    <link href="https://imqinhao.cn/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/"/>
+    <id>https://imqinhao.cn/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</id>
     <published>2020-10-01T02:00:00.000Z</published>
     <updated>2020-10-16T10:41:43.974Z</updated>
     
@@ -63,15 +95,15 @@
     </summary>
     
     
-      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
+      <category term="通信技术" scheme="https://imqinhao.cn/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>
   
   <entry>
     <title>系统信息相关命令</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/08/13/system_info/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/08/13/system_info/</id>
+    <link href="https://imqinhao.cn/2020/08/13/system_info/"/>
+    <id>https://imqinhao.cn/2020/08/13/system_info/</id>
     <published>2020-08-13T12:14:14.000Z</published>
     <updated>2020-08-13T05:49:29.827Z</updated>
     
@@ -87,15 +119,15 @@
     </summary>
     
     
-      <category term="Linux" scheme="https://www.zhengyuanyuan520.com/categories/Linux/"/>
+      <category term="Linux" scheme="https://imqinhao.cn/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>文件和目录常用命令</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/08/13/Files_and_directories/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/08/13/Files_and_directories/</id>
+    <link href="https://imqinhao.cn/2020/08/13/Files_and_directories/"/>
+    <id>https://imqinhao.cn/2020/08/13/Files_and_directories/</id>
     <published>2020-08-13T12:13:14.000Z</published>
     <updated>2020-08-13T05:45:27.553Z</updated>
     
@@ -112,15 +144,15 @@
     </summary>
     
     
-      <category term="Linux" scheme="https://www.zhengyuanyuan520.com/categories/Linux/"/>
+      <category term="Linux" scheme="https://imqinhao.cn/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>计算机网络学习1</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/07/17/computer_Internet_1/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/07/17/computer_Internet_1/</id>
+    <link href="https://imqinhao.cn/2020/07/17/computer_Internet_1/"/>
+    <id>https://imqinhao.cn/2020/07/17/computer_Internet_1/</id>
     <published>2020-07-17T10:25:00.000Z</published>
     <updated>2020-07-17T10:22:05.825Z</updated>
     
@@ -138,15 +170,15 @@
     </summary>
     
     
-      <category term="计算机网络" scheme="https://www.zhengyuanyuan520.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <category term="计算机网络" scheme="https://imqinhao.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
     
   </entry>
   
   <entry>
     <title>Python基础之变量进阶</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/07/07/Python_variable/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/07/07/Python_variable/</id>
+    <link href="https://imqinhao.cn/2020/07/07/Python_variable/"/>
+    <id>https://imqinhao.cn/2020/07/07/Python_variable/</id>
     <published>2020-07-07T10:30:11.000Z</published>
     <updated>2020-07-07T10:54:59.447Z</updated>
     
@@ -163,15 +195,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
+      <category term="Python" scheme="https://imqinhao.cn/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>综合应用 —— 名片管理系统</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/07/07/Python_cards_manage/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/07/07/Python_cards_manage/</id>
+    <link href="https://imqinhao.cn/2020/07/07/Python_cards_manage/"/>
+    <id>https://imqinhao.cn/2020/07/07/Python_cards_manage/</id>
     <published>2020-07-07T09:20:14.000Z</published>
     <updated>2020-07-07T10:10:57.176Z</updated>
     
@@ -191,15 +223,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
+      <category term="Python" scheme="https://imqinhao.cn/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>MySQL压缩包版安装方法</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/06/13/mysql-install/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/06/13/mysql-install/</id>
+    <link href="https://imqinhao.cn/2020/06/13/mysql-install/"/>
+    <id>https://imqinhao.cn/2020/06/13/mysql-install/</id>
     <published>2020-06-13T04:00:00.000Z</published>
     <updated>2020-06-13T03:58:52.577Z</updated>
     
@@ -212,15 +244,15 @@
     </summary>
     
     
-      <category term="数据库" scheme="https://www.zhengyuanyuan520.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://imqinhao.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
   </entry>
   
   <entry>
     <title>无法访问蓝奏云的解决方法</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/06/11/lanzous/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/06/11/lanzous/</id>
+    <link href="https://imqinhao.cn/2020/06/11/lanzous/"/>
+    <id>https://imqinhao.cn/2020/06/11/lanzous/</id>
     <published>2020-06-11T12:20:11.000Z</published>
     <updated>2020-06-12T11:58:20.616Z</updated>
     
@@ -233,15 +265,15 @@
     </summary>
     
     
-      <category term="小技巧" scheme="https://www.zhengyuanyuan520.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+      <category term="小技巧" scheme="https://imqinhao.cn/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
     
   </entry>
   
   <entry>
     <title>政府工作报告词云示例</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/06/01/Python-5/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/06/01/Python-5/</id>
+    <link href="https://imqinhao.cn/2020/06/01/Python-5/"/>
+    <id>https://imqinhao.cn/2020/06/01/Python-5/</id>
     <published>2020-06-01T05:14:20.000Z</published>
     <updated>2020-06-05T12:59:39.011Z</updated>
     
@@ -257,15 +289,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
+      <category term="Python" scheme="https://imqinhao.cn/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>华为应用开发学习笔记</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/29/huawei-exam-application/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/29/huawei-exam-application/</id>
+    <link href="https://imqinhao.cn/2020/05/29/huawei-exam-application/"/>
+    <id>https://imqinhao.cn/2020/05/29/huawei-exam-application/</id>
     <published>2020-05-29T12:13:14.000Z</published>
     <updated>2020-06-01T05:18:01.052Z</updated>
     
@@ -278,15 +310,15 @@
     </summary>
     
     
-      <category term="华为认证" scheme="https://www.zhengyuanyuan520.com/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/"/>
+      <category term="华为认证" scheme="https://imqinhao.cn/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/"/>
     
     
   </entry>
   
   <entry>
     <title>Python实现《三国演义》人物出场次数统计</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/25/Python-4/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/25/Python-4/</id>
+    <link href="https://imqinhao.cn/2020/05/25/Python-4/"/>
+    <id>https://imqinhao.cn/2020/05/25/Python-4/</id>
     <published>2020-05-25T03:11:11.000Z</published>
     <updated>2020-05-25T03:54:04.147Z</updated>
     
@@ -299,15 +331,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
+      <category term="Python" scheme="https://imqinhao.cn/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>七段数码管带时间倒计时效果</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/24/Python-3/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/24/Python-3/</id>
+    <link href="https://imqinhao.cn/2020/05/24/Python-3/"/>
+    <id>https://imqinhao.cn/2020/05/24/Python-3/</id>
     <published>2020-05-24T03:11:11.000Z</published>
     <updated>2020-05-25T03:57:42.347Z</updated>
     
@@ -320,15 +352,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
+      <category term="Python" scheme="https://imqinhao.cn/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>白嫖天翼云盘4T空间和1年会员</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/23/free-get-189vip/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/23/free-get-189vip/</id>
+    <link href="https://imqinhao.cn/2020/05/23/free-get-189vip/"/>
+    <id>https://imqinhao.cn/2020/05/23/free-get-189vip/</id>
     <published>2020-05-23T04:00:00.000Z</published>
     <updated>2020-05-23T04:17:26.712Z</updated>
     
@@ -341,15 +373,15 @@
     </summary>
     
     
-      <category term="小技巧" scheme="https://www.zhengyuanyuan520.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+      <category term="小技巧" scheme="https://imqinhao.cn/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
     
   </entry>
   
   <entry>
     <title>七段数码管绘制系统时间</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/20/python-2/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/20/python-2/</id>
+    <link href="https://imqinhao.cn/2020/05/20/python-2/"/>
+    <id>https://imqinhao.cn/2020/05/20/python-2/</id>
     <published>2020-05-20T12:13:14.000Z</published>
     <updated>2020-05-24T01:28:55.665Z</updated>
     
@@ -362,15 +394,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
+      <category term="Python" scheme="https://imqinhao.cn/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>网页禁止审查元素和F12</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/19/not-allow-F12/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/19/not-allow-F12/</id>
+    <link href="https://imqinhao.cn/2020/05/19/not-allow-F12/"/>
+    <id>https://imqinhao.cn/2020/05/19/not-allow-F12/</id>
     <published>2020-05-19T14:25:11.000Z</published>
     <updated>2020-05-19T14:28:00.147Z</updated>
     
@@ -383,15 +415,15 @@
     </summary>
     
     
-      <category term="小技巧" scheme="https://www.zhengyuanyuan520.com/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+      <category term="小技巧" scheme="https://imqinhao.cn/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
     
     
   </entry>
   
   <entry>
     <title>解决pip异常:No module named &#39;pip&#39;</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/19/No-module-named-pip/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/19/No-module-named-pip/</id>
+    <link href="https://imqinhao.cn/2020/05/19/No-module-named-pip/"/>
+    <id>https://imqinhao.cn/2020/05/19/No-module-named-pip/</id>
     <published>2020-05-19T13:10:00.000Z</published>
     <updated>2020-05-19T13:14:37.534Z</updated>
     
@@ -404,15 +436,15 @@
     </summary>
     
     
-      <category term="Python" scheme="https://www.zhengyuanyuan520.com/categories/Python/"/>
+      <category term="Python" scheme="https://imqinhao.cn/categories/Python/"/>
     
     
   </entry>
   
   <entry>
     <title>非华为电脑使用多屏协同</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/19/huawei-PCManager/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/19/huawei-PCManager/</id>
+    <link href="https://imqinhao.cn/2020/05/19/huawei-PCManager/"/>
+    <id>https://imqinhao.cn/2020/05/19/huawei-PCManager/</id>
     <published>2020-05-19T03:42:14.000Z</published>
     <updated>2020-05-19T04:10:09.386Z</updated>
     
@@ -427,15 +459,15 @@
     </summary>
     
     
-      <category term="软件破解" scheme="https://www.zhengyuanyuan520.com/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/"/>
+      <category term="软件破解" scheme="https://imqinhao.cn/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/"/>
     
     
   </entry>
   
   <entry>
     <title>ICIC</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/12/ICIC/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/12/ICIC/</id>
+    <link href="https://imqinhao.cn/2020/05/12/ICIC/"/>
+    <id>https://imqinhao.cn/2020/05/12/ICIC/</id>
     <published>2020-05-12T06:11:21.000Z</published>
     <updated>2020-05-12T07:21:14.455Z</updated>
     
@@ -448,41 +480,14 @@
     </summary>
     
     
-      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
+      <category term="通信技术" scheme="https://imqinhao.cn/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/tags/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
+      <category term="通信技术" scheme="https://imqinhao.cn/tags/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="无线技术" scheme="https://www.zhengyuanyuan520.com/tags/%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF/"/>
+      <category term="无线技术" scheme="https://imqinhao.cn/tags/%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="通信原理" scheme="https://www.zhengyuanyuan520.com/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MIMO</title>
-    <link href="https://www.zhengyuanyuan520.com/2020/05/11/MIMO/"/>
-    <id>https://www.zhengyuanyuan520.com/2020/05/11/MIMO/</id>
-    <published>2020-05-11T13:21:21.000Z</published>
-    <updated>2020-05-11T13:19:16.882Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>多进多出（MIMO）是为极大地提高信道容量，在发送端和接收端都使用多根天线，在收发之间构成多个信道的天线系统。MIMO系统的一个明显特点就是具有极高的频谱利用效率，在对现有频谱资源充分利用的基础上通过利用空间资源来获取可靠性与有效性两方面增益，其代价是增加了发送端与接收端的处理复杂度。大规模MIMO技术采用大量天线来服务数量相对较少的用户，可以有效提高频谱效率。</p><a id="more"></a><h2 id="MIMO的定义"><a href="#MIMO的定义" class="headerlink" title="MIMO的定义"></a>MIMO的定义</h2><details ><summary> <p>Multiple Input Multiple Output，多输入多输出。</p> </summary>              <div class='content'>              <div class="note success"><p>在多个天线上分别发送多个数据流</p></div><div class="note success"><p>利用多径衰落，在不增加带宽和天线发射功率的情况下，提高信道容量及频谱利用率，或提高数据的传输质量。</p></div>              </div>            </details><h2 id="MIMO的优点"><a href="#MIMO的优点" class="headerlink" title="MIMO的优点"></a>MIMO的优点</h2><p><red><strong>MIMO多种模式带来多种增益。</strong></red></p><ul><li>分集增益</li><li>波束赋形增益</li><li>空间复用增益</li></ul><p><red><strong>频谱效率</strong></red></p><p>要求TD-LTE的下行频率速率达到5bps/Hz（Rel-10为30bps/Hz），上行频谱速率达到2.5bps/Hz（Rel-10为15bps/Hz）</p><hr><div class="note success"><p>MIMO天线收发分集：提高通信质量。</p></div><div class="note success"><p>发射分集技术提高系统下行链路性能。</p></div><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511140050.png" alt="开环模式中的STTD分集"></p><hr><div class="note success"><p>MIMO天线空间复用：提高系统容量</p></div><p>MU-MIMO：基站将占用相同时频资源的多个数据流发送给不同用户</p><p>下行同时支持SU-MIMO和MU-MIMO</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511154807.png" alt=""></p><hr><div class="note success"><p>MIMO天线波束赋形：增强抗干扰能力</p></div><p>传统的波束赋形：</p><ul><li>小间距的天线阵列，使用较多天线单元</li><li>提高峰值速率，小区覆盖，降低小区间的干扰</li></ul><hr><h2 id="LTE创新技术：双流波束赋形"><a href="#LTE创新技术：双流波束赋形" class="headerlink" title="LTE创新技术：双流波束赋形"></a>LTE创新技术：双流波束赋形</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511211824.png" alt=""></p><hr><h2 id="MIMO优点总结"><a href="#MIMO优点总结" class="headerlink" title="MIMO优点总结"></a>MIMO优点总结</h2><p>发送分集：提高可靠性，不能提升数据速率</p><p>波束赋形：降低干扰，能提升数据速率</p><p>空分复用：多个数据流传输，可提升数据速率</p><hr><h2 id="TD-LTE中MIMO的应用（PDSCH-传输方案）"><a href="#TD-LTE中MIMO的应用（PDSCH-传输方案）" class="headerlink" title="TD-LTE中MIMO的应用（PDSCH 传输方案）"></a>TD-LTE中MIMO的应用（PDSCH 传输方案）</h2><table><thead><tr><th align="center">传输模式</th><th align="left">PDSCH传输方案</th><th>优点</th><th>典型应用方案</th></tr></thead><tbody><tr><td align="center">TM1</td><td align="left">单天线传输模式</td><td>产生的CRS开销小</td><td>各类场景</td></tr><tr><td align="center">TM2</td><td align="left">发送分集</td><td>提高链路传输质量，提高小区覆盖半径</td><td>作为其他MIMO模式的回退模式</td></tr><tr><td align="center">TM3</td><td align="left">开环空间复用</td><td>提高小区平均频谱效率和峰值速率</td><td>高速移动场景</td></tr><tr><td align="center">TM4</td><td align="left">闭环空间复用</td><td>提高小区平均频谱效率和峰值速率</td><td>低速移动场景</td></tr><tr><td align="center">TM5</td><td align="left">多用户MIMO</td><td>提高小区平均频谱效率和峰值速率</td><td>密集城区</td></tr><tr><td align="center">TM6</td><td align="left">Rank=1的预编码</td><td>提高小区的覆盖</td><td>仅支持rank=1的传输</td></tr><tr><td align="center">TM7</td><td align="left">单流波束赋形</td><td>提高链路传输质量，提高小区覆盖半径</td><td>郊区、大范围覆盖场景</td></tr><tr><td align="center">TM8</td><td align="left">双流波束赋形</td><td>提高小区覆盖，提升小区中心用户吞吐量</td><td>小区中心吞吐量需求大的场景</td></tr></tbody></table><hr><h2 id="TM1：单天线端口传输"><a href="#TM1：单天线端口传输" class="headerlink" title="TM1：单天线端口传输"></a>TM1：单天线端口传输</h2><ul><li>最简单的传输方案</li><li>PDSCH使用单天线端口传输时，根据Port0上的CRS进行解调。</li></ul><div class="note success"><p>Port0上的小区专用参考信号的标识是R0。</p></div><hr><h2 id="TM2：发送分集"><a href="#TM2：发送分集" class="headerlink" title="TM2：发送分集"></a>TM2：发送分集</h2><ul><li>用于增强小区覆盖。</li><li>作为TM3/4/5/6/7的回退模式</li><li>LTE中的实现方式SFBC+FSTD。</li></ul><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511191836.png" alt=""></p><hr><h2 id="TM3：开环空间复用"><a href="#TM3：开环空间复用" class="headerlink" title="TM3：开环空间复用"></a>TM3：开环空间复用</h2><ul><li>一种大延迟（CDD）空间复用，接收端不需给发射端反馈预编码矩阵信息。</li><li>用于提高小区平均频谱效率和峰值速率。</li><li>适用于高速移动场景。</li></ul><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511192143.png" alt=""></p><hr><h2 id="TM4：闭环空间复用"><a href="#TM4：闭环空间复用" class="headerlink" title="TM4：闭环空间复用"></a>TM4：闭环空间复用</h2><ul><li>发送端需要给接收端反馈预编码矩阵信息。</li><li>用于提高小区平均频谱效率和峰值速率。</li><li>适用于低速移动场景。</li></ul><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511192325.png" alt=""></p><hr><h2 id="TM5：多用户MIMO"><a href="#TM5：多用户MIMO" class="headerlink" title="TM5：多用户MIMO"></a>TM5：多用户MIMO</h2><ul><li>只支持每个用户单层的传输，而且最大支持两层。</li><li>用于提高小区平均频谱效率和峰值速率。</li></ul><hr><h2 id="TM6：闭环RANK-1的预编码"><a href="#TM6：闭环RANK-1的预编码" class="headerlink" title="TM6：闭环RANK=1的预编码"></a>TM6：闭环RANK=1的预编码</h2><ul><li>用于增强小区覆盖。</li><li>尽可能减小承载相关的控制信令。</li><li>仅支持rank=1的传输。</li></ul><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511192647.png" alt=""></p><hr><h2 id="TM7：单流波束赋形"><a href="#TM7：单流波束赋形" class="headerlink" title="TM7：单流波束赋形"></a>TM7：单流波束赋形</h2><ul><li>PDSCH是依据port5上DRS进行解调的。</li><li>用于提高小区边缘用户的覆盖。</li><li>单流波束赋形是基于专用导频的非码本波束赋形。</li><li>主要用于TD-LTE系统。</li></ul><hr><h2 id="TM8：双流波束赋形"><a href="#TM8：双流波束赋形" class="headerlink" title="TM8：双流波束赋形"></a>TM8：双流波束赋形</h2><ul><li>双流波束赋形将波束赋形技术与空间复用技术相结合。</li><li>既提高小区边缘用户的覆盖，也可以提升小区中心用户的吞吐量。</li><li>双流波束赋形是基于专用导频的非码本波束赋形。</li><li>双流波束赋形是TD-LTE  Rel-9中的增强型技术。</li></ul><hr><h2 id="终端LTE多天线"><a href="#终端LTE多天线" class="headerlink" title="终端LTE多天线"></a>终端LTE多天线</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200511205924.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;多进多出（MIMO）是为极大地提高信道容量，在发送端和接收端都使用多根天线，在收发之间构成多个信道的天线系统。MIMO系统的一个明显特点就是具有极高的频谱利用效率，在对现有频谱资源充分利用的基础上通过利用空间资源来获取可靠性与有效性两方面增益，其代价是增加了发送端与接收端的处理复杂度。大规模MIMO技术采用大量天线来服务数量相对较少的用户，可以有效提高频谱效率。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="通信技术" scheme="https://www.zhengyuanyuan520.com/tags/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="无线技术" scheme="https://www.zhengyuanyuan520.com/tags/%E6%97%A0%E7%BA%BF%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="通信原理" scheme="https://www.zhengyuanyuan520.com/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
+      <category term="通信原理" scheme="https://imqinhao.cn/tags/%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
