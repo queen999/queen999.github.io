@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://imqinhao.cn/2020/11/01/network_security_comprehensive/</loc>
+    <lastmod>2020-11-01</lastmod>
+  </url>  <url>
     <loc>https://imqinhao.cn/2020/10/20/Design_patterns_1/</loc>
-    <lastmod>2020-10-20</lastmod>
+    <lastmod>2020-11-01</lastmod>
   </url>  <url>
     <loc>https://imqinhao.cn/2020/10/05/linux/</loc>
     <lastmod>2020-10-16</lastmod>
