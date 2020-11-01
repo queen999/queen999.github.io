@@ -18,14 +18,16 @@
   
 
   
-    <meta name="description" content="1.  网络搭建 
+    <meta name="description" content="
+网络搭建
+
 根据所给定的拓扑要求，将给定的网络设备互连，搭建物理网络。
 2. IP 地址规划
 根据要求确定所需子网的数量，每个子网的主机数量，设计适当的编址方案，填写网络地址规划表和设备地址表。
 3. 网络设备的安全配置
 根据任务书中指出的安全需求，完成数据网络安全配置。
 4 数据网络安全测试
-安全配置后...">
+安全配置后进行完...">
   
 
   <!-- feed -->
@@ -554,7 +556,9 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p><strong>1.  网络搭建</strong> </p>
+          <ol>
+<li><strong>网络搭建</strong></li>
+</ol>
 <p>根据所给定的拓扑要求，将给定的网络设备互连，搭建物理网络。</p>
 <p><strong>2. IP 地址规划</strong></p>
 <p>根据要求确定所需子网的数量，每个子网的主机数量，设计适当的编址方案，填写网络地址规划表和设备地址表。</p>
@@ -593,7 +597,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 <td>综合实训项目（姓名）</td>
 </tr>
 </tbody></table>
-<h1 id="四、网络拓扑图如下"><a href="#四、网络拓扑图如下" class="headerlink" title="四、网络拓扑图如下"></a><strong>四、网络拓扑图如下</strong></h1><p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage001.png" alt="image001"></p>
+<h1 id="四、网络拓扑图如下"><a href="#四、网络拓扑图如下" class="headerlink" title="四、网络拓扑图如下"></a><strong>四、网络拓扑图如下</strong></h1><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image001.png" alt="image001"></p>
 <h1 id="五、根据网络安全需求，进行网络安全配置"><a href="#五、根据网络安全需求，进行网络安全配置" class="headerlink" title="五、根据网络安全需求，进行网络安全配置"></a><strong>五、根据网络安全需求，进行网络安全配置</strong></h1><p>（一）基础配置</p>
 <p>1、在Packet Tracer中绘制如图所示拓扑图，模拟某公司分隔两地的总公司和分公司之间通过Internet 连接。（注意：XX为学号最后2位）</p>
 <p>2、IP地址规划和配置</p>
@@ -739,7 +743,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">R3(config)#ip route 0.0.0.0 0.0.0.0 100.1.1.2	#配置默认路由</span><br></pre></td></tr></table></figure>
 
 <p>4、测试R1和R3的公网地址间的互通性（验证Internet互通），截图如下：（注意：说明为什么）</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage008.png" alt="image008"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image008.png" alt="image008"></p>
 <blockquote>
 <p>答：可以互通，因为R1配置了默认路由，全部数据包转发给了ISP的Fa4/0端口，而R3配置了默认路由，全部数据包转发给了ISP的Fa5/0端口，最终数据包在同一个路由器的两个端口上，所以可以直接通信。</p>
 </blockquote>
@@ -750,7 +754,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">R1(config)# hostname R1						#配置ssh前必须修改主机名</span><br><span class="line">R1(config)# ip domain-name wtctx-qh			#给路由器设置域名</span><br><span class="line">R1(config)# crypto key generate rsa			#生成rsa秘钥</span><br><span class="line">R1(config)# line vty 0 15					#进入vty端口，最多15人同时在线</span><br><span class="line">R1(config-line)# transport input ssh		#启用SSH登录</span><br><span class="line">R1(config-line)# privilege level 15			#设置用户操作等级为最高级</span><br><span class="line">R1(config-line)# login local				#使用本地验证</span><br><span class="line">R1(config-line)# exit						#退出到全局模式</span><br><span class="line">R1(config)# username wtctx-qh password wtctx-qh	#创建用户名和密码</span><br><span class="line">R1(config)# enable secret wtctx-qh			#设置密文密码</span><br></pre></td></tr></table></figure>
 
 <p>3、测试PC2 SSH登录R1，截图如下：</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage012.jpg" alt="image012"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image012.jpg" alt="image012"></p>
 <p>（三）交换机端口安全配置：</p>
 <p>1、在总公司交换机上端口安全要求：</p>
 <p>（1）f0/1端口采用静态MAC地址学习方式，指定服务器0的MAC地址，端口最大MAC地址数为？违规处理方式shutdown</p>
@@ -772,19 +776,19 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 <p>在分公司无线路由器上做安全配置：</p>
 <p>1、基础安全设置：（XX为学号最后2位）</p>
 <p>1）修改无线路由器默认的管理密码为：wtctx</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage015.png" alt="image015"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image015.png" alt="image015"></p>
 <p>2）修改LAN口地址：192.168.XX+1.1/24 </p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage017.png" alt="image017"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image017.png" alt="image017"></p>
 <p>3）修改SSID：wtctx18</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage019.png" alt="image019"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image019.png" alt="image019"></p>
 <p>4）无线安全配置：</p>
 <p>   认证：WPA2-PSK</p>
 <p>   加密：AES</p>
 <p>   预共享密钥：wtctx2020</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage021.png" alt="image021"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image021.png" alt="image021"></p>
 <p>2、进一步安全配置：</p>
 <p>1）隐藏SSID</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage023.png" alt="image023"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image023.png" alt="image023"></p>
 <p>2）无线mac地址过滤</p>
 <p>  只允许图中3台无线设备laptop0、Smartphone0、Table PC0的mac地址接入，其他不允许</p>
 <table>
@@ -807,9 +811,9 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 <td>0001.C7B0.ED9E</td>
 </tr>
 </tbody></table>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage027.png" alt="image027"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image027.png" alt="image027"></p>
 <p>3、测试各无线终端与PC6的连通性，截图显示如下：</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage029.png" alt="image029"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image029.png" alt="image029"></p>
 <p>（五）GRE over IPSec VPN配置：</p>
 <p>1、在企业总公司和分公司间配置GRE over IPSec VPN (企业总公司和分公司间参数一致)，要求：</p>
 <p>（1）GRE tunnel两端地址分别为：1.1.1.1/24和1.1.1.2/24 ，tunnel编号为120</p>
@@ -823,11 +827,11 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
 <p>3、测试：</p>
 <p>总公司PC5和分公司PC6间以私有地址互访，截图如下：</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage034.png" alt="image034"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image034.png" alt="image034"></p>
 <p>4、分析GRE over Ipsec VPN的数据包</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage038.png" alt="image038"></p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage036.png" alt="image036"></p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage040.png" alt="image040"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image038.png" alt="image038"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image036.png" alt="image036"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image040.png" alt="image040"></p>
 <blockquote>
 <p>答：可以看到入站前源地址和目的地址都是私网地址，经过路由器，从出站方向可以看到添加了GRE头部，然后添加了公网地址的头部，源地址和目的地址都为公网地址，然后经过IPsec加密，最后添加了公网地址的头部进行传送。</p>
 </blockquote>
@@ -844,12 +848,12 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
 <p>3、测试：</p>
 <p>出差员工PC以VPN登录，能访问公总司PC，截图显示</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage043.png" alt="image043"></p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage045.png" alt="image045"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image043.png" alt="image043"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image045.png" alt="image045"></p>
 <p>4、分析easy VPN的数据包</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage049.png" alt="image049"></p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage047.png" alt="image047"></p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage051.png" alt="image051"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image049.png" alt="image049"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image047.png" alt="image047"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image051.png" alt="image051"></p>
 <blockquote>
 <p>答：位于公网的电脑，登录easy VPN之后会自动获取到一个我们设置的地址池地址，和位于公司总部的电脑进行通信时，首先在公网这边的路由器ISP进站源地址是分配的地址池IP，目的地址为分公司私网地址，出站后添加了ESP头部，然后添加了公网地址头。在总公司路由器进站则是将添加了私网地址头，源地址为公网电脑登录VPN分配的地址池IP，目的地址为总公司内部的私网地址。</p>
 </blockquote>
@@ -868,11 +872,11 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
 <p>4、测试：</p>
 <p>（1）公网PC能访问总公司内网服务器0的www服务，截图如下：</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage056.png" alt="image056"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image056.png" alt="image056"></p>
 <p>（2）公网PC能访问总公司内网服务器0的ftp服务，截图如下：</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage058.png" alt="image058"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image058.png" alt="image058"></p>
 <p>（3）总公司PC能访问公网服务器，截图如下：</p>
-<p><img src="E:%5CC%E7%9B%98%E6%A1%8C%E9%9D%A2%5C%E3%80%8A%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE%E4%B8%8E%E7%AE%A1%E7%90%86%E3%80%8B%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD%E4%BB%BB%E5%8A%A1%E4%B9%A6.files%5Cimage060.png" alt="image060"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image060.png" alt="image060"></p>
 
           
             <div class='article_footer'>
