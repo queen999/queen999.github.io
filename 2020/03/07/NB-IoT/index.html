@@ -2,6 +2,7 @@
 <html>
 <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/3.0.0'>
   <meta charset="utf-8">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- SEO相关 -->
   
   <!-- 渲染优化 -->
@@ -703,7 +704,6 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
   
     <meting-js
       theme='#1BCDFC'
-      autoplay='true'
       volume='0.8'
       loop='all'
       order='list'
@@ -1016,6 +1016,12 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
       input.select();
       document.execCommand('copy');
       document.body.removeChild(input);
+      swal({
+        title: '复制成功',
+        text: "文本/链接已复制，请遵守相关授权协议。",
+        icon: 'success',
+        button: "我承诺遵守",
+      });
     }
     document.execCommand('click');
   </script>
@@ -1337,7 +1343,7 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
 </script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src=""></script>
 <script>
     var clipboard = new ClipboardJS('.btn-copy', {
         target: function (trigger) {
@@ -1349,6 +1355,7 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
         timelag = window.setTimeout(callback, seconds)
     }
     function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
         var copyHtml = '';
         copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
         copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
@@ -1356,6 +1363,11 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
+            $.message({
+            title: '复制成功',
+            message: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+        });
             let $btn = $(e.trigger);
             $btn.addClass('copied');
             let $icon = $($btn.find('i'));
@@ -1415,6 +1427,7 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
   let APlayerController = new Object();
   APlayerController.id = '5190090137';  // 设定全局音乐播放ID
   APlayerController.volume = '0.8';
+  APlayerController.autoPlay = 'true';
 </script>
 
   
@@ -1435,7 +1448,8 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
 
 
 
-  
+  <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script>
+
   
 <script src="/js/valine.js"></script>
 
@@ -1501,8 +1515,83 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
     })
   }
 
+   
+  function newcomment() {
+ 
+ function queryLeanCloud(k) {
+   let root = this;
+   let len = arguments.length;
+   if (len == 1) {
+     let notExist = new AV.Query("Comment");
+     notExist.doesNotExist('rid');
+     let isEmpty = new AV.Query("Comment");
+     isEmpty.equalTo('rid', '');
+     let q = AV.Query.or(notExist, isEmpty);
+     if (k === '*') q.exists('url');
+     else q.equalTo('url', decodeURI(k));
+     q.addDescending('createdAt');
+     q.addDescending('insertedAt');
+     return q;
+   } else {
+     let ids = JSON.stringify(arguments[1]).replace(/(\[|\])/g, '');
+     let cql = `select * from ${root['config']['clazzName']} where rid in (${ids}) order by -createdAt,-createdAt`;
+     return AV.Query.doCloudQuery(cql)
+   }
+ }
+ var valine = new Valine({
+   el: '#valine_container_ba（因为主题已经有valine的这些参数了，这里随意填都行）',
+   app_id: 'BjvSh3vMNuh6WyEVfUX5NGvD-gzGzoHsz',
+   app_key: 'tvRQuJAWPHtA7Xpddprw1wa8',
+   placeholder: '',
+   serverURLs: 'api.imqinhao.cn'
+ });
+
+ //判断博主，heson改为自己的昵称
+ function bozhu(e){
+     if (e == "heson"){
+         nick = e + '[覃浩]'
+         return nick;
+     } else {
+       return e
+     }
+ }
+
+//判断网址
+function wangzhi(e){
+     http = e.slice(0,4)
+     https = e.slice(0,5)
+     if (http == "http" || https == "https" ){
+          return e
+     } else if (e == "" || e == null || e == undefined){
+       return e
+     } else {
+       e = 'http://'+ e
+       return e
+     }
+ }
+
+ //查询评论
+ valine.Q('*').limit(7).find().then(function (comments) {
+   var hotComments = $("#hot-comments");
+   for (var i = 0; i < comments.length; i++) {
+     if (i === 0) {
+       console.log(comments[0]);
+     }
+     var nick = bozhu(comments[i]._serverData.nick);
+     var content = comments[i]._serverData.comment;
+     var newcontent = content.substring(0, 50).replace(/<[^>]+>/g,"");
+     var url = comments[i]._serverData.url;
+     var link = wangzhi(comments[i]._serverData.link);
+     var updatedAt = timeago(comments[i].updatedAt);
+     var commentId = '#' + comments[i].id;
+     hotComments.append('<div class="card-comment-item"><div class="item-header-text"><a href="'+ link +'" target="_blank" rel="nofollow noopener noreferrer" class="newcomment" >' + nick + '</a>&nbsp;发表于' + updatedAt + '</div><div class="item-text"><a href="' + url + commentId +'"  rel="nofollow" style="color:#717171" class="comments-detail" >' + newcontent + '</a></div></div>');
+   }
+ });
+};
+
   $(function () {
     pjax_valine();
+    newcomment();
   });
 </script>
 
@@ -1657,6 +1746,7 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
         
         
           pjax_valine();
+          newcomment();
         
         
         
@@ -1676,4 +1766,5 @@ IP地址1互联网协议地址（Internet Protocol Address），缩写为IP地�
 
     
   </div>
-<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+</body>
+</html>
