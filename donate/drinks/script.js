@@ -16,10 +16,9 @@ var PayPalLink  =   "https://www.paypal.me/kelecn";
 $('#paypal-donate>a').href = PayPalLink;
 $('#github-box>a').href = GithubLink;
 var qrcodes = {
-    'btc_donate'	:	'../simple/images/BTCQR.png',	// 二维码路径
-    'alipay_donate'	:	'../simple/images/AliPayQR.png',	// 支付宝二维码
-    'alipay_donate_link'   :   'https://qr.alipay.com/fkx05422rnstyh9yihg7u78',   // 支付宝二维码上的链接，必须换成自己的连接！！！手机点击会自动跳转到支付宝。
-    'wechat_donate'	:	'../simple/images/WeChanSQ.png'
+    'alipay_donate'	:	'https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/alipay.png',	// 支付宝二维码
+    'alipay_donate_link'   :   'https://qr.alipay.com/fkx10880vpnfqvmp47irlee',   // 支付宝二维码上的链接，必须换成自己的连接！！！手机点击会自动跳转到支付宝。
+    'wechat_donate'	:	'https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/Wechat.png'
 };
 
 var drinks_an = new Object();

@@ -465,7 +465,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         
           
   <h1 class="title">
-    <a href="/donate/sponsor-page-master/drinks/index.html">
+    <a href="/donate/simple/index.html">
       2021年3月8日
     </a>
   </h1>
@@ -511,9 +511,9 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
               
 <div class="new-meta-item comments-count">
   
-  <a href="/donate/sponsor-page-master/drinks/#comments">
+  <a href="/donate/simple/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/donate/sponsor-page-master/drinks/">0</span>
+    <span class="valine-comment-count" data-xid="/donate/simple/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -537,39 +537,32 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
           
           
           <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sponsor</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+	<meta charset="UTF-8">
+	<title>Sponsor-Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" /><!--禁止缩放-->
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+	<!-- clipboard.js 是 JS 复制文本的库 -->
+	<script src="script.js"></script>
 <link rel="alternate" href="/atom.xml" title="覃浩的博客" type="application/atom+xml">
 </head>
 <body>
-    <section id="drinks-box">
-        <section id="drinks-box-s" class="drinks-button left-100">
-            <div id="drinks-icons" class="left-100 tr3">
-                <div id="coffee-donate" class="icon-donate"><img src="images/coffee.png" alt="coffee" data-creative
-                    ="https://www.zcool.com.cn/work/ZMjQ3NTE2MA==.html"></div>
-            </div>
-            <div id="drinks-button-box" class="tr3 left-100">
-                <div id="drinks-button-bg" class="left-100"></div>
-                <div id="github-box"><a href="https://github.com/kelecn/sponsor-page/" target="_blank">Github</a></div>
-                <ul id="donate-buttons" class="list tr3">
-                    <li id="paypal_donate"><a href="https://www.paypal.me/kelecn" target="_blank">Paypal</a></li>
-                    <li id="btc_donate" class="donate-button">Bitcoin</li>
-                    <li id="alipay_donate" class="donate-button">AliPay</li>
-                    <li id="wechat_donate" class="donate-button">WeChat</li>
-                </ul>
-            </div>
-            <div id="drinks-qrcodes" class="left-100 tr3">
-                <div id="drinks-qrcode"></div>
-            </div>
-        </section>
-    </section>
+	<a id="github" href="https://github.com/kelecn/sponsor-page" target="_blank" class="pos-f tr3" title="Github"></a>
+	<div id="DonateText" class="tr3">Sponsor</div>
+	<ul id="donateBox" class="list pos-f tr3">
+		<li id="PayPal"><a href="https://www.paypal.me/kelecn" target="_blank">PayPal</a></li>
+		<li id="BTC" data-footnote="感谢支持！！！"><button id="BTCBn"  data-clipboard-target="#btc-key" alt="十分感谢！">Bitcoin</button></li>
+		<li id="AliPay">AliPay</li>
+		<li id="WeChat">WeChat</li>
+	</ul>
+	<div id="QRBox" class="pos-f left-100">
+		<div id="MainBox"></div>
+	</div>
+	<!-- Bitcoin 账号 -->
+	<input id="btc-key" type="text" value="感谢支持！https://kelecn.top/" readonly="readonly">
 </body>
 </html>
 
@@ -624,14 +617,6 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
 
 <!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-</blockquote>
-</div>
-//上面用于定位，下面为新添加的，对应修改src即可，要是已经部署到Github Pages，直接使用对应链接即可，要是想放在博客项目中，可往下看
-<div class='donate'>
-<iframe src="https://kelecn.top/donate/drinks" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
-</div>
 
 </div>
 <aside class='l_side'>
