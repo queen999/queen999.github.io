@@ -99,7 +99,6 @@ a{
 }
 #donateBox>#BTC {
 	background-image: url(images/bitcoin.svg);
-	line-height: 28px;
 }
 #donateBox>#BTC:hover {
 	overflow: visible;
