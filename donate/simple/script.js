@@ -1,9 +1,8 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>jQuery(document).ready(function() {
+jQuery(document).ready(function() {
 	var QRBox	=	$('#QRBox');
 	var MainBox	=	$('#MainBox');
-	var BTCQR	=	'images/BTCQR.png';	// 二维码路径
-	var AliPayQR	=	'images/AliPayQR.png';
-	var WeChanQR	=	'images/WeChanSQ.png';
+	var AliPayQR	=	'https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/alipay.png';
+	var WeChanQR	=	'https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/Wechat.png';
 
 	
 
