@@ -3618,6 +3618,40 @@ div.gallery.stretch>p img {
 #archive-page .archive .all-tags ul li:hover span {
   background: #ffeee8;
 }
+h1 {
+  font-weight: bold;
+  text-align: left;
+  color: #444;
+  margin-top: 48px;
+}
+h2 {
+  font-weight: bold;
+  text-align: left;
+  color: #ad2121;
+  margin-top: 48px;
+}
+h3 {
+  font-weight: bold;
+  text-align: left;
+  color: #0028bb;
+  margin-top: 24px;
+}
+h4 {
+  font-weight: bold;
+  text-align: left;
+  color: #ad9521;
+  margin-top: 16px;
+}
+h5 {
+  font-weight: bold;
+  color: #444;
+  margin-top: 0.6rem;
+}
+h6 {
+  font-weight: bold;
+  color: #444;
+  margin-top: 0.6rem;
+}
 .article a:not([class]) {
   text-decoration: underline;
   transition: all 0.1s ease;
@@ -3703,17 +3737,17 @@ div.gallery.stretch>p img {
 }
 .article h2 {
   text-align: left;
-  color: #444;
+  color: #ad2121;
   margin-top: 48px;
 }
 .article h3 {
   text-align: left;
-  color: #444;
+  color: #0028bb;
   margin-top: 24px;
 }
 .article h4 {
   text-align: left;
-  color: #444;
+  color: #ad9521;
   margin-top: 16px;
 }
 .article h5 {
