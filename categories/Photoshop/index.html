@@ -961,7 +961,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Mon Mar 08 2021 17:15:30 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update" style="display: none;">Mon Mar 08 2021 17:52:52 GMT+0800 (GMT+08:00)</div>
             <div id="last-update-show">2021-03-08 日</div>
           
         </div>
@@ -1796,7 +1796,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 </script>
 
 
-  <script src=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
     var clipboard = new ClipboardJS('.btn-copy', {
         target: function (trigger) {
@@ -1808,7 +1808,6 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         timelag = window.setTimeout(callback, seconds)
     }
     function pjax_initCopyCode() {
-		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
         var copyHtml = '';
         copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
         copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
@@ -1816,11 +1815,12 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
-            $.message({
-            title: '复制成功',
-            message: "代码已复制，请遵守相关授权协议。",
-            type: 'success'
-        });
+            swal({
+                title: '复制成功',
+                text: "代码已复制，请遵守相关授权协议。",
+                icon: 'success',
+                button: "我承诺遵守",
+            });
             let $btn = $(e.trigger);
             $btn.addClass('copied');
             let $icon = $($btn.find('i'));
