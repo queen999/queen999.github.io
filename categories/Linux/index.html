@@ -2,7 +2,6 @@
 <html>
 <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/3.0.0'>
   <meta charset="utf-8">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- SEO相关 -->
   
   <!-- 渲染优化 -->
@@ -1259,8 +1258,8 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Fri Mar 12 2021 19:27:32 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2021-03-12 日</div>
+            <div id="last-update" style="display: none;">Sun Mar 14 2021 12:11:21 GMT+0800 (GMT+08:00)</div>
+            <div id="last-update-show">2021-03-14 日</div>
           
         </div>
         
@@ -1310,7 +1309,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
           try { 
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate)); 
           } catch (error) { 
-            document.getElementById('last-update-show').innerHTML = '2021-03-12 日'; 
+            document.getElementById('last-update-show').innerHTML = '2021-03-14 日'; 
           } 
         </script> 
         
@@ -1731,8 +1730,8 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       if (href.length == 0) {
         // 选中文本
         if (window.getSelection().toString()) {
-          copyText.style.display = 'block';
-          hrText.style.display = 'block';
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
         }
       }
 
@@ -1787,12 +1786,11 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       input.select();
       document.execCommand('copy');
       document.body.removeChild(input);
-      swal({
-        title: '复制成功',
-        text: "文本/链接已复制，请遵守相关授权协议。",
-        icon: 'success',
-        button: "我承诺遵守",
-      });
+      $.message({
+            title: '复制成功',
+            message: "文本/链接已复制，请遵守相关授权协议。",
+            type: 'success'
+        });
     }
     document.execCommand('click');
   </script>
@@ -2133,11 +2131,10 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
-            swal({
-                title: '复制成功',
-                text: "代码已复制，请遵守相关授权协议。",
-                icon: 'success',
-                button: "我承诺遵守",
+            $.message({
+            title: '复制成功',
+            message: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
             });
             let $btn = $(e.trigger);
             $btn.addClass('copied');
@@ -2146,6 +2143,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
             $icon.addClass('fa-check-circle');
             let $span = $($btn.find('span'));
             $span[0].innerText = 'COPIED';
+
             wait(function () {
                 $icon.removeClass('fa-check-circle');
                 $icon.addClass('fa-copy');

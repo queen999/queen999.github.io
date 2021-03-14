@@ -2,7 +2,6 @@
 <html>
 <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/3.0.0'>
   <meta charset="utf-8">
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- SEO相关 -->
   
   <!-- 渲染优化 -->
@@ -1050,8 +1049,8 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       if (href.length == 0) {
         // 选中文本
         if (window.getSelection().toString()) {
-          copyText.style.display = 'block';
-          hrText.style.display = 'block';
+            copyText.style.display = 'block';
+            hrText.style.display = 'block';
         }
       }
 
@@ -1106,12 +1105,11 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       input.select();
       document.execCommand('copy');
       document.body.removeChild(input);
-      swal({
-        title: '复制成功',
-        text: "文本/链接已复制，请遵守相关授权协议。",
-        icon: 'success',
-        button: "我承诺遵守",
-      });
+      $.message({
+            title: '复制成功',
+            message: "文本/链接已复制，请遵守相关授权协议。",
+            type: 'success'
+        });
     }
     document.execCommand('click');
   </script>
@@ -1452,11 +1450,10 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         $(".highlight .code pre").before(copyHtml);
         $(".article pre code").before(copyHtml);
         clipboard.off('success').on('success', function (e) {
-            swal({
-                title: '复制成功',
-                text: "代码已复制，请遵守相关授权协议。",
-                icon: 'success',
-                button: "我承诺遵守",
+            $.message({
+            title: '复制成功',
+            message: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
             });
             let $btn = $(e.trigger);
             $btn.addClass('copied');
@@ -1465,6 +1462,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
             $icon.addClass('fa-check-circle');
             let $span = $($btn.find('span'));
             $span[0].innerText = 'COPIED';
+
             wait(function () {
                 $icon.removeClass('fa-check-circle');
                 $icon.addClass('fa-copy');
