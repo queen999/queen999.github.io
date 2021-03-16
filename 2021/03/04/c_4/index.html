@@ -14,9 +14,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/12 - 覃浩的博客</title>
+  <title>顺序结构 - 覃浩的博客</title>
   
 
+  
+    <meta name="description" content="顺序结构编程练习题">
   
 
   <!-- feed -->
@@ -347,7 +349,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
   
   
     <div class="cover-wrapper">
-      <div class='cover ' style="display: none;">
+      <div class='cover post' style="display: none;">
         <div class='cover-bg lazyload placeholder' data-bg=""></div>
         <div class='cover-body'>
   <div class='a'>
@@ -415,8 +417,8 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">顺序结构</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path">none</div>
   <div id="pjax-comment-placeholder">none</div>
@@ -425,15 +427,15 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("blog" == "none") { // 移除封面
+  if ("none" == "none") { // 移除封面
     document.getElementsByClassName('cover')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("blog" == "blog") { // 半屏
+    if ("none" == "blog") { // 半屏
       document.getElementsByClassName('cover')[0].classList.remove("full");
       document.getElementsByClassName('cover')[0].classList.add("half");
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("blog" == "docs") { // 全屏
+    } else if ("none" == "docs") { // 全屏
       document.getElementsByClassName('cover')[0].classList.remove("half");
       document.getElementsByClassName('cover')[0].classList.add("full");
       document.getElementsByClassName('scroll-down')[0].style.display = "";
@@ -448,22 +450,11 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -474,11 +465,11 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/12/15/C_basic/">
-      C语言复习笔记
+  <h1 class="title">
+    <a href="/2021/03/04/c_4/">
+      顺序结构
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -498,16 +489,6 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
             
           
             
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月15日</p>
-  </a>
-</div>
-
-            
-          
-            
               
   
   <div class='new-meta-item category'>
@@ -521,17 +502,27 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
             
           
             
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年3月4日</p>
+  </a>
+</div>
+
+            
+          
+            
               
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：10.8k字</p>
+      <p>字数：1.4k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：51分钟</p>
+      <p>时长：5分钟</p>
     </a>
   </div>
 
@@ -542,18 +533,13 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/12/15/C_basic/#comments">
+  <a href="/2021/03/04/c_4/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/12/15/C_basic/">0</span>
+    <span class="valine-comment-count" data-xid="/2021/03/04/c_4/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
 
-
-            
-          
-            
-              
 
             
           
@@ -568,47 +554,210 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一章：</p>
-<ul>
-<li>C语言的发展历史</li>
-<li>C语言的特点及程序结构</li>
-</ul>
-<p>第二章：</p>
-<ul>
-<li>标记</li>
-<li>类型</li>
-<li>运算符与表达式</li>
-</ul>
-<p>第三章：</p>
-<ul>
-<li>编程小练习</li>
-</ul>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/12/15/C_basic/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>顺序结构编程练习题</p>
+<a id="more"></a>
 
-          </div>
+<h2 id="关系运算符和相等类运算符"><a href="#关系运算符和相等类运算符" class="headerlink" title="关系运算符和相等类运算符"></a>关系运算符和相等类运算符</h2><h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><table>
+<thead>
+<tr>
+<th align="center">关系运算符</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&lt;</td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">小于或等于</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">大于或等于</td>
+</tr>
+</tbody></table>
+<div class="note success"><p>表达关系式的类型是<kbd>int</kbd>。如果指定的关系为<kbd>真</kbd>，关系表达式的值是<kbd>1</kbd>；如果指定的关系为<kbd>假</kbd>，关系表达式的值是<kbd>0</kbd>。</p></div>
+
+<h3 id="相等类运算符"><a href="#相等类运算符" class="headerlink" title="相等类运算符"></a>相等类运算符</h3><table>
+<thead>
+<tr>
+<th align="center">相等类运算符</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">==</td>
+<td align="center">等于</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">不等于</td>
+</tr>
+</tbody></table>
+<div class="note success"><p>相等类表达式的类型是<kbd>int</kbd>。如果指定的关系为<kbd>真</kbd>，相等类表达式的值是<kbd>1</kbd>；如果指定的关系为<kbd>假</kbd>，相等类表达式的值是<kbd>0</kbd>。</p></div>
+
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><h3 id="逻辑非运算符"><a href="#逻辑非运算符" class="headerlink" title="逻辑非运算符"></a>逻辑非运算符</h3><p>逻辑非运算符是<kbd> ! </kbd>，属于单目运算符。</p>
+<div class="note success"><p>逻辑非运算符和运算对象构成的表达式的类型是<kbd>int</kbd>。如果运算对象的值不等于<kbd>0</kbd>，表达式的值是<kbd>0</kbd>；如果运算对象的值等于<kbd>假</kbd>，相等类表达式的值是<kbd>1</kbd>。</p></div>
+
+<h3 id="逻辑与运算符"><a href="#逻辑与运算符" class="headerlink" title="逻辑与运算符"></a>逻辑与运算符</h3><p>逻辑与运算符是<kbd>&&</kbd>，属于双目运算符。</p>
+<div class="note success"><p>逻辑与运算符和运算对象构成的表达式的类型是<kbd>int</kbd>。如果两个运算对象的值都不等于<kbd>0</kbd>，表达式的值是<kbd>1</kbd>；否则，表达式的值是0。即任何一个运算对象的值等于0，表达式的值是0</p></div>
+
+<h3 id="逻辑非运算符-1"><a href="#逻辑非运算符-1" class="headerlink" title="逻辑非运算符"></a>逻辑非运算符</h3><p>逻辑非运算符是<kbd>||</kbd>，属于双目运算符。</p>
+<div class="note success"><p>逻辑或运算符和运算对象构成的表达式的类型是<kbd>int</kbd>。如果任何一个运算对象的值不等于<kbd>0</kbd>，表达式的值是<kbd>1</kbd>；否则，表达式的值是0。即只有两个运算对象的值都等于0，表达式的值才是0</p></div>
+
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><h3 id="第一种形式"><a href="#第一种形式" class="headerlink" title="第一种形式"></a>第一种形式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (表达式)</span><br><span class="line">	语句</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其功能是：如果表达式的值不等于0，则执行其后的语句；否则，不执行该语句。</p>
+</blockquote>
+<h3 id="第二种形式"><a href="#第二种形式" class="headerlink" title="第二种形式"></a>第二种形式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (表达式)</span><br><span class="line">	语句<span class="number">1</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	语句<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其功能是：如果表达式的值不等于0，则执行语句1；否则，执行语句2。</p>
+</blockquote>
+<h3 id="嵌套的if语句"><a href="#嵌套的if语句" class="headerlink" title="嵌套的if语句"></a>嵌套的if语句</h3><p>if 语句的两种形式中，如果“语句”、“语句1”或“语句2”也是if语句，称为嵌套的if语句。</p>
+<h2 id="编程练习"><a href="#编程练习" class="headerlink" title="编程练习"></a>编程练习</h2><h3 id="编程练习4-1"><a href="#编程练习4-1" class="headerlink" title="编程练习4.1"></a>编程练习4.1</h3><p>$$<br>输入整数a和b，如果a^2+b^2大于100，则输出a+b的值；否则，输出a-b的值。<br>$$</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="comment">// 输入整数a和b，如果a²+b²大于100，则输出a+b的值，否则，输出a-b的值</span></span><br><span class="line">        <span class="keyword">int</span> a;</span><br><span class="line">        <span class="keyword">int</span> b;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"请输入a的值："</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"请输入b的值："</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</span><br><span class="line">        <span class="keyword">if</span>(a * a + b * b &gt; <span class="number">100</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"a + b = %d\n"</span>,a + b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"a - b = %d\n"</span>,a - b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编程练习4-2"><a href="#编程练习4-2" class="headerlink" title="编程练习4.2"></a>编程练习4.2</h3><p>输入整数 n ，如果 n 既是 5 的整倍数又是 7 的整倍数，则输出 yes，否则输出 no 。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="comment">// 输入整数n，如果n既是5的整倍数又是7的整倍数，则输出yes，否则输出no</span></span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"请输入一个整数："</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">5</span> == <span class="number">0</span> &amp;&amp; n % <span class="number">7</span> == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"yes\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"no\n"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编程练习4-3"><a href="#编程练习4-3" class="headerlink" title="编程练习4.3"></a>编程练习4.3</h3><p>商场为促销实行打折销售商品，折扣规则如表所示。</p>
+<table>
+<thead>
+<tr>
+<th align="center">商品数量</th>
+<th align="center">折扣</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x  &lt;  5</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">5  ≤  x  &lt; 10</td>
+<td align="center">1%</td>
+</tr>
+<tr>
+<td align="center">10  ≤  x  &lt;  21</td>
+<td align="center">2%</td>
+</tr>
+<tr>
+<td align="center">21  ≤  x  &lt;  30</td>
+<td align="center">4%</td>
+</tr>
+<tr>
+<td align="center">30  ≤  x</td>
+<td align="center">6%</td>
+</tr>
+</tbody></table>
+<p>假定商品的价格为 p 元，编程计算某顾客购买 x 件商品的应付金额。计算公式为：<br>$$<br>sum = p * x * (1-d)<br>$$<br>其中，sum 为应付金额，d 为折扣数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;    </span><br><span class="line">        <span class="keyword">double</span> p;       <span class="comment">//商品价格</span></span><br><span class="line">        <span class="keyword">int</span> x;          <span class="comment">//商品数量</span></span><br><span class="line">        <span class="keyword">double</span> sum;     <span class="comment">//应付金额</span></span><br><span class="line">        <span class="keyword">double</span> d;       <span class="comment">//折扣数</span></span><br><span class="line">        <span class="keyword">int</span> b;          <span class="comment">//折扣率</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"请输入商品的数量："</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"请输入商品的单价："</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;p);</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">5</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                d = <span class="number">0</span>;</span><br><span class="line">                b = d * <span class="number">100</span>;</span><br><span class="line">                sum = p * x * (<span class="number">1</span>-d);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (x &lt; <span class="number">10</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                d = <span class="number">0.01</span>;</span><br><span class="line">                b = d * <span class="number">100</span>;</span><br><span class="line">                sum = p * x * (<span class="number">1</span>-d);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x &lt; <span class="number">21</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                d = <span class="number">0.02</span>;</span><br><span class="line">                b = d * <span class="number">100</span>;</span><br><span class="line">                sum = p * x * (<span class="number">1</span>-d);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(x &lt; <span class="number">30</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                d = <span class="number">0.04</span>;</span><br><span class="line">                b = d * <span class="number">100</span>;</span><br><span class="line">                sum = p * x * (<span class="number">1</span>-d);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">                d = <span class="number">0.06</span>;</span><br><span class="line">                b = d * <span class="number">100</span>;</span><br><span class="line">                sum =  p * x * (<span class="number">1</span>-d);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"你购买了%d件商品\n单价为%.2lf元\n折扣数为：%d%\n结算价格为%.2lf元\n"</span>,x,p,b,sum);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编程练习4-4"><a href="#编程练习4-4" class="headerlink" title="编程练习4.4"></a>编程练习4.4</h3><p>输入’0’<del>‘9’或’a’</del>‘f’或’A’~’F’中的一个字符，代表一个十六进制数，将其转换为十进制数，求该数与15的和并输出。例如，输入a，输出25。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> ch;</span><br><span class="line">        <span class="keyword">int</span> result;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"请输入字符："</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;ch);</span><br><span class="line">        <span class="keyword">if</span>(ch == <span class="string">'a'</span> || ch == <span class="string">'A'</span>)&#123;</span><br><span class="line">                result = <span class="number">10</span> + <span class="number">15</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'b'</span> || ch == <span class="string">'B'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                result = <span class="number">11</span> + <span class="number">15</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'c'</span> || ch == <span class="string">'C'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                result = <span class="number">12</span> + <span class="number">15</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'d'</span> || ch == <span class="string">'D'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                result = <span class="number">13</span> + <span class="number">15</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'e'</span> || ch == <span class="string">'E'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                result = <span class="number">14</span> + <span class="number">15</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ch == <span class="string">'f'</span> || ch == <span class="string">'F'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                result = <span class="number">15</span> + <span class="number">15</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">                result = ch - <span class="number">48</span>  + <span class="number">15</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"请检查输入！\n"</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="编程练习4-5"><a href="#编程练习4-5" class="headerlink" title="编程练习4.5"></a>编程练习4.5</h3><p>输出一张如下所示的时间表：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20210310141539.png" alt=""></p>
+<p>根据输入的序号显示相应的问候信息：输入 1 时，输出 Good  morning ；输入 2 时，输出 Good  Afternoon ；输入 3 时，输出 Good  night； 对于其他的输入，则输出 error 。</p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+
+
+              
+            </div>
+          
+        </div>
+        <div class='donate'>
+          <iframe src="https://imqinhao.cn/donate/drinks/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
         
       
-    
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2021/03/05/c_5/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>循环结构</p>
+                <p class='content'>循环结构编程练习题
+
+
+for语句编程练习5.1降序输出 1 ~ 30 中所有的偶数。
+123456789101112131415#include &lt;stdio.h&gt;int main...</p>
+              </a>
+            
+            
+              <a class='next' href='/2021/03/03/c_3/'>
+                <p class='title'>顺序结构<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>顺序结构编程练习题
+
+
+编程练习编程练习3.4使用转换说明%c输出以下图案（注：星号之间没有空格）
+12345678910#include &lt;stdio.h&gt;int main(voi...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+  
     
-    
-      <script>
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+  <script>
   // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
@@ -660,12 +809,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
   }
 </script>
 
-    
 
-  
-
-
-	
 </div>
 <aside class='l_side'>
   
@@ -673,378 +817,28 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200606210045.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>覃浩的博客</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">覃浩的博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-  </div>
-</section>
-
-  
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-globe-asia fa-fw" aria-hidden="true"></i><span class='name'>定位</span>
-    
-  </header>
 
 
-  <div class='content'>
-    
-      <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script><b><script>var getOSAndBrowser=function(){var os=navigator.platform;var userAgent=navigator.userAgent;var info="";var tempArray="";if(os.indexOf("Win")>-1){if(userAgent.indexOf("Windows NT 5.0")>-1){info+="Win2000"}else if(userAgent.indexOf("Windows NT 5.1")>-1){info+="WinXP"}else if(userAgent.indexOf("Windows NT 5.2")>-1){info+="Win2003"}else if(userAgent.indexOf("Windows NT 6.0")>-1){info+="WindowsVista"}else if(userAgent.indexOf("Windows NT 6.1")>-1||userAgent.indexOf("Windows 7")>-1){info+="Win7"}else if(userAgent.indexOf("Windows NT 6.2")>-1||userAgent.indexOf("Windows 8")>-1){info+="Win8"}else if(userAgent.indexOf("Windows NT 6.3")>-1||userAgent.indexOf("Windows 8.1")>-1){info+="Win8.1"}else if(userAgent.indexOf("Windows NT 10.0")>-1||userAgent.indexOf("Windows 10")>-1){info+="Win10"}else{info+="Other"}}else if(os.indexOf("Mac")>-1){info+="Mac"}else if(os.indexOf("X11")>-1){info+="Unix"}else if(os.indexOf("Linux")>-1){info+="Linux"}else{info+="Other"}info+="/";var isOpera=userAgent.indexOf("Opera")>-1;var isIE=userAgent.indexOf("compatible")>-1&&userAgent.indexOf("MSIE")>-1&&!isOpera;var isEdge=userAgent.toLowerCase().indexOf("edge")>-1&&!isIE;var isIE11=(userAgent.toLowerCase().indexOf("trident")>-1&&userAgent.indexOf("rv")>-1);if(/[Ff]irefox(\/\d+\.\d+)/.test(userAgent)){tempArray=/([Ff]irefox)\/(\d+\.\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(isIE){var version="";var reIE=new RegExp("MSIE (\\d+\\.\\d+);");reIE.test(userAgent);var fIEVersion=parseFloat(RegExp["$1"]);if(fIEVersion==7){version="IE7"}else if(fIEVersion==8){version="IE8"}else if(fIEVersion==9){version="IE9"}else if(fIEVersion==10){version="IE10"}else{version="0"}info+=version}else if(isEdge){info+="Edge"}else if(isIE11){info+="IE11"}else if(/[Cc]hrome\/\d+/.test(userAgent)){tempArray=/([Cc]hrome)\/(\d+)/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else if(/[Vv]ersion\/\d+\.\d+\.\d+(\.\d)* *[Ss]afari/.test(userAgent)){tempArray=/[Vv]ersion\/(\d+\.\d+\.\d+)(\.\d)* *([Ss]afari)/.exec(userAgent);info+=tempArray[3]+tempArray[1]}else if(/[Oo]pera.+[Vv]ersion\/\d+\.\d+/.test(userAgent)){tempArray=/([Oo]pera).+[Vv]ersion\/(\d+)\.\d+/.exec(userAgent);info+=tempArray[1]+tempArray[2]}else{info+="unknown"}return info};document.write("欢迎来自"+returnCitySN["cname"]+"的朋友");document.write("<br>您的 IP 是："+returnCitySN["cip"]);document.write("<br>您使用的是："+getOSAndBrowser());</script></b>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget text shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-map-marked-alt fa-fw" aria-hidden="true"></i><span class='name'>访客地图</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <script type="text/javascript" src="//rf.revolvermaps.com/0/0/7.js?i=5stt7n27ekb&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;br=8&amp;sx=0" async="async"></script>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>60 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2019/12/04'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>81.2k 字</div>
-        </div>
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sun Mar 14 2021 12:11:26 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2021-03-14 日</div>
-          
-        </div>
-        
-        <script> 
-          function timeago(dateTimeStamp) { 
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示 
-              var hour = minute * 60; 
-              var day = hour * 24; 
-              var week = day * 7; 
-              var month = day * 30; 
-              var now = new Date().getTime(); //获取当前时间毫秒 
-              var diffValue = now - dateTimeStamp; //时间差 
-              if (diffValue < 0) { 
-                  return; 
-              } 
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月 
-              var hourC = diffValue / hour; 
-              var dayC = diffValue / day; 
-              var weekC = diffValue / week; 
-              var monthC = diffValue / month; 
-              if (monthC >= 1 && monthC <= 3) { 
-                  result = " " + parseInt(monthC) + " 月前" 
-              } else if (weekC >= 1 && weekC <= 3) { 
-                  result = " " + parseInt(weekC) + " 周前" 
-              } else if (dayC >= 1 && dayC <= 6) { 
-                  result = " " + parseInt(dayC) + " 天前" 
-              } else if (hourC >= 1 && hourC <= 23) { 
-                  result = " " + parseInt(hourC) + " 小时前" 
-              } else if (minC >= 1 && minC <= 59) { 
-                  result = " " + parseInt(minC) + " 分钟前" 
-              } else if (diffValue >= 0 && diffValue <= minute) { 
-                  result = "刚刚" 
-              } else { 
-                  var datetime = new Date(); 
-                  datetime.setTime(dateTimeStamp); 
-                  var Nyear = datetime.getFullYear(); 
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1; 
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate(); 
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours(); 
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes(); 
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds(); 
-                  result = Nyear + "-" + Nmonth + "-" + Ndate 
-              } 
-              return result; 
-          } 
-          var lastUpDate = document.getElementById('last-update').innerHTML; 
-          try { 
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate)); 
-          } catch (error) { 
-            document.getElementById('last-update-show').innerHTML = '2021-03-14 日'; 
-          } 
-        </script> 
-        
-      
-    </div>
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/C%E8%AF%AD%E8%A8%80/" href="/categories/C%E8%AF%AD%E8%A8%80/"
-            id="categoriesCE8AFADE8A880"
-            ><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            id="categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Photoshop/" href="/categories/Photoshop/"
-            id="categoriesPhotoshop"
-            ><div class='name'>Photoshop</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Python/" href="/categories/Python/"
-            id="categoriesPython"
-            ><div class='name'>Python</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E4%BA%A4%E6%8D%A2%E6%9C%BA/" href="/categories/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"
-            id="categoriesE4BAA4E68DA2E69CBA"
-            ><div class='name'>交换机</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/" href="/categories/%E5%8D%8E%E4%B8%BA%E8%AE%A4%E8%AF%81/"
-            id="categoriesE58D8EE4B8BAE8AEA4E8AF81"
-            ><div class='name'>华为认证</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/" href="/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/"
-            id="categoriesE5B08FE68A80E5B7A7"
-            ><div class='name'>小技巧</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"
-            id="categoriesE695B0E68DAEE5BA93"
-            ><div class='name'>数据库</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/" href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"
-            id="categoriesE69C8DE58AA1E599A8"
-            ><div class='name'>服务器</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
-            id="categoriesE7BD91E7BB9CE5AE89E585A8"
-            ><div class='name'>网络安全</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/"
-            id="categoriesE8AEA1E7AE97E69CBAE4B889E7BAA7"
-            ><div class='name'>计算机三级</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
-            id="categoriesE8AEA1E7AE97E69CBAE7BD91E7BB9C"
-            ><div class='name'>计算机网络</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/" href="/categories/%E8%BD%AF%E4%BB%B6%E7%A0%B4%E8%A7%A3/"
-            id="categoriesE8BDAFE4BBB6E7A0B4E8A7A3"
-            ><div class='name'>软件破解</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/" href="/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"
-            id="categoriesE9809AE4BFA1E68A80E69CAF"
-            ><div class='name'>通信技术</div><div class='badge'>(15)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关系运算符和相等类运算符"><span class="toc-text">关系运算符和相等类运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关系运算符"><span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相等类运算符"><span class="toc-text">相等类运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#逻辑运算符"><span class="toc-text">逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑非运算符"><span class="toc-text">逻辑非运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑与运算符"><span class="toc-text">逻辑与运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑非运算符-1"><span class="toc-text">逻辑非运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#if语句"><span class="toc-text">if语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一种形式"><span class="toc-text">第一种形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二种形式"><span class="toc-text">第二种形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套的if语句"><span class="toc-text">嵌套的if语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程练习"><span class="toc-text">编程练习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编程练习4-1"><span class="toc-text">编程练习4.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程练习4-2"><span class="toc-text">编程练习4.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程练习4-3"><span class="toc-text">编程练习4.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程练习4-4"><span class="toc-text">编程练习4.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程练习4-5"><span class="toc-text">编程练习4.5</span></a></li></ol></li></ol>
     </div>
   </section>
 
 
   
 
-  
-    
-    
-
-<section class="widget text shadow desktop">
-  
-  <header>
-    
-      <i class="far fa-comments fa-fw" aria-hidden="true"></i><span class='name'>最新评论</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <div id="hot-comments"></div>
-    
-  </div>
-</section>
-
-  
-
 
 </aside>
 
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
-	    <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-	
 
 
       </div>
@@ -2138,5 +1932,4 @@ function wangzhi(e){
 
     
   </div>
-</body>
-</html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
