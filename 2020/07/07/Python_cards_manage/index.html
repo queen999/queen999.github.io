@@ -246,6 +246,22 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 				</ul>
 			</div>
 
+      <div id="tp-weather-widget"></div>
+      <script>
+        (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+        window.SeniverseWeatherWidget('show', {
+          flavor: "slim",
+          location: "WX4FBXXFKE4F",
+          geolocation: true,
+          language: "auto",
+          unit: "c",
+          theme: "auto",
+          token: "c4c09888-0162-4785-990d-764b942e26f2",
+          hover: "enabled",
+          container: "tp-weather-widget"
+        })
+      </script>
+
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fas fa-search fa-fw"></i>
@@ -1489,7 +1505,7 @@ document.write('<script src="' + src + '" id="sozz"><\/script>');
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200804154709.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/301238.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/300516.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/301220.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/300844.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/300861.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20200804154709.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/301238.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/300516.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/301220.jpg", "https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/300844.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
@@ -2010,5 +2026,4 @@ function wangzhi(e){
 
     
   </div>
-</body>
-</html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
