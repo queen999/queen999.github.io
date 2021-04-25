@@ -1,3 +1,8 @@
+https://imqinhao.cn/2021/04/25/FileDownload/
+https://imqinhao.cn/2021/04/25/TCP_server/
+https://imqinhao.cn/2021/04/25/TCP_client/
+https://imqinhao.cn/2021/04/25/TCP/
+https://imqinhao.cn/2021/04/25/PythonUdp/
 https://imqinhao.cn/2021/03/17/c-11/
 https://imqinhao.cn/2021/03/16/c_10/
 https://imqinhao.cn/2021/03/15/c_9/
