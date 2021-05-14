@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://imqinhao.cn/"/>
-  <updated>2021-04-25T10:58:07.543Z</updated>
+  <updated>2021-05-14T10:48:44.524Z</updated>
   <id>https://imqinhao.cn/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CPU内部结构与寄存器</title>
+    <link href="https://imqinhao.cn/2021/05/14/CPU_Register/"/>
+    <id>https://imqinhao.cn/2021/05/14/CPU_Register/</id>
+    <published>2021-05-14T10:02:14.000Z</published>
+    <updated>2021-05-14T10:48:44.524Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>64位和32位系统区别</p><p>寄存器名称</p><p>寄存器、缓存、内存三者关系</p><a id="more"></a><h2 id="64位和32位系统区别"><a href="#64位和32位系统区别" class="headerlink" title="64位和32位系统区别"></a><center><font color="#55ee0f" size="6px">64位和32位系统区别</font></center></h2><ul><li>寄存器是CPU内部最基本的存储单元。</li><li>CPU对外是通过总线（地址、控制、数据）来和外部设备交互的，<font color="red">总线的宽度是8位，同时CPU的寄存器也是8位</font>，那么这个CPU就叫8位CPU。</li><li>如果总线是32位，寄存器也是32位，那么这个CPU就是32位CPU。</li><li>有一种CPU内部的寄存器是32位的，但总线是16位，准32位CPU。</li><li>所有的64位CPU兼容32位的指令，32位也兼容16位的指令，所以在64位的CPU上是可以识别32位的指令的。</li><li>在64位的CPU架构上运行了64位的软件操作系统，那么这个系统是64位。</li><li>在64位的CPU架构上，运行了32位的软件操作系统，那么这个系统就是32位。</li><li>64位的软件不能运行在32位的CPU之上。</li></ul><h2 id="寄存器名称"><a href="#寄存器名称" class="headerlink" title="寄存器名称"></a><center><font color="#55ee0f" size="6px">寄存器名称</font></center></h2><table><thead><tr><th>8位</th><th>16 位</th><th>32位</th><th>64位</th></tr></thead><tbody><tr><td>A</td><td>AX</td><td>EAX</td><td>RAX</td></tr><tr><td>B</td><td>BX</td><td>EBX</td><td>RBX</td></tr><tr><td>C</td><td>CX</td><td>ECX</td><td>RCX</td></tr><tr><td>D</td><td>DX</td><td>EDX</td><td>RDX</td></tr></tbody></table><h2 id="寄存器、缓存、内存三者关系"><a href="#寄存器、缓存、内存三者关系" class="headerlink" title="寄存器、缓存、内存三者关系"></a><center><font color="#55ee0f" size="6px">寄存器、缓存、内存三者关系</font></center></h2><p>按与CPU远近来分，离得最近的是寄存器，然后缓存（CPU缓存），最后内存。</p><p><font color="red">CPU计算时</font>，先预先把要用的数据从硬盘读到内存，然后再把即将要用到的数据读到寄存器，于是<kbd>CPU <--> 寄存器 <--> 内存</kbd>，这就是它们之间的信息交换。</p><p>那为什么没有缓存呢？因为如果经常操作内存中的同一地址的数据，就会影响速度。于是就在寄存器和内存之间设置一个缓存。</p><p>因为从缓存提取的速度远高于内存。当然缓存的价格肯定也远远高于内存，不然的话，机器里就没有内存的存在。</p><p>由此可以看出，从远近来看：<kbd>CPU <--> 寄存器 <--> 缓存 <--> 内存</kbd>。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;64位和32位系统区别&lt;/p&gt;
+&lt;p&gt;寄存器名称&lt;/p&gt;
+&lt;p&gt;寄存器、缓存、内存三者关系&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C语言" scheme="https://imqinhao.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C语言编译过程</title>
+    <link href="https://imqinhao.cn/2021/05/14/gcc/"/>
+    <id>https://imqinhao.cn/2021/05/14/gcc/</id>
+    <published>2021-05-14T09:02:14.000Z</published>
+    <updated>2021-05-14T11:03:07.643Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>C语言编译过程</p><p>​    C程序编译步骤</p><p>​    gcc编译过程</p><p>​        分步编译</p><p>​        常见代码问题</p><a id="more"></a><h2 id="C语言编译过程"><a href="#C语言编译过程" class="headerlink" title="C语言编译过程"></a><center><font color="#55ee0f" size="7px">C语言编译过程</font></center></h2><h3 id="C程序编译步骤"><a href="#C程序编译步骤" class="headerlink" title="C程序编译步骤"></a><center><font color="#ff33ee" size="6px" >C程序编译步骤</font></center></h3><p>C代码编译成可执行程序经过4步：</p><ol><li><kbd>预处理</kbd>：宏定义展开、头文件展开、条件编译等，同时将代码中的注释删除，这里并不会检查语法。</li><li><kbd>编译</kbd>：检查语法，将预处理后文件编译生成汇编文件。</li><li><kbd>汇编</kbd>：将汇编文件生成目标文件（二进制文件）</li><li><kbd>链接</kbd>：C语言写的程序是需要依赖各种库的，所以编译之后还需要把库链接到最终的可执行程序中去。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20210514190258.png" alt=""></p><h3 id="gcc编译过程"><a href="#gcc编译过程" class="headerlink" title="gcc编译过程"></a><center><font color="#ff33ee" size="6px" >gcc编译过程</font></center></h3><h4 id="分步编译"><a href="#分步编译" class="headerlink" title="分步编译"></a><center><font color = "#ffaa00" size="5px">分步编译</font></center></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">预处理: gcc -E hello.c -o hello.i</span><br><span class="line">编  译: gcc -S hello.i -o hello.s</span><br><span class="line">汇  编: gcc -c hello.s -o hello.o</span><br><span class="line">链  接: gcc hello.o -o hello</span><br></pre></td></tr></table></figure><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>-E</td><td>只进行预处理</td></tr><tr><td>-S（大写）</td><td>只进行预处理和编译</td></tr><tr><td>-c（小写）</td><td>只进行预处理、编译和汇编</td></tr><tr><td>-o  file</td><td>指定生成的输出文件名为file</td></tr></tbody></table><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20210514164441.png" alt="程序编译过程"></p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20210514165349.png" alt="程序执行过程"></p><table><thead><tr><th>文件后缀</th><th>含义</th></tr></thead><tbody><tr><td>.c</td><td>C语言文件</td></tr><tr><td>.i</td><td>预处理后的C语言文件</td></tr><tr><td>.s</td><td>编译后的汇编文件</td></tr><tr><td>.o</td><td>编译后的目标文件</td></tr></tbody></table><h4 id="常见代码问题"><a href="#常见代码问题" class="headerlink" title="常见代码问题"></a><center><font color = "#ffaa00" size="5px">常见代码问题</font></center></h4><ol><li>编辑时异常</li><li>编译时异常</li><li>运行时异常</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;C语言编译过程&lt;/p&gt;
+&lt;p&gt;​    C程序编译步骤&lt;/p&gt;
+&lt;p&gt;​    gcc编译过程&lt;/p&gt;
+&lt;p&gt;​        分步编译&lt;/p&gt;
+&lt;p&gt;​        常见代码问题&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C语言" scheme="https://imqinhao.cn/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python网络编程-文件下载器</title>
@@ -436,58 +484,6 @@
     
     
       <category term="Java" scheme="https://imqinhao.cn/categories/Java/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>TCP/IP简介</title>
-    <link href="https://imqinhao.cn/2020/10/05/linux/"/>
-    <id>https://imqinhao.cn/2020/10/05/linux/</id>
-    <published>2020-10-05T05:14:14.000Z</published>
-    <updated>2021-03-08T06:30:48.178Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>知识点</p><ul><li>IP 地址</li><li>域名</li><li>MAC 地址</li><li>端口号</li><li>封装和分用</li></ul><a id="more"></a><p>提到网络协议栈结构，最著名的当属 OSI 七层模型，但是 TCP/IP 协议族的结构则稍有不同，它们之间的层次结构有如图对应关系：</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/1548669082626.png" alt=""></p><p>可见 TCP/IP 被分为 4 层，每层承担的任务不一样，各层的协议的工作方式也不一样，每层封装上层数据的方式也不一样：</p><ul><li>应用层：应用程序通过这一层访问网络，常见 FTP、HTTP、DNS 和 TELNET 协议；</li><li>传输层：TCP 协议和 UDP 协议；</li><li>网络层：IP 协议，ARP、RARP 协议，ICMP 协议等；</li><li>网络接口层：是 TCP/IP 协议的基层，负责数据帧的发送和接收。</li></ul><blockquote><p>TCP/IP（Transmission Control Protocol/Internet Protocol）是传输控制协议和网络协议的简称，它定义了电子设备如何连入因特网，以及数据如何在它们之间传输的标准。</p><p>TCP/IP 不是一个协议，而是一个协议族的统称，里面包括了 IP 协议、ICMP 协议、TCP 协议、以及 http、ftp、pop3 协议等。网络中的计算机都采用这套协议族进行互联。</p></blockquote><h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><p>网络上每一个节点都必须有一个独立的 IP 地址，通常使用的 IP 地址是一个 32bit 的数字，被 <code>.</code> 分成 4 组，例如，<code>255.255.255.255</code> 就是一个 IP 地址。有了 IP 地址，用户的计算机就可以发现并连接互联网中的另外一台计算机。</p><p>在 终端输入 <code>ifconfig -a</code> 命令查看自己的 IP 地址：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig -a</span><br></pre></td></tr></table></figure><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/61acdc3e0704fdf5fb97876dec817ff3-0" alt=""></p><h1 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h1><p>用 12 位数字组成的 IP 地址很难记忆，在实际应用时，用户一般不需要记住 IP 地址，互联网给每个 IP 地址起了一个别名，习惯上称作域名。</p><p>域名与计算机的 IP 地址相对应，并把这种对应关系存储在域名服务系统 DNS(Domain Name System) 中，这样用户只需记住域名就可以与指定的计算机进行通信了。</p><p>常见的域名包括 com、net 和 org 三种顶级域名后缀，除此之外每个国家还有自己国家专属的域名后缀（比如我国的域名后缀为 cn）。目前经常使用的域名诸如百度（<a href="https://www.baidu.com/" target="_blank" rel="noopener">www.baidu.com</a>）、Linux 组织（<a href="https://lwn.net/" target="_blank" rel="noopener">www.lwn.net</a>）等等。</p><p>我们可以使用命令 <code>nslookup</code> 或者 <code>ping</code> 来查看与域名相对应的 IP 地址，由于实验楼网络限制，我们可以使用 <code>ping github.com</code>（如果 <code>github</code> 也 ping 不通，那么可以使用 <code>ping labfile.oss.aliyuncs.com</code>，如果你是会员账户，那么也可以 ping 其他的域名）查看。</p><p>例如：</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20201016215115.png" alt=""></p><h1 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h1><p>MAC（Media Access Control）地址，或称为物理地址、硬件地址，用来定义互联网中设备的位置。</p><p>在 TCP/IP 层次模型中，网络层管理 IP 地址，链路层则负责 MAC 地址。因此每个网络位置会有一个专属于它的 IP 地址，而每个主机会有一个专属于它 MAC 地址。</p><h1 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h1><p>IP 地址是用来发现和查找网络中的地址，但是不同程序如何互相通信呢？这就需要端口号来识别了。如果把 IP 地址比作一间房子，端口就是出入这间房子的门。真正的房子只有几个门，但是端口采用 16 比特的端口号标识，一个 IP 地址的端口可以有 65536（即：216）个之多！</p><p>服务器的默认程序一般都是通过人们所熟知的端口号来识别的。例如，对于每个 TCP/IP 实现来说，SMTP（简单邮件传输协议）服务器的 TCP 端口号都是 <code>25</code>，FTP（文件传输协议）服务器的 TCP 端口号都是 <code>21</code>，TFTP（简单文件传输协议）服务器的 UDP 端口号都是 <code>69</code>。任何 TCP/IP 实现所提供的服务都用众所周知的 <code>1－1023</code> 之间的端口号。这些人们所熟知的端口号由 Internet 端口号分配机构（Internet Assigned Numbers Authority，IANA）来管理。</p><p>常用协议对应端口号：</p><ul><li>SSH 22</li><li>FTP 20 和 21</li><li>Telnet 23</li><li>SMTP 25</li><li>TFTP 69</li><li>HTTP 80</li><li>SNMP 161</li><li>Ping 使用 ICMP，无具体端口号</li></ul><h1 id="封装和分用"><a href="#封装和分用" class="headerlink" title="封装和分用"></a>封装和分用</h1><p><strong>封装</strong>：当应用程序发送数据的时候，数据在协议层次当中自顶向下通过每一层，每一层都会对数据增加一些首部或尾部信息，这样的信息称之为协议数据单元（Protocol Data Unit，缩写为 PDU），在分层协议系统里，在指定的协议层上传送的数据单元，包含了该层的协议控制信息和用户信息。如下图所示：</p><ul><li>物理层（一层）PDU 指数据位（Bit）</li><li>数据链路层（二层）PDU 指数据帧（Frame）</li><li>网络层（三层）PDU 指数据包（Packet）</li><li>传输层（四层）PDU 指数据段（Segment）</li><li>第五层以上为数据（data）</li></ul><p><img src="https://dn-simplecloud.shiyanlou.com/uid/8797/1548670748600.png" alt=""></p><p><strong>分用</strong>：当主机收到一个数据帧时，数据就从协议层底向上升，通过每一层时，检查并去掉对应层次的报文首部或尾部，与封装过程正好相反。</p><h1 id="RFC"><a href="#RFC" class="headerlink" title="RFC"></a>RFC</h1><p>RFC（Request for Comment）文档是所有以太网协议的正式标准，并在其官网上面公布，由 IETF 标准协会制定。大量的 RFC 并不是正式的标准，出版的目的只是为了提供信息。RFC 的篇幅不一，从几页到几百页不等。每一种协议都用一个数字来标识，如 RFC 3720 是 iSCSI 协议的标准，数字越大意味着 RFC 的内容越新或者是对应的协议（标准）出现的比较晚。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;知识点&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;IP 地址&lt;/li&gt;
-&lt;li&gt;域名&lt;/li&gt;
-&lt;li&gt;MAC 地址&lt;/li&gt;
-&lt;li&gt;端口号&lt;/li&gt;
-&lt;li&gt;封装和分用&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="计算机网络" scheme="https://imqinhao.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>5G网络优化</title>
-    <link href="https://imqinhao.cn/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/"/>
-    <id>https://imqinhao.cn/2020/10/01/5G%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96/</id>
-    <published>2020-10-01T02:00:00.000Z</published>
-    <updated>2021-03-08T06:20:07.712Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>5G覆盖指标定义</p><p>覆盖率</p><p>覆盖优化整体流程</p><p>NR覆盖类问题及优化方案</p><a id="more"></a><h1 id="5G覆盖指标定义"><a href="#5G覆盖指标定义" class="headerlink" title="5G覆盖指标定义"></a>5G覆盖指标定义</h1><h2 id="广播信道"><a href="#广播信道" class="headerlink" title="广播信道"></a>广播信道</h2><p><font color=Fuchsia>SS参考信号接收功率(SS-RSRP) </font>:测量频段带宽上承载辅同步信号(SS) 的资源单元接收功率贡献的线性平均值;</p><p><font color=Fuchsia>SS信噪比和干扰比(SS SINR)</font>定义为”携带辅同步信号的资源单元的功率贡献的线性平均值”除以”在相同频率带宽内承载辅同步信号的资源单元的噪声和干扰功率的线性平均值”;</p><h2 id="业务信道"><a href="#业务信道" class="headerlink" title="业务信道"></a>业务信道</h2><p><font color=Fuchsia>CSI参考信号接收功率(CSI-RSRP) </font>被定义为在所配置的CSI中在所考虑的测量频率带宽内承载用于RSRP测量的CSI参考信号的资源单元的功率贡献上的线性平均值;</p><p><font color=Fuchsia>CSI信噪比和干扰比(CSI-SINR) </font>被定义为”携带CSI参考信号的资源单元的功率贡献的线性平均值”除以”携带CSI参考信号的资源单元在相同频率带宽内的参考信号的噪声和干扰功率的线性平均值”。</p><h1 id="覆盖率"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率</h1><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009080953462.png" alt=""></p><h1 id="NR和LTE的覆盖相关差异"><a href="#NR和LTE的覆盖相关差异" class="headerlink" title="NR和LTE的覆盖相关差异"></a>NR和LTE的覆盖相关差异</h1><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009081519659.png" alt=""></p><h1 id="NR覆盖优化基础"><a href="#NR覆盖优化基础" class="headerlink" title="NR覆盖优化基础"></a>NR覆盖优化基础</h1><h2 id="覆盖优化的原则"><a href="#覆盖优化的原则" class="headerlink" title="覆盖优化的原则"></a>覆盖优化的原则</h2><ol><li>先优化SS-RSRP，后优化SS-SINR</li><li>覆盖优化的两大关键任务：消除弱覆盖（保证SS-RSRP）；净化切换带、消除交叉覆盖</li><li>优先优化弱覆盖、越区覆盖、再优化重叠覆盖</li><li>优先调整天线的下倾角、方位角、天线挂高和迁站及加站，最后考虑调整RS的发射功率和波束管理相关参数以及天线权值</li></ol><h1 id="覆盖优化整体流程"><a href="#覆盖优化整体流程" class="headerlink" title="覆盖优化整体流程"></a>覆盖优化整体流程</h1><h2 id="覆盖优化的流程"><a href="#覆盖优化的流程" class="headerlink" title="覆盖优化的流程"></a>覆盖优化的流程</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009082637909.png" alt=""></p><p><kbd>数据采集</kbd>：通过不同的数据采集系统进行覆盖相关数据采集</p><p><kbd>数据分析</kbd>：结合采集结果对数据进行综合分析，确定指标情况</p><p><kbd>原因分析</kbd>：对存在覆盖问题的小区进行分析，并确定原因</p><p><kbd>方案制定</kbd>：基于覆盖问题的原因，制定覆盖优化方案</p><p><kbd>方案实施</kbd>：方案实施，并进行方案实施前后的评估</p><h2 id="数据采集"><a href="#数据采集" class="headerlink" title="数据采集"></a>数据采集</h2><p>覆盖指标的来源有哪些？</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009083312711.png" alt=""></p><h2 id="覆盖评估"><a href="#覆盖评估" class="headerlink" title="覆盖评估"></a>覆盖评估</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009083534560.png" alt=""></p><h2 id="覆盖类问题分析"><a href="#覆盖类问题分析" class="headerlink" title="覆盖类问题分析"></a>覆盖类问题分析</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009083722471.png" alt=""></p><h2 id="覆盖问题原因"><a href="#覆盖问题原因" class="headerlink" title="覆盖问题原因"></a>覆盖问题原因</h2><ol><li>故障问题</li><li>环境变化</li><li>新的需求</li><li>规划问题</li><li>施工问题</li><li>参数问题</li></ol><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009083850079.png" alt=""></p><h3 id="故障问题"><a href="#故障问题" class="headerlink" title="故障问题"></a>故障问题</h3><p>设备问题是指由于基站设备出现故障，导致无法提供服务，从而引起覆盖问题，一般表现为扫频仪或中断检测不到信号、信号弱等：</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009084029375.png" alt=""></p><h3 id="规划问题"><a href="#规划问题" class="headerlink" title="规划问题"></a>规划问题</h3><p>规划问题也是影响覆盖问题的主要原因，规划偏差小的话可以通过优化解决，如果规划偏差大只能考虑新增站点，耗时耗力：</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009084421397.png" alt=""></p><h3 id="施工问题"><a href="#施工问题" class="headerlink" title="施工问题"></a>施工问题</h3><p>施工问题，主要指在施工过程中没按照规划方案进行，如实际建设位置和规划位置有偏差、天馈基础参数设置和规划存在偏差等：</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009084831423.png" alt=""></p><h3 id="参数问题"><a href="#参数问题" class="headerlink" title="参数问题"></a>参数问题</h3><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009085032588.png" alt=""></p><h3 id="无线环境"><a href="#无线环境" class="headerlink" title="无线环境"></a>无线环境</h3><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009085143805.png" alt=""></p><h3 id="新增需求"><a href="#新增需求" class="headerlink" title="新增需求"></a>新增需求</h3><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009085424820.png" alt=""></p><h2 id="覆盖优化的方案"><a href="#覆盖优化的方案" class="headerlink" title="覆盖优化的方案"></a>覆盖优化的方案</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009085604425.png" alt=""></p><h1 id="NR覆盖类问题及优化分析"><a href="#NR覆盖类问题及优化分析" class="headerlink" title="NR覆盖类问题及优化分析"></a>NR覆盖类问题及优化分析</h1><h2 id="覆盖类问题概述"><a href="#覆盖类问题概述" class="headerlink" title="覆盖类问题概述"></a>覆盖类问题概述</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009085809348.png" alt=""></p><h2 id="弱覆盖问题分析"><a href="#弱覆盖问题分析" class="headerlink" title="弱覆盖问题分析"></a>弱覆盖问题分析</h2><p>指标定义：弱覆盖是指在连片站点中间出现的完全没有NR信号的区域</p><p>UE终端的灵敏度一般为-124dBm，考虑部分商用终端与测试终端灵敏度的差异，预留5dB余量，覆盖空洞定义为RSRP ＜ -119dBm的区域。</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009090145488.png" alt=""></p><h2 id="弱覆盖原因及优化方案"><a href="#弱覆盖原因及优化方案" class="headerlink" title="弱覆盖原因及优化方案"></a>弱覆盖原因及优化方案</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009090219993.png" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009090355034.png" alt=""></p><h2 id="越区覆盖定义"><a href="#越区覆盖定义" class="headerlink" title="越区覆盖定义"></a>越区覆盖定义</h2><p>所谓孤岛效应就是在无线通信系统中，因为复杂的无线环境，无线信号经过山脉、建筑物、以及大气层的发射、折射，或基站安装位置过高，以及波导效应等原因,弓|起在远离本小区覆盖的区域外形成-个强场区域，如图所示：</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009090536376.png" alt=""></p><h2 id="越区覆盖影响"><a href="#越区覆盖影响" class="headerlink" title="越区覆盖影响"></a>越区覆盖影响</h2><p>由于这个区域超出其实际覆盖范围，往往这一-区域没有和周围小区配备邻区关系，形成孤岛，对A小区产生干扰，或在孤岛区域起呼的UE无法切换到A小区，产生掉话。</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009090803666.png" alt=""></p><h2 id="越区覆盖原因及优化措施"><a href="#越区覆盖原因及优化措施" class="headerlink" title="越区覆盖原因及优化措施"></a>越区覆盖原因及优化措施</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009090849864.png" alt=""></p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009090956637.png" alt=""></p><blockquote><p><strong>临时规避措施</strong>：增加越区覆盖小区和主覆盖小区的单项邻区关系</p></blockquote><h2 id="重叠覆盖问题分析"><a href="#重叠覆盖问题分析" class="headerlink" title="重叠覆盖问题分析"></a>重叠覆盖问题分析</h2><p><font color=red><strong>强导频</strong></font>：RSRP ＞ -90dBm</p><p><font color=red><strong>过多</strong></font>：RSRP_number ≥ N，设定N=4</p><p><font color=red><strong>无足够强主导频</strong></font>：最强信号和第（N）个强信号强度的差值如果小于某一门限值D，即定义为该地点没有足够强主导频，RSRP(fist) －RSRP(N) ≤ D，设定D为-6dB</p><p><font color=red><strong>判断NR网络中的某点存在重叠覆盖的条件是</strong></font>：RSRP ＞ -90dB的小区个数大于等于4个；RSRP(fist) －RSRP(4) ≤ 6dB。当上述两个条件都满足时，即为重叠覆盖。</p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009091712704.png" alt=""></p><h2 id="重叠覆盖的影响及原因分析"><a href="#重叠覆盖的影响及原因分析" class="headerlink" title="重叠覆盖的影响及原因分析"></a>重叠覆盖的影响及原因分析</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009091827593.png" alt=""></p><h2 id="重叠覆盖问题优化思路"><a href="#重叠覆盖问题优化思路" class="headerlink" title="重叠覆盖问题优化思路"></a>重叠覆盖问题优化思路</h2><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009091902716.png" alt=""></p><h2 id="覆盖不均衡"><a href="#覆盖不均衡" class="headerlink" title="覆盖不均衡"></a>覆盖不均衡</h2><p>上下行覆盖不平衡:指目标覆盖区域内，上下行对称业务出现下行覆盖良好而上行覆盖受限或上行覆盖良好而下行覆盖受限的情况：</p><blockquote><p>上下行不平衡一-般是指下行覆盖大于上行覆盖，在只有下行覆盖的区域，当用户因为检测到了基站信号，想要接入或者切换时，因为上行达不到覆盖要求，也就是手机以最大功率发射基站也收不到，就会造成接入失败或切换失败。另外如果上行覆盖是连续的，那么下行信号因为覆盖大于.上行，会对邻区造成干扰。</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009092135465.png" alt=""></p><blockquote><p><font color=red>影响：上行覆盖不均衡常见表现为有信号但数据业务体验差，容易出现掉话、单通等感知类问题。</font></p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009092413897.png" alt="">)<img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/image-20201009092540732.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;5G覆盖指标定义&lt;/p&gt;
-&lt;p&gt;覆盖率&lt;/p&gt;
-&lt;p&gt;覆盖优化整体流程&lt;/p&gt;
-&lt;p&gt;NR覆盖类问题及优化方案&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="通信技术" scheme="https://imqinhao.cn/categories/%E9%80%9A%E4%BF%A1%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>

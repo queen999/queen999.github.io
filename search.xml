@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>CPU内部结构与寄存器</title>
+      <link href="/2021/05/14/CPU_Register/"/>
+      <url>/2021/05/14/CPU_Register/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>64位和32位系统区别</p><p>寄存器名称</p><p>寄存器、缓存、内存三者关系</p><a id="more"></a><h2 id="64位和32位系统区别"><a href="#64位和32位系统区别" class="headerlink" title="64位和32位系统区别"></a><center><font color="#55ee0f" size="6px">64位和32位系统区别</font></center></h2><ul><li>寄存器是CPU内部最基本的存储单元。</li><li>CPU对外是通过总线（地址、控制、数据）来和外部设备交互的，<font color="red">总线的宽度是8位，同时CPU的寄存器也是8位</font>，那么这个CPU就叫8位CPU。</li><li>如果总线是32位，寄存器也是32位，那么这个CPU就是32位CPU。</li><li>有一种CPU内部的寄存器是32位的，但总线是16位，准32位CPU。</li><li>所有的64位CPU兼容32位的指令，32位也兼容16位的指令，所以在64位的CPU上是可以识别32位的指令的。</li><li>在64位的CPU架构上运行了64位的软件操作系统，那么这个系统是64位。</li><li>在64位的CPU架构上，运行了32位的软件操作系统，那么这个系统就是32位。</li><li>64位的软件不能运行在32位的CPU之上。</li></ul><h2 id="寄存器名称"><a href="#寄存器名称" class="headerlink" title="寄存器名称"></a><center><font color="#55ee0f" size="6px">寄存器名称</font></center></h2><table><thead><tr><th>8位</th><th>16 位</th><th>32位</th><th>64位</th></tr></thead><tbody><tr><td>A</td><td>AX</td><td>EAX</td><td>RAX</td></tr><tr><td>B</td><td>BX</td><td>EBX</td><td>RBX</td></tr><tr><td>C</td><td>CX</td><td>ECX</td><td>RCX</td></tr><tr><td>D</td><td>DX</td><td>EDX</td><td>RDX</td></tr></tbody></table><h2 id="寄存器、缓存、内存三者关系"><a href="#寄存器、缓存、内存三者关系" class="headerlink" title="寄存器、缓存、内存三者关系"></a><center><font color="#55ee0f" size="6px">寄存器、缓存、内存三者关系</font></center></h2><p>按与CPU远近来分，离得最近的是寄存器，然后缓存（CPU缓存），最后内存。</p><p><font color="red">CPU计算时</font>，先预先把要用的数据从硬盘读到内存，然后再把即将要用到的数据读到寄存器，于是<kbd>CPU <--> 寄存器 <--> 内存</kbd>，这就是它们之间的信息交换。</p><p>那为什么没有缓存呢？因为如果经常操作内存中的同一地址的数据，就会影响速度。于是就在寄存器和内存之间设置一个缓存。</p><p>因为从缓存提取的速度远高于内存。当然缓存的价格肯定也远远高于内存，不然的话，机器里就没有内存的存在。</p><p>由此可以看出，从远近来看：<kbd>CPU <--> 寄存器 <--> 缓存 <--> 内存</kbd>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> C语言 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C语言编译过程</title>
+      <link href="/2021/05/14/gcc/"/>
+      <url>/2021/05/14/gcc/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>C语言编译过程</p><p>​    C程序编译步骤</p><p>​    gcc编译过程</p><p>​        分步编译</p><p>​        常见代码问题</p><a id="more"></a><h2 id="C语言编译过程"><a href="#C语言编译过程" class="headerlink" title="C语言编译过程"></a><center><font color="#55ee0f" size="7px">C语言编译过程</font></center></h2><h3 id="C程序编译步骤"><a href="#C程序编译步骤" class="headerlink" title="C程序编译步骤"></a><center><font color="#ff33ee" size="6px" >C程序编译步骤</font></center></h3><p>C代码编译成可执行程序经过4步：</p><ol><li><kbd>预处理</kbd>：宏定义展开、头文件展开、条件编译等，同时将代码中的注释删除，这里并不会检查语法。</li><li><kbd>编译</kbd>：检查语法，将预处理后文件编译生成汇编文件。</li><li><kbd>汇编</kbd>：将汇编文件生成目标文件（二进制文件）</li><li><kbd>链接</kbd>：C语言写的程序是需要依赖各种库的，所以编译之后还需要把库链接到最终的可执行程序中去。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20210514190258.png" alt=""></p><h3 id="gcc编译过程"><a href="#gcc编译过程" class="headerlink" title="gcc编译过程"></a><center><font color="#ff33ee" size="6px" >gcc编译过程</font></center></h3><h4 id="分步编译"><a href="#分步编译" class="headerlink" title="分步编译"></a><center><font color = "#ffaa00" size="5px">分步编译</font></center></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">预处理: gcc -E hello.c -o hello.i</span><br><span class="line">编  译: gcc -S hello.i -o hello.s</span><br><span class="line">汇  编: gcc -c hello.s -o hello.o</span><br><span class="line">链  接: gcc hello.o -o hello</span><br></pre></td></tr></table></figure><table><thead><tr><th>选项</th><th>含义</th></tr></thead><tbody><tr><td>-E</td><td>只进行预处理</td></tr><tr><td>-S（大写）</td><td>只进行预处理和编译</td></tr><tr><td>-c（小写）</td><td>只进行预处理、编译和汇编</td></tr><tr><td>-o  file</td><td>指定生成的输出文件名为file</td></tr></tbody></table><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20210514164441.png" alt="程序编译过程"></p><p><img src="https://cdn.jsdelivr.net/gh/queen999/ImageHosting/images/20210514165349.png" alt="程序执行过程"></p><table><thead><tr><th>文件后缀</th><th>含义</th></tr></thead><tbody><tr><td>.c</td><td>C语言文件</td></tr><tr><td>.i</td><td>预处理后的C语言文件</td></tr><tr><td>.s</td><td>编译后的汇编文件</td></tr><tr><td>.o</td><td>编译后的目标文件</td></tr></tbody></table><h4 id="常见代码问题"><a href="#常见代码问题" class="headerlink" title="常见代码问题"></a><center><font color = "#ffaa00" size="5px">常见代码问题</font></center></h4><ol><li>编辑时异常</li><li>编译时异常</li><li>运行时异常</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> C语言 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python网络编程-文件下载器</title>
       <link href="/2021/04/25/FileDownload/"/>
       <url>/2021/04/25/FileDownload/</url>
