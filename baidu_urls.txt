@@ -1,3 +1,5 @@
+https://imqinhao.cn/2021/05/20/Algorithm_1/
+https://imqinhao.cn/2021/05/20/C_Programming_1/
 https://imqinhao.cn/2021/05/14/CPU_Register/
 https://imqinhao.cn/2021/05/14/gcc/
 https://imqinhao.cn/2021/04/25/FileDownload/
